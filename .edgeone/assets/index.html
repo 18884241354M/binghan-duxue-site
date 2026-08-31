@@ -1,0 +1,2223 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>冰寒督学 · 找回你的自律节奏</title>
+<style>
+:root{
+  --blue:#2563eb; --blue-2:#3b82f6; --sky:#0ea5e9; --navy:#1e3a8a;
+  --ink:#0f172a; --slate:#475569; --muted:#64748b; --line:#e2e8f0;
+  --bg:#f8fafc; --bg2:#f0f9ff; --bg3:#fff7ed; --bg4:#f5f3ff;
+  --hot:#f43f5e; --orange:#f97316; --amber:#f59e0b; --teal:#14b8a6;
+  --purple:#8b5cf6; --emerald:#10b981;
+  --shadow:0 10px 30px rgba(15,23,42,.08);
+  --shadow-lg:0 20px 50px rgba(15,23,42,.14);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,"Microsoft YaHei","PingFang SC",sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+
+/* ===== Header ===== */
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:18px;height:68px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;color:var(--navy)}
+.logo img{height:44px;width:auto;display:block;object-fit:contain}
+.logo .mark{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;
+  background:linear-gradient(135deg,var(--blue),var(--sky));color:#fff;font-size:18px}
+.nav-links{display:flex;gap:2px;margin-left:8px;max-width:760px;overflow:hidden}
+.nav-links a{padding:7px 10px;border-radius:8px;font-size:13.5px;color:var(--slate);font-weight:500;transition:.2s;white-space:nowrap}
+.nav-links a:hover,.nav-links a.active{color:var(--blue);background:#eff6ff}
+.nav-cta{margin-left:auto;background:var(--ink);color:#fff;padding:10px 18px;border-radius:20px;font-size:14px;font-weight:600;transition:.2s}
+.nav-cta:hover{background:var(--blue);transform:translateY(-1px)}
+
+/* ===== Hero ===== */
+.hero{background:linear-gradient(180deg,#dbeafe 0%,#3b82f6 22%,#1e3a8a 55%,#172554 100%);color:#fff;padding:90px 0 110px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;right:-80px;top:-80px;width:520px;height:520px;border-radius:50%;background:rgba(191,219,254,.35);filter:blur(50px)}
+.hero::after{content:"";position:absolute;left:-60px;bottom:-60px;width:360px;height:360px;border-radius:50%;background:rgba(14,165,233,.12);filter:blur(50px)}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center;position:relative;z-index:1}
+.hero h1{font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-.02em}
+.hero h1 span{color:#7dd3fc}
+.hero p{font-size:18px;color:#cbd5e1;margin:22px 0 30px;max-width:520px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:28px;font-size:15px;font-weight:700;transition:.2s;border:none;cursor:pointer}
+.btn-primary{background:#fff;color:var(--blue)}
+.btn-primary:hover{background:#e0f2fe;transform:translateY(-2px)}
+.btn-outline{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.3)}
+.btn-outline:hover{background:rgba(255,255,255,.2)}
+/* feedback CTA band (查看真实反馈) */
+.fb-cta{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;padding:26px 16px;position:relative;z-index:3}
+.fb-btn{display:inline-flex;align-items:center;gap:8px;padding:14px 30px;border-radius:30px;border:none;cursor:pointer;font-size:15px;font-weight:800;color:#fff;background:linear-gradient(120deg,#3b82f6,#6366f1);box-shadow:0 10px 24px rgba(59,130,246,.35);transition:.2s}
+.fb-btn:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(59,130,246,.45)}
+.fb-blue-light{background:linear-gradient(120deg,#7dd3fc,#1d4ed8);color:#fff;box-shadow:0 10px 24px rgba(29,78,216,.35)}
+.fb-blue-light:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(29,78,216,.45)}
+.fb-cta-tip{font-size:13px;color:#64748b}
+.contact-rule-btn{text-align:center;margin-top:24px}
+.hero-rule-btn{margin-top:16px}
+.hero-visual{display:flex;flex-direction:column;gap:16px}
+.glass{background:rgba(255,255,255,.1);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.18);border-radius:18px;padding:20px}
+.glass .label{font-size:12px;color:#93c5fd;text-transform:uppercase;letter-spacing:1px}
+.glass .big{font-size:28px;font-weight:800;margin-top:4px}
+.glass p{font-size:14px;color:#e2e8f0;margin-top:6px}
+.hero-cards{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+
+/* ===== Stats ===== */
+.stats{margin-top:-50px;position:relative;z-index:2}
+.stats-inner{background:#fff;border-radius:20px;box-shadow:var(--shadow-lg);padding:32px 20px;display:grid;grid-template-columns:repeat(4,1fr);text-align:center;gap:20px}
+.stat .num{font-size:38px;font-weight:900;background:linear-gradient(135deg,var(--blue),var(--sky));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.stat .txt{font-size:14px;color:var(--muted);margin-top:4px;font-weight:500}
+.stats-foot{display:flex;align-items:center;gap:18px;justify-content:center;flex-wrap:wrap;margin-top:16px;font-size:13.5px;color:var(--slate)}
+.stats-foot .stats-link{color:var(--blue);font-weight:700;border:1px solid var(--line);padding:7px 16px;border-radius:20px;transition:.2s;background:#fff;cursor:pointer;font:inherit}
+.stats-foot .stats-link:hover{background:var(--blue);color:#fff;border-color:var(--blue)}
+
+/* ===== Section common ===== */
+.section{padding:72px 0}
+.sec-head{display:flex;align-items:flex-end;gap:14px;margin-bottom:32px}
+.sec-head h2{font-size:30px;font-weight:900;color:var(--ink)}
+.sec-head .tagline{font-size:15px;color:var(--muted);margin-left:auto;font-weight:500}
+.sec-head .line{flex:1;height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+.alt{background:var(--bg2)}
+.alt2{background:var(--bg3)}
+.alt3{background:var(--bg4)}
+
+/* ===== Section colour themes (bold gradients + inner glow) ===== */
+.section{position:relative;overflow:hidden}
+.section.theme-blue{background:radial-gradient(circle at 12% 16%,rgba(37,99,235,.12),transparent 42%),radial-gradient(circle at 88% 84%,rgba(14,165,233,.14),transparent 42%),linear-gradient(180deg,#eaf2ff,#d8e8ff)}
+.section.theme-orange{background:radial-gradient(circle at 12% 16%,rgba(249,115,22,.12),transparent 42%),radial-gradient(circle at 88% 84%,rgba(245,158,11,.14),transparent 42%),linear-gradient(180deg,#fff3e3,#ffe3c4)}
+.section.theme-teal{background:radial-gradient(circle at 12% 16%,rgba(13,148,136,.12),transparent 42%),radial-gradient(circle at 88% 84%,rgba(5,150,105,.14),transparent 42%),linear-gradient(180deg,#e6fbf4,#c9f3e7)}
+.section.theme-purple{background:radial-gradient(circle at 12% 16%,rgba(124,58,237,.12),transparent 42%),radial-gradient(circle at 88% 84%,rgba(139,92,246,.14),transparent 42%),linear-gradient(180deg,#f6effe,#e9d8ff)}
+.section.theme-indigo{background:radial-gradient(circle at 12% 16%,rgba(79,70,229,.12),transparent 42%),radial-gradient(circle at 88% 84%,rgba(99,102,241,.14),transparent 42%),linear-gradient(180deg,#eef0ff,#dde2ff)}
+.section.theme-sky{background:radial-gradient(circle at 12% 16%,rgba(14,165,233,.12),transparent 42%),radial-gradient(circle at 88% 84%,rgba(56,189,248,.14),transparent 42%),linear-gradient(180deg,#e8f5ff,#d0ebff)}
+#thanks{background:radial-gradient(circle at 15% 20%,rgba(251,191,36,.16),transparent 45%),radial-gradient(circle at 85% 80%,rgba(244,114,182,.14),transparent 45%),linear-gradient(180deg,#fff6ea,#ffe7f2)}
+
+/* ===== Steps ===== */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;position:relative}
+.steps::before{content:"";position:absolute;top:36px;left:12%;right:12%;height:2px;background:linear-gradient(90deg,var(--blue),var(--sky));opacity:.25}
+.step{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px 18px;text-align:center;position:relative;z-index:1;transition:.25s}
+.step:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.step .num{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--sky));color:#fff;display:grid;place-items:center;font-size:20px;font-weight:800;margin:0 auto 16px;border:4px solid var(--bg2)}
+.step h4{font-size:17px;margin-bottom:6px}
+.step p{font-size:13.5px;color:var(--muted)}
+
+/* ===== Categories ===== */
+.cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.cat-toggle{display:none;margin:0 0 18px;align-items:center;gap:6px;background:var(--accent-soft);color:var(--accent-d);border:1px solid #bfdbfe;border-radius:20px;padding:9px 18px;font-size:14px;font-weight:800;cursor:pointer;transition:.2s}
+.cat-toggle:hover{background:#dbeafe}
+.cat-toggle:active{transform:scale(.97)}
+.cat{position:relative;background:var(--csoft,#f8fafc);border:1px solid var(--cline,#eef2f7);border-radius:20px;padding:26px 20px;text-align:center;cursor:pointer;overflow:hidden;
+  transition:transform .28s cubic-bezier(.22,1,.36,1),box-shadow .28s,border-color .28s;box-shadow:0 6px 18px rgba(15,23,42,.05)}
+.cat::before{content:"";position:absolute;right:-26px;top:-26px;width:92px;height:92px;border-radius:50%;
+  background:radial-gradient(circle,var(--c,#3b82f6) 0%,transparent 70%);opacity:.12;pointer-events:none}
+.cat .badge{position:absolute;top:14px;left:14px;font-size:11px;font-weight:800;letter-spacing:.02em;padding:4px 10px;border-radius:999px;background:var(--c,#3b82f6);color:#fff;box-shadow:0 5px 12px -4px var(--c,#3b82f6)}
+.cat .ic{width:58px;height:58px;border-radius:16px;margin:6px auto 16px;display:grid;place-items:center;
+  background:linear-gradient(135deg,var(--c,#3b82f6),var(--c2,#60a5fa));color:#fff;box-shadow:0 10px 20px -8px var(--c,#3b82f6);transition:transform .3s,box-shadow .3s}
+.cat .ic svg{width:30px;height:30px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.cat h4{font-size:16px;font-weight:800;margin-bottom:6px;color:var(--navy)}
+.cat p{font-size:12.5px;color:var(--slate);line-height:1.62}
+.cat:hover{transform:translateY(-7px);box-shadow:0 22px 44px -16px var(--c,#3b82f6);border-color:var(--c,#3b82f6)}
+.cat:hover .ic{transform:rotate(-7deg) scale(1.07);box-shadow:0 14px 26px -8px var(--c,#3b82f6)}
+/* 卡片错落入场 */
+.cat-grid.in .cat{animation:catIn .62s cubic-bezier(.22,1,.36,1) both;animation-delay:calc(var(--i,0)*75ms)}
+@keyframes catIn{from{opacity:0;transform:translateY(38px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+/* feature 旗舰大卡 */
+.cat.feature{grid-column:span 2;display:flex;align-items:center;gap:22px;text-align:left;padding:28px 30px;background:linear-gradient(120deg,var(--csoft,#f5f3ff),#fff)}
+.cat.feature .ic{width:88px;height:88px;border-radius:22px;margin:0;flex:0 0 auto}
+.cat.feature .ic svg{width:46px;height:46px}
+.cat.feature h4{font-size:23px;margin-bottom:8px}
+.cat.feature p{font-size:14px;max-width:430px}
+.cat.feature .badge{top:18px;left:20px;font-size:12px;padding:5px 12px}
+/* CTA 引导卡 */
+.cat.cta{grid-column:span 3;background:linear-gradient(120deg,var(--navy),var(--blue));border:none;color:#fff;display:flex;align-items:center;justify-content:space-between;gap:18px;text-align:left;cursor:pointer;box-shadow:0 16px 40px -16px rgba(37,99,235,.6)}
+.cat.cta::before{display:none}
+.cat.cta .cta-main{font-size:16px;font-weight:800;line-height:1.5}
+.cat.cta .cta-main small{display:block;font-size:12.5px;font-weight:500;opacity:.85;margin-top:4px}
+.cat.cta .cta-go{background:#fff;color:var(--blue);font-weight:800;font-size:14px;padding:12px 22px;border-radius:24px;white-space:nowrap;box-shadow:0 8px 18px -6px rgba(0,0,0,.25);transition:transform .2s}
+.cat.cta:hover{transform:translateY(-5px)}
+.cat.cta:hover .cta-go{transform:scale(1.05)}
+/* 各卡主色 */
+.cat.c-blue{--c:#3b82f6;--c2:#60a5fa;--csoft:#eff6ff;--cline:#dbeafe}
+.cat.c-indigo{--c:#4f46e5;--c2:#818cf8;--csoft:#eef2ff;--cline:#e0e7ff}
+.cat.c-purple{--c:#8b5cf6;--c2:#a78bfa;--csoft:#f5f3ff;--cline:#ede9fe}
+.cat.c-orange{--c:#f97316;--c2:#fb923c;--csoft:#fff7ed;--cline:#fed7aa}
+.cat.c-rose{--c:#f43f5e;--c2:#fb7185;--csoft:#fff1f2;--cline:#fecdd3}
+.cat.c-teal{--c:#14b8a6;--c2:#2dd4bf;--csoft:#f0fdfa;--cline:#99f6e4}
+.cat.c-emerald{--c:#10b981;--c2:#34d399;--csoft:#ecfdf5;--cline:#a7f3d0}
+.cat.c-amber{--c:#f59e0b;--c2:#fbbf24;--csoft:#fffbeb;--cline:#fde68a}
+
+/* ===== Products ===== */
+.period-bar{display:flex;align-items:center;gap:10px;margin-bottom:22px;flex-wrap:wrap}
+.period-bar .label{font-size:14px;color:var(--muted)}
+.period-toggle{display:inline-flex;background:#fff;border:1px solid var(--line);border-radius:24px;padding:4px;gap:2px}
+.period-toggle button{position:relative;overflow:hidden;border:none;background:transparent;padding:8px 18px;border-radius:20px;cursor:pointer;font-size:14px;color:var(--muted);transition:.2s}
+.period-toggle button.active{background:linear-gradient(135deg,#f97316,#ec4899);color:#fff;font-weight:700}
+.bfly-wrap{position:absolute;left:50%;top:50%;width:28px;height:28px;margin:-14px 0 0 -14px;pointer-events:none;z-index:2;overflow:visible;animation:bflyFade .9s ease-out forwards}
+.bfly-wrap svg{width:100%;height:100%;display:block;filter:drop-shadow(0 0 2px rgba(255,255,255,.95)) drop-shadow(0 0 5px rgba(253,211,77,.55))}
+.bfly-wrap .wing{transform-origin:center;animation:bflyWing .52s ease-in-out 2}
+.bfly-wrap .wing-l{animation-name:bflyWingL}
+.bfly-wrap .wing-r{animation-name:bflyWingR}
+.bfly-wrap .spark{position:absolute;left:50%;top:50%;width:2.5px;height:2.5px;margin:-1.25px 0 0 -1.25px;border-radius:50%;background:#fff;box-shadow:0 0 4px #fde68a;opacity:0;animation:bflySpark .85s ease-out forwards}
+@keyframes bflyFade{0%{opacity:0;transform:scale(.7)}15%{opacity:1;transform:scale(1)}85%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(.85)}}
+@keyframes bflyWingL{0%,100%{transform:scaleX(1) rotate(0)}50%{transform:scaleX(.22) rotate(-10deg)}}
+@keyframes bflyWingR{0%,100%{transform:scaleX(1) rotate(0)}50%{transform:scaleX(.22) rotate(10deg)}}
+@keyframes bflySpark{0%{transform:translate(0,0) scale(1);opacity:.95}100%{transform:translate(var(--tx),var(--ty)) scale(0);opacity:0}}
+.prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.prod{background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px;display:flex;flex-direction:column;transition:.25s;position:relative}
+.prod:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.prod .badges{position:absolute;top:18px;right:18px;display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.prod .badges span{font-size:11px;font-weight:700;color:#fff;background:var(--hot);padding:3px 10px;border-radius:12px}
+.prod .badges span.tag2{background:var(--orange)}
+.prod .badges span.tag1{background:var(--navy)}
+.prod-groups{margin-top:8px}
+.prod-group{margin-top:40px}
+.prod-group:first-child{margin-top:0}
+.prod-group-head{display:flex;align-items:baseline;gap:14px;margin-bottom:18px;padding-left:14px;border-left:4px solid var(--blue);flex-wrap:wrap}
+.prod-group-head h3{font-size:21px;font-weight:800;color:var(--navy)}
+.prod-group-head span{font-size:13px;color:var(--muted)}
+/* ===== Group accent colors ===== */
+.prod-group.g-yellow{--accent:#f59e0b;--accent-d:#b45309}
+.prod-group.g-blue{--accent:#2563eb;--accent-d:#1d4ed8}
+.prod-group.g-purple{--accent:#7c3aed;--accent-d:#6d28d9}
+.prod-group.g-green{--accent:#059669;--accent-d:#047857}
+.prod-group .prod-group-head{border-left-color:var(--accent)}
+.prod-group .prod-group-head h3{color:var(--accent-d)}
+.prod-group .prod{border-left:4px solid var(--accent)}
+.prod-group .prod:hover{box-shadow:0 10px 28px rgba(15,23,42,.12);border-color:var(--accent)}
+.prod-group .prod .badges span.tag1{background:var(--accent)}
+.prod-group .buy{background:var(--accent)}
+.prod-group .buy:hover{background:var(--accent-d)}
+/* ===== Series collapse/expand ===== */
+.prod-group-head{cursor:pointer;user-select:none}
+.prod-group-head .gh-toggle{margin-left:auto;align-self:center;display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:var(--accent-d);background:rgba(255,255,255,.55);border:1px solid var(--line);border-radius:999px;padding:5px 14px;transition:.2s;position:relative;padding-right:30px}
+.prod-group-head:hover .gh-toggle{background:#fff;box-shadow:0 2px 8px rgba(15,23,42,.1)}
+.prod-group-head .gh-toggle::after{content:"▾";position:absolute;right:13px;top:50%;transform:translateY(-50%);font-size:11px;transition:transform .25s}
+.prod-group.collapsed .gh-toggle::after{transform:translateY(-50%) rotate(-90deg)}
+.prod-group.collapsed .prod-grid{display:none}
+.prod .badges span.tag3{background:var(--teal)}
+.prod .tier{font-size:13px;color:var(--blue);font-weight:800;letter-spacing:.5px}
+.prod h4{font-size:19px;margin:6px 0 4px}
+.prod .desc{font-size:13.5px;color:var(--muted);min-height:42px}
+.prod .price{margin:16px 0 4px;display:flex;align-items:baseline;gap:4px}
+.prod .price .cur{font-size:16px;color:var(--hot);font-weight:800}
+.prod .price .num{font-size:36px;font-weight:900;color:var(--hot);line-height:1}
+.prod .price .unit{font-size:13px;color:var(--muted)}
+.prod .unit-note{font-size:12px;color:var(--muted);margin-bottom:14px}
+.prod .feats{list-style:none;font-size:13.5px;color:var(--slate);margin-bottom:18px;flex:1}
+.prod .feats li{padding:4px 0 4px 22px;position:relative}
+.prod .feats li::before{content:"✓";position:absolute;left:0;color:var(--blue);font-weight:800}
+.buy{width:100%;border:none;cursor:pointer;padding:13px;border-radius:12px;font-size:15px;font-weight:800;
+  background:linear-gradient(135deg,var(--blue),var(--sky));color:#fff;transition:.2s}
+.buy:hover{filter:brightness(1.08);transform:translateY(-1px)}
+
+/* ===== Single services ===== */
+.ss-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.ss-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:26px;transition:.25s}
+.ss-card:hover{box-shadow:var(--shadow)}
+.ss-card h3{font-size:18px;font-weight:800;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.ss-card h3 .dot{width:10px;height:10px;border-radius:50%;background:var(--blue)}
+.ss-card.alt-h h3 .dot{background:var(--purple)}
+.ss-card.alt-f h3 .dot{background:var(--orange)}
+.ss-item{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px dashed var(--line);font-size:14px}
+.ss-item:last-child{border-bottom:none}
+.ss-item .price{font-weight:800;color:var(--hot);font-size:15px}
+.ss-note{font-size:13px;color:var(--muted);margin-top:14px;line-height:1.8;background:#f8fafc;padding:12px;border-radius:10px}
+.ss-row{padding:9px 0;border-bottom:1px dashed var(--line)}
+.ss-row:last-child{border-bottom:none}
+.ss-row .ss-item{border-bottom:none;padding:0}
+.ss-desc{font-style:italic;font-size:13px;font-weight:600;line-height:1.7;margin-top:6px;background:linear-gradient(90deg,#f97316,#ec4899);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+.ss-tag{margin-left:auto;font-style:italic;font-size:12px;font-weight:600;line-height:1;background:linear-gradient(90deg,#f97316,#ec4899);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+.ss-img{margin-top:26px;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+
+/* ===== Team ===== */
+.team-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.team-card{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:.25s;display:flex;flex-direction:column}
+.team-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.team-img{aspect-ratio:3/4;overflow:hidden;background:#edf2f7;display:flex;align-items:center;justify-content:center}
+.team-img img{width:100%;height:100%;object-fit:cover}
+.team-meta{padding:16px;flex:1}
+.team-meta .name{font-size:16px;font-weight:800;margin-bottom:4px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.team-meta .role{font-size:11px;color:#fff;background:var(--blue);padding:2px 8px;border-radius:8px;font-weight:600}
+.team-meta .role.gold{background:var(--amber)}
+.team-meta .role.purple{background:var(--purple)}
+.team-meta .role.rose{background:var(--hot)}
+.team-meta .role.teal{background:var(--teal)}
+.team-meta p{font-size:12.5px;color:var(--muted);margin-top:8px;line-height:1.7}
+
+/* ===== Team featured (Jinhuan) ===== */
+.team-featured{display:grid;grid-template-columns:280px 1fr;gap:0;background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;margin-top:22px;transition:.25s;text-decoration:none;color:inherit}
+.team-featured:hover{box-shadow:var(--shadow);transform:translateY(-3px)}
+.tf-img{height:100%;min-height:220px;background:#f1f5f9;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.tf-img img{width:100%;height:100%;object-fit:contain;padding:6px}
+.tf-body{padding:28px 30px;display:flex;flex-direction:column;justify-content:center}
+.tf-head{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:10px}
+.tf-name{font-size:22px;font-weight:900}
+.tf-mail{font-size:15px;color:var(--blue);font-weight:700;background:#eff6ff;padding:5px 12px;border-radius:8px}
+.tf-body p{font-size:14.5px;color:var(--muted);line-height:1.8;margin-bottom:16px}
+.tf-btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--blue),var(--sky));color:#fff;padding:12px 22px;border-radius:24px;font-weight:800;font-size:14px;width:fit-content}
+@media(max-width:760px){
+  .team-featured{grid-template-columns:1fr}
+  .tf-img{height:260px;min-height:auto}
+  .tf-body{padding:22px}
+}
+
+/* ===== Reviews ===== */
+.review-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.review-card{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:.25s}
+.review-card:hover{box-shadow:var(--shadow)}
+.review-card img{width:100%;height:auto}
+
+/* ===== Letter of thanks ===== */
+.thanks-card{position:relative;background:radial-gradient(circle at 88% 10%,rgba(251,191,36,.10),transparent 50%),radial-gradient(circle at 8% 95%,rgba(244,114,182,.10),transparent 52%),linear-gradient(135deg,#fffaf3,#fff1f6);border:1px solid #f3d9e6;border-radius:22px;padding:48px 46px 42px;color:#3b3357;overflow:hidden;box-shadow:0 18px 44px -28px rgba(157,23,77,.25)}
+.fw-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+.thanks-card>*:not(.fw-canvas){position:relative;z-index:1}
+.thanks-card::before{content:"";position:absolute;right:-60px;top:-70px;width:300px;height:300px;border-radius:50%;background:rgba(251,191,36,.12);filter:blur(50px)}
+.thanks-card::after{content:"";position:absolute;left:-70px;bottom:-80px;width:300px;height:300px;border-radius:50%;background:rgba(244,114,182,.12);filter:blur(54px)}
+.thanks-mark{position:absolute;right:40px;top:6px;font-size:120px;line-height:1;color:rgba(190,24,93,.12);font-family:Georgia,serif}
+.thanks-card h3{font-size:26px;font-weight:900;margin-bottom:22px;position:relative;z-index:1;display:flex;align-items:center;gap:12px}
+.thanks-card h3::before{content:"";width:6px;height:26px;border-radius:4px;background:#db2777}
+.thanks-body{position:relative;z-index:1;max-width:880px}
+.thanks-body p{font-size:16px;line-height:2;color:#5a536b;margin-bottom:16px}
+.thanks-body strong{color:#be185d;font-weight:800}
+.thanks-sign{position:relative;z-index:1;margin-top:10px;font-size:15px;color:#8a7f99;text-align:right;font-weight:600}
+@media(max-width:560px){
+  .thanks-card{padding:34px 24px 30px}
+  .thanks-body p{font-size:14.5px}
+  .thanks-mark{font-size:88px;right:18px}
+}
+
+/* ===== Activity ===== */
+.act-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.act{position:relative;border-radius:18px;padding:26px;color:#fff;overflow:hidden;transition:.25s}
+.act:hover{transform:translateY(-3px)}
+.act h4{font-size:20px;font-weight:800;margin-bottom:8px}
+.act p{font-size:14px;opacity:.95;margin-bottom:14px}
+.act .pill{display:inline-block;background:rgba(255,255,255,.22);padding:5px 14px;border-radius:20px;font-size:13px;font-weight:600}
+.act .coupon{font-size:30px;font-weight:800;margin-top:6px}
+.r-grid{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.r-grid span{font-size:11px;background:rgba(255,255,255,.22);padding:5px 9px;border-radius:6px;font-weight:700}
+.a1{background:linear-gradient(135deg,#f0fdf4,#dcfce7);color:#14532d;border:1px solid #bbf7d0;box-shadow:0 16px 36px -24px rgba(5,150,105,.5)}
+.a1 h4{display:flex;align-items:center;gap:9px;color:#14532d}
+.a1 h4 svg{width:22px;height:22px;flex:0 0 auto}
+.a1 p{color:#3f6212}
+.a1 .coupon{color:#059669}
+.a1 .act-detail{background:rgba(21,128,61,.08);color:#166534;opacity:1}
+.a2{background:linear-gradient(120deg,#f59e0b,#fcd34d)}
+.a3{background:linear-gradient(120deg,#f06595,#ffa94d)}
+.a4{background:linear-gradient(120deg,#0ea5e9,#38bdf8)}
+.a5{position:relative;background:#0a0a0a;color:#f5f5f5;overflow:hidden;border:1px solid #262626}
+.city-skyline{position:absolute;left:0;right:0;bottom:0;height:58%;pointer-events:none;z-index:0;opacity:.9}
+.city-skyline svg{width:100%;height:100%;display:block}
+.a5 .aw-left{position:relative;z-index:1}
+.a5 h4{display:flex;align-items:center;gap:10px;font-size:22px;margin-bottom:10px}
+.a5 .aw-ic{width:22px;height:22px;color:#e5e5e5;flex-shrink:0}
+.a5 .aw-addr{display:flex;align-items:center;gap:7px;color:#d4d4d4;font-weight:600}
+.a5 .aw-left p{color:#d4d4d4}
+.a5 .aw-price{position:relative;z-index:2;background:rgba(10,10,10,.72);border-left:1px solid rgba(255,255,255,.1)}
+.a5 .aw-item span{color:#f5f5f5;font-weight:600;text-shadow:0 1px 3px rgba(0,0,0,.75)}
+.offline-btn{display:inline-flex;align-items:center;gap:8px;margin-top:16px;padding:10px 20px;border-radius:24px;border:1px solid #d4d4d4;background:#0a0a0a;color:#f5f5f5;font-size:13.5px;font-weight:700;cursor:pointer;transition:.2s}
+.offline-btn svg{width:16px;height:16px}
+.offline-btn:hover{background:#f5f5f5;color:#0a0a0a;border-color:#f5f5f5}
+.a-gold{background:linear-gradient(120deg,#262626,#0a0a0a);color:#f3d27a;border:1px solid rgba(212,175,55,.55)}
+.a-gold .act-detail{background:rgba(212,175,55,.1)}
+.a-gold .coupon{color:#f3d27a}
+.a-blue{background:linear-gradient(120deg,#dbeafe,#bfdbfe);color:#1e3a8a}
+.a-blue .pill{background:rgba(37,99,235,.14);color:#1e40af}
+.a-blue .act-detail{background:rgba(37,99,235,.08)}
+.a-green{background:linear-gradient(120deg,#dcfce7,#bbf7d0);color:#14532d}
+.a-green .act-detail{background:rgba(21,128,61,.08)}
+.act-sub{margin:4px 0 14px;display:flex;align-items:center;gap:12px}
+.act-sub::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+.act-sub-tag{font-size:13px;font-weight:800;color:var(--hot);background:#fff1f2;border:1px solid #fecdd3;padding:5px 14px;border-radius:20px}
+.act-grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:24px}
+.act-grid3 .coupon{font-size:26px}
+.act-grid3 .act p{margin-bottom:10px}
+.act-detail{font-size:12px;line-height:1.7;opacity:.92;background:rgba(0,0,0,.14);padding:10px 12px;border-radius:10px;margin-bottom:12px}
+.act-mini{font-size:11.5px;opacity:.85;margin-top:4px;margin-bottom:10px;font-style:italic}
+.act-divider{display:flex;align-items:center;gap:14px;margin:30px 0;font-size:12.5px;font-weight:800;letter-spacing:2px;color:var(--hot)}
+.act-divider::before,.act-divider::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--line) 35%,var(--line) 65%,transparent)}
+.act-divider span{padding:6px 18px;border:1px solid var(--line);border-radius:20px;background:#fff}
+.act-wide{display:grid;grid-template-columns:1.6fr 1fr;gap:0;margin-top:24px;border-radius:20px;overflow:hidden;color:#fff}
+.aw-left{padding:30px 32px}
+.aw-left h4{font-size:21px;font-weight:800;margin-bottom:10px}
+.aw-addr{font-size:14px;opacity:.92;margin-bottom:12px;font-weight:600}
+.aw-left p{font-size:14px;line-height:1.95;opacity:.95}
+.aw-price{background:rgba(0,0,0,.2);padding:30px 28px;display:flex;flex-direction:column;justify-content:center;gap:14px}
+.aw-item{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+.aw-item span{font-size:13px;opacity:.85}
+.aw-item b{font-size:25px;font-weight:900}
+.a5 .aw-item b{color:#f5d98a}
+@media(max-width:980px){
+  .act-grid3{grid-template-columns:1fr}
+  .act-wide{grid-template-columns:1fr}
+  .aw-price{flex-direction:row;flex-wrap:wrap}
+  .a5 .aw-price{border-left:none;border-top:1px solid rgba(255,255,255,.08)}
+}
+
+/* ===== FAQ ===== */
+.faq-list{display:grid;gap:12px;max-width:820px;margin:0 auto}
+.faq{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.faq-q{padding:16px 20px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:700;font-size:15px}
+.faq-q::after{content:"+";font-size:20px;color:var(--blue);font-weight:400}
+.faq.open .faq-q::after{content:"−"}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 20px;font-size:14px;color:var(--slate)}
+.faq.open .faq-a{max-height:200px;padding-bottom:16px}
+
+/* ===== Contact ===== */
+.contact-card{background:linear-gradient(120deg,var(--navy),var(--blue));border-radius:20px;padding:32px;color:#fff;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.contact-card h3{font-size:24px;margin-bottom:6px}
+.contact-card p{opacity:.9;font-size:14px}
+.wx-row{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.15);padding:10px 18px;border-radius:30px;margin-top:12px}
+.wx-id{font-size:18px;font-weight:900;letter-spacing:.5px}
+.copy-btn{border:none;background:#fff;color:var(--blue);font-weight:800;padding:7px 16px;border-radius:20px;cursor:pointer;font-size:13px;transition:.2s}
+.copy-btn:hover{background:#e0f2fe}
+
+/* ===== Footer ===== */
+footer{background:#0f172a;color:#94a3b8;padding:46px 0 28px}
+.foot{display:grid;grid-template-columns:2fr 1fr 1fr 1.6fr;gap:28px}
+.foot h5{color:#f8fafc;font-size:15px;margin-bottom:14px}
+.foot a,.foot p{font-size:13.5px;display:block;padding:4px 0;transition:.2s}
+.foot a:hover{color:#fff}
+.foot .brand{font-size:22px;font-weight:900;color:#fff;margin-bottom:10px}
+.foot .copy{grid-column:1/-1;text-align:center;font-size:12.5px;color:#64748b;border-top:1px solid #1e293b;padding-top:22px;margin-top:14px}
+
+/* ===== Payment modal ===== */
+.modal-overlay{position:fixed;inset:0;background:rgba(15,23,42,.75);z-index:100;display:none;align-items:center;justify-content:center;padding:18px;backdrop-filter:blur(4px)}
+.modal-overlay.show{display:flex}
+.modal{background:#fff;border-radius:20px;width:100%;max-width:560px;padding:26px;position:relative;animation:pop .25s ease}
+@keyframes pop{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}
+.modal-close{position:absolute;top:14px;right:14px;width:34px;height:34px;border-radius:50%;border:none;background:#f1f5f9;color:var(--slate);font-size:22px;cursor:pointer}
+.modal-close:hover{background:#e2e8f0}
+.offline-modal{max-width:720px;background:#0a0a0a;border:1px solid #262626;color:#f5f5f5}
+.offline-modal .modal-title{color:#f5f5f5}
+.offline-modal .modal-sub{color:#a3a3a3}
+.offline-tabs{display:flex;gap:12px;justify-content:center;margin-bottom:18px}
+.offline-tab{padding:8px 22px;border-radius:20px;border:1px solid #404040;background:transparent;color:#a3a3a3;font-size:14px;font-weight:700;cursor:pointer;transition:.2s}
+.offline-tab.active{background:#f5f5f5;color:#0a0a0a;border-color:#f5f5f5}
+.offline-tab:hover:not(.active){border-color:#737373;color:#e5e5e5}
+.offline-pane{display:none}
+.offline-pane.active{display:block;animation:fadeIn .25s ease}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.offline-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.offline-grid.cols-2{grid-template-columns:repeat(2,1fr);max-width:560px;margin:0 auto}
+.offline-grid img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:12px;border:1px solid #262626;transition:.2s}
+.offline-grid img:hover{transform:scale(1.02);border-color:#525252}
+@media(max-width:640px){
+  .offline-grid{grid-template-columns:repeat(2,1fr)}
+  .offline-grid.cols-2{grid-template-columns:1fr}
+}
+.modal-head{text-align:center;margin-bottom:18px}
+.modal-title{font-size:20px;font-weight:900;color:var(--ink)}
+.modal-sub{font-size:14px;color:var(--muted);margin-top:4px}
+.modal-price{font-size:40px;font-weight:900;color:var(--hot);margin-top:6px}
+.qr-wrap{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px}
+.qr-item{background:#f8fafc;border:1px solid var(--line);border-radius:14px;padding:14px;text-align:center}
+.qr-item img{width:100%;border-radius:10px}
+.qr-item span{display:block;margin-top:10px;font-size:14px;font-weight:800;color:var(--ink)}
+.pay-note{background:#fffbeb;border:1px solid #fde68a;border-radius:12px;padding:14px 16px;font-size:14px;color:var(--ink);text-align:center}
+.pay-note b{color:var(--blue)}
+
+/* ===== Notice button + modal ===== */
+.notice-link{margin-top:16px;background:#fff;border:1.5px solid #fff;color:var(--blue);font-size:13.5px;font-weight:700;padding:9px 18px;border-radius:20px;cursor:pointer;transition:.2s;box-shadow:0 6px 16px rgba(0,0,0,.18)}
+.notice-link:hover{background:var(--blue);color:#fff;border-color:var(--blue)}
+.notice-modal{max-width:620px}
+.notice-body{padding:4px 6px 6px;max-height:62vh;overflow:auto;text-align:left}
+.notice-body h5{font-size:15px;color:var(--navy);margin:16px 0 6px;font-weight:800}
+.notice-body h5:first-child{margin-top:4px}
+.notice-body p{font-size:14px;color:var(--slate);line-height:1.75}
+.notice-body .warn{color:var(--hot);font-weight:900}
+.notice-body .notice-tip{margin-top:18px;background:#fff1f2;border:1px solid #fecdd3;border-radius:12px;padding:12px 14px;font-size:14px;font-weight:700;color:#be123c;text-align:center}
+
+/* ===== Order guide button + modal ===== */
+.order-guide{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;margin:0 0 26px}
+.og-hint{font-size:15px;color:var(--accent-d);font-weight:700}
+.og-btn{background:linear-gradient(135deg,var(--accent),var(--accent-d));color:#fff;border:none;
+  padding:12px 24px;border-radius:26px;font-size:15px;font-weight:800;cursor:pointer;
+  box-shadow:0 8px 22px rgba(249,115,22,.35);transition:.2s}
+.og-btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(249,115,22,.45)}
+.guide-modal{max-width:680px}
+.guide-body{padding:4px 6px 6px;max-height:64vh;overflow:auto;text-align:left}
+.g-block{background:#f8fafc;border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin-bottom:14px}
+.g-head{font-size:16px;font-weight:900;margin-bottom:10px}
+.g-study{color:#2563eb}.g-life{color:#0d9488}.g-fit{color:#f97316}.g-companion{color:#7c3aed}
+.g-block ul{margin:0;padding-left:20px;display:grid;grid-template-columns:1fr 1fr;gap:4px 18px;list-style:disc}
+.g-pair ul{grid-template-columns:1fr}
+.g-block li{font-size:13.5px;color:var(--slate);line-height:1.7}
+.g-pair{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.g-sub{font-weight:800;color:var(--ink);margin-bottom:6px;font-size:14px}
+@media(max-width:560px){.g-block ul,.g-pair{grid-template-columns:1fr}}
+
+/* ===== Reviews modal ===== */
+.reviews-modal{max-width:960px;width:92%;padding:0;overflow:hidden;background:#fff;border-radius:22px}
+.reviews-modal .modal-head{padding:26px 26px 12px;background:linear-gradient(120deg,#fff1f2,#ffe4e6);margin-bottom:0}
+.reviews-modal .modal-title{color:#be123c;font-size:22px}
+.reviews-modal .modal-sub{color:#9f1239;margin-top:6px}
+.reviews-body{max-height:70vh;overflow-y:auto;padding:22px 26px 32px;background:#fdf2f8}
+.review-flow{display:grid;grid-template-columns:1fr;gap:18px}
+.review-item{background:#fff;border:1px solid #e2e8f0;border-radius:18px;overflow:hidden;box-shadow:0 4px 14px rgba(15,23,42,.06);transition:.25s}
+.review-item:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(15,23,42,.1)}
+.review-item img{width:100%;height:auto;display:block}
+.review-item p{padding:14px 16px;margin:0;font-size:14.5px;font-weight:500;color:#334155;line-height:1.8;background:#f8fafc;border-top:1px solid #f1f5f9}
+.review-quote{position:relative;padding-left:18px}
+.review-quote::before{content:"“";position:absolute;left:-2px;top:-8px;font-size:28px;color:#fb7185;opacity:.6}
+/* reviews modal entrance + card waterfall + falling deco */
+.modal-overlay.show .reviews-modal{animation:revModalPop .42s cubic-bezier(.2,.8,.3,1)}
+@keyframes revModalPop{from{opacity:0;transform:scale(.92) translateY(12px)}to{opacity:1;transform:scale(1) translateY(0)}}
+.reviews-modal .review-item{opacity:0}
+.modal-overlay.show .reviews-modal .review-item{animation:revCardIn .55s cubic-bezier(.22,1,.36,1) both}
+@keyframes revCardIn{from{opacity:0;transform:translateY(22px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+@media(max-width:720px){
+  .reviews-modal{width:96%}
+  .reviews-body{padding:16px;max-height:74vh}
+}
+
+/* ===== Rule modal (学员准则) + envelope animation ===== */
+.rule-modal{max-width:640px}
+.rule-modal .modal-head{background:linear-gradient(120deg,#eff6ff,#dbeafe);margin-bottom:0;border-radius:20px 20px 0 0}
+.rule-modal .modal-title{color:#1d4ed8}
+.rule-modal .modal-sub{color:#3b82f6}
+.rule-body{padding:6px 10px 4px;max-height:66vh;overflow:auto;text-align:left}
+/* decorative envelope that opens */
+.rule-envelope{position:relative;width:210px;height:130px;margin:8px auto 2px;perspective:900px;cursor:pointer;transition:transform .2s}
+.rule-envelope:hover{transform:translateY(-3px)}
+.env-back{position:absolute;inset:0;background:linear-gradient(135deg,#dbeafe,#bfdbfe);border-radius:10px;box-shadow:inset 0 -8px 16px rgba(37,99,235,.18)}
+.env-pocket{position:absolute;left:0;right:0;bottom:0;height:60%;background:linear-gradient(135deg,#bfdbfe,#93c5fd);clip-path:polygon(0 100%,50% 36%,100% 100%);z-index:2}
+.env-flap{position:absolute;left:0;right:0;top:0;height:64%;background:linear-gradient(135deg,#f1f6ff,#c7dbfd);clip-path:polygon(0 0,100% 0,50% 80%);transform-origin:top center;z-index:4;transition:transform .85s cubic-bezier(.4,0,.2,1);box-shadow:0 2px 6px rgba(37,99,235,.12)}
+.rule-envelope.open .env-flap{transform:rotateX(180deg)}
+.rule-envelope.open{transform:scale(1.05)}
+.rule-envelope .bloom{position:absolute;font-size:22px;line-height:1;opacity:0;transform:scale(0) rotate(-30deg);pointer-events:none;z-index:6}
+.b1{left:-4px;top:-16px}.b2{right:-12px;top:-8px}.b3{left:12px;bottom:-16px}.b4{right:-6px;bottom:-12px}.b5{left:-16px;bottom:4px}.b6{right:-16px;bottom:12px}
+.rule-envelope.open .bloom{animation:bloomIn .95s cubic-bezier(.34,1.56,.64,1) forwards}
+.rule-envelope.open .b1{animation-delay:.15s}.rule-envelope.open .b2{animation-delay:.30s}.rule-envelope.open .b3{animation-delay:.45s}.rule-envelope.open .b4{animation-delay:.60s}.rule-envelope.open .b5{animation-delay:.50s}.rule-envelope.open .b6{animation-delay:.72s}
+@keyframes bloomIn{0%{opacity:0;transform:scale(0) rotate(-40deg) translateY(12px)}60%{opacity:1;transform:scale(1.35) rotate(12deg) translateY(0)}100%{opacity:.95;transform:scale(1) rotate(0) translateY(0)}}
+/* letter card revealed below the envelope */
+.rule-letter-card{background:linear-gradient(180deg,#fff,#f7fbff);border:1px solid #dbeafe;border-radius:14px;padding:18px 20px;margin:0 0 18px;font-size:14px;line-height:1.9;color:#334155;opacity:0;transform:translateY(14px);transition:opacity .6s ease .35s,transform .6s ease .35s}
+.rule-modal.show-anim .rule-letter-card{opacity:1;transform:translateY(0)}
+.env-hint{position:relative;z-index:8;text-align:center;font-size:12px;color:#64748b;margin:20px 0 16px}
+.env-hint b{color:#1d4ed8}
+/* ===== QR modal (店长微信) ===== */
+.qr-modal{max-width:420px;text-align:center;padding:30px 26px 26px}
+.qr-modal .qr-img{width:100%;max-width:280px;border-radius:14px;border:1px solid var(--line);box-shadow:0 14px 34px -14px rgba(0,0,0,.18);margin-top:6px}
+.qr-modal .qr-wx{font-size:17px;font-weight:800;color:var(--ink);margin-top:16px}
+.qr-modal .qr-tip{font-size:13px;color:var(--muted);margin-top:6px}
+/* fireworks over real-feedback — text-shaped, transparent, non-blocking */
+#fwOverlay{position:fixed;inset:0;z-index:150;display:none;pointer-events:none;background:transparent}
+#fwOverlay.show{display:block}
+#fwCanvasBig{position:absolute;inset:0;width:100%;height:100%}
+.rule-letter-card p{margin:0 0 10px}
+.rule-letter-card .sign{text-align:right;font-weight:800;color:#1d4ed8;margin-top:4px}
+.rule-intro{font-size:14.5px;color:#475569;line-height:1.8;margin:0 0 14px}
+.rule-list{margin:0;padding:0;list-style:none}
+.rule-list li{background:#f8fafc;border:1px solid #e2e8f0;border-left:4px solid var(--blue);border-radius:12px;padding:12px 14px;margin-bottom:12px;font-size:14px;line-height:1.75;color:#334155}
+.rule-list li b{display:block;color:#1e3a8a;font-size:15px;font-weight:900;margin-bottom:3px}
+.rule-sign{position:relative;z-index:8;text-align:center;font-weight:900;color:#be123c;margin:18px 0 20px;line-height:1.8}
+.rule-sign .small{display:block;font-size:13px;color:#9f1239;font-weight:700}
+
+/* ===== Snow overlay (ice element) ===== */
+#snowCanvas{position:fixed;inset:0;width:100%;height:100%;z-index:35;pointer-events:none}
+
+/* ===== Floating contact ===== */
+.fab{position:fixed;bottom:24px;right:24px;z-index:40;background:linear-gradient(135deg,var(--blue),var(--sky));
+  color:#fff;padding:12px 18px;border-radius:30px;font-weight:800;font-size:14px;box-shadow:var(--shadow-lg);
+  cursor:pointer;border:none;display:flex;align-items:center;gap:8px;transition:.2s}
+.fab:hover{transform:translateY(-2px)}
+
+/* ===== Toast ===== */
+.toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(20px);
+  background:#0f172a;color:#fff;padding:13px 24px;border-radius:30px;font-size:14px;opacity:0;
+  transition:.3s;z-index:99;box-shadow:var(--shadow-lg)}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* ===== Reveal animation ===== */
+.reveal{opacity:0;transform:translateY(42px) scale(.96);transition:.7s cubic-bezier(.22,1,.36,1)}
+.reveal.show{opacity:1;transform:translateY(0) scale(1)}
+
+@media(max-width:980px){
+  .hero-grid{grid-template-columns:1fr}.hero-visual{display:none}
+  .stats-inner{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:repeat(2,1fr)}.steps::before{display:none}
+  .cat-toggle{display:inline-flex}
+  .cat-grid.collapsed .cat:nth-child(n+4){display:none}
+  .cat-grid{grid-template-columns:repeat(2,1fr)}
+  .cat.feature{grid-column:span 2}
+  .cat.cta{grid-column:span 2}
+  /* 单项服务卡（emerald）展开后同大卡形态 */
+  .cat.c-emerald{grid-column:span 2;display:flex;align-items:center;gap:18px;text-align:left;padding:22px 16px;background:linear-gradient(120deg,var(--csoft,#ecfdf5),#fff)}
+  .cat.c-emerald .ic{width:60px;height:60px;border-radius:18px;margin:0 14px 0 0;flex:0 0 auto}
+  .cat.c-emerald .ic svg{width:32px;height:32px}
+  .cat.c-emerald h4{font-size:18px}
+  .cat.c-emerald p{font-size:12px;max-width:430px}
+  .cat.c-emerald .badge{top:14px;left:16px}
+  .prod-grid{grid-template-columns:repeat(2,1fr)}
+  .ss-grid{grid-template-columns:1fr}
+  .team-grid{grid-template-columns:repeat(3,1fr)}
+  .review-grid{grid-template-columns:1fr}
+  .act-grid{grid-template-columns:1fr}
+  .foot{grid-template-columns:1fr 1fr}
+}
+@media(max-width:560px){
+  .hero h1{font-size:34px}
+  .nav{height:auto;flex-wrap:wrap;gap:8px;padding:8px 0}
+  .nav-links{display:flex;order:3;width:100%;gap:4px;margin-left:0;overflow-x:auto;
+    -webkit-overflow-scrolling:touch;padding-bottom:4px}
+  .nav-links a{font-size:12px;padding:6px 9px}
+  .nav-cta{margin-left:auto}
+  .prod-grid{grid-template-columns:1fr}
+  .team-grid{grid-template-columns:repeat(2,1fr)}
+  .foot{grid-template-columns:1fr}
+  .qr-wrap{grid-template-columns:1fr}
+  .contact-card{text-align:center;justify-content:center}
+  /* 手机端服务分类：两列 + 砖墙错落 + 卡片缩小 */
+  .cat-grid{grid-template-columns:repeat(2,1fr);gap:14px}
+  .cat{padding:18px 12px}
+  .cat .ic{width:46px;height:46px;border-radius:13px;margin:4px auto 12px}
+  .cat .ic svg{width:24px;height:24px}
+  .cat h4{font-size:14px;margin-bottom:4px}
+  .cat p{font-size:11px;line-height:1.5}
+  .cat .badge{top:9px;left:9px;font-size:9.5px;padding:3px 8px}
+  .cat.feature{grid-column:span 2;flex-direction:row;text-align:left;padding:20px 16px}
+  .cat.feature .ic{margin:0 14px 0 0;width:62px;height:62px}
+  .cat.feature .ic svg{width:32px;height:32px}
+  .cat.feature h4{font-size:18px}
+  .cat.feature p{font-size:12px}
+  .cat.cta{grid-column:span 2;flex-direction:row;align-items:center;gap:12px;padding:18px 16px}
+  .cat.cta .cta-go{width:auto}
+  .cat-grid .cat.c-emerald{margin-top:0}
+}
+/* ===== Draggable cat widget ===== */
+.cat-widget{position:fixed;left:18px;bottom:78px;z-index:60;display:flex;gap:10px;align-items:flex-end;
+  cursor:grab;user-select:none;-webkit-user-select:none;touch-action:none;
+  filter:drop-shadow(0 10px 18px rgba(15,23,42,.22));transition:transform .12s ease}
+.cat-widget:active{cursor:grabbing}
+.cat-widget.grab{cursor:grabbing}
+.cat-avatar{position:fixed;z-index:55;width:66px;height:66px;border-radius:50%;overflow:visible;
+  border:3px solid #fff;box-shadow:0 6px 14px rgba(15,23,42,.18);
+  background:#fff;animation:sway 2.8s ease-in-out infinite;transition:transform .12s ease;
+  cursor:grab;user-select:none;-webkit-user-select:none;touch-action:none}
+.cat-avatar:active{cursor:grabbing}
+.cat-avatar.grab{cursor:grabbing}
+.cat-avatar:hover{animation-play-state:paused;transform:scale(1.06)}
+.cat-avatar.dragging{animation-play-state:paused}
+.cat-avatar img{width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;pointer-events:none}
+#catXiaoman{left:18px;bottom:140px}
+#catXiaohei{left:18px;bottom:70px;animation-delay:.45s}
+.cat-name{position:absolute;left:100%;top:50%;transform:translateY(-50%);margin-left:8px;
+  font-size:11px;font-weight:700;color:#475569;white-space:nowrap;
+  background:rgba(255,255,255,.92);padding:3px 8px;border-radius:10px;
+  box-shadow:0 3px 8px rgba(15,23,42,.14);pointer-events:none;opacity:.95;transition:opacity .2s}
+@keyframes sway{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(4deg)}}
+
+/* ===== Cat food can (drag to cat -> meow + scroll action) ===== */
+.cat-can{position:fixed;right:18px;top:18px;width:54px;height:54px;z-index:60;cursor:grab;
+  user-select:none;-webkit-user-select:none;touch-action:none;background:#fff;
+  border:3px solid #bae6fd;border-radius:16px;box-shadow:0 8px 20px rgba(37,99,235,.25);
+  display:flex;align-items:center;justify-content:center;transition:transform .12s ease;
+  animation:canBob 2.4s ease-in-out infinite}
+.cat-can:active{cursor:grabbing}
+.cat-can svg{width:38px;height:38px;pointer-events:none}
+.cat-can.eaten{animation:canEat .5s ease forwards;pointer-events:none}
+@keyframes canBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@keyframes canEat{0%{transform:scale(1)}45%{transform:scale(1.25) rotate(8deg)}
+  100%{transform:scale(0) rotate(40deg);opacity:0}}
+.can-hint{position:fixed;right:18px;top:84px;z-index:59;max-width:160px;text-align:right;
+  font-size:12px;line-height:1.4;color:rgba(100,116,139,.6);font-weight:700;
+  background:rgba(255,255,255,.55);padding:5px 10px;border-radius:12px;
+  box-shadow:0 4px 12px rgba(15,23,42,.08);pointer-events:none}
+
+@media(max-width:560px){
+  .cat-avatar{width:56px;height:56px;border-width:2px}
+  #catXiaoman{left:12px;bottom:122px}
+  #catXiaohei{left:12px;bottom:64px}
+  .cat-name{font-size:10px;margin-left:6px;padding:2px 6px}
+  .cat-can{width:48px;height:48px;right:12px;top:12px}
+  .cat-can svg{width:32px;height:32px}
+  .can-hint{right:12px;top:72px;font-size:11px;max-width:150px}
+}
+/* ===== Section theme system (multicolor accents) ===== */
+.theme-blue{--accent:#2563eb;--accent-d:#1d4ed8;--accent-soft:#eff6ff}
+.theme-orange{--accent:#f97316;--accent-d:#c2410c;--accent-soft:#fff7ed}
+.theme-teal{--accent:#0d9488;--accent-d:#0f766e;--accent-soft:#ecfeff}
+.theme-purple{--accent:#7c3aed;--accent-d:#6d28d9;--accent-soft:#f5f3ff}
+.theme-rose{--accent:#f43f5e;--accent-d:#be123c;--accent-soft:#fff1f2}
+.theme-indigo{--accent:#6366f1;--accent-d:#4338ca;--accent-soft:#eef2ff}
+.theme-sky{--accent:#0ea5e9;--accent-d:#0369a1;--accent-soft:#e0f2fe}
+
+/* colored section titles + accents per theme */
+.theme-blue .sec-head h2,.theme-orange .sec-head h2,.theme-teal .sec-head h2,
+.theme-purple .sec-head h2,.theme-rose .sec-head h2,.theme-indigo .sec-head h2,
+.theme-sky .sec-head h2{color:var(--accent-d)}
+.theme-blue .sec-head .line,.theme-orange .sec-head .line,.theme-teal .sec-head .line,
+.theme-purple .sec-head .line,.theme-rose .sec-head .line,.theme-indigo .sec-head .line,
+.theme-sky .sec-head .line{background:linear-gradient(90deg,var(--accent-soft),transparent)}
+.theme-blue .sec-head .tagline,.theme-orange .sec-head .tagline,.theme-teal .sec-head .tagline,
+.theme-purple .sec-head .tagline,.theme-rose .sec-head .tagline,.theme-indigo .sec-head .tagline,
+.theme-sky .sec-head .tagline{color:var(--accent)}
+
+/* category icon tints follow theme */
+.theme-blue .cat .ico{background:var(--accent-soft);color:var(--accent-d)}
+/* single-service dots follow theme */
+.theme-teal .ss-card h3 .dot{background:var(--accent)}
+.theme-teal .ss-card h3{color:var(--accent-d)}
+/* faq plus + left bar follow theme */
+.theme-sky .faq-q::after{color:var(--accent)}
+.faq{border-left:4px solid var(--accent,#2563eb)}
+
+/* ===== Decorative blobs & dot grid ===== */
+.section.deco{position:relative;overflow:hidden}
+.section.deco::before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;
+  right:-150px;top:-180px;background:radial-gradient(circle,var(--accent),transparent 72%);
+  opacity:.2;pointer-events:none;z-index:0}
+.section.deco::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:200px;
+  background-image:radial-gradient(var(--accent) 1.4px,transparent 1.8px);background-size:22px 22px;
+  opacity:.13;pointer-events:none;z-index:0}
+.section.deco .wrap{position:relative;z-index:1}
+
+/* ===== Card polish ===== */
+.cat .ico{transition:.25s}
+.cat:hover .ico{transform:scale(1.12)}
+.ss-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.team-card,.review-card{transition:.25s}
+.team-card:hover,.review-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+
+/* ===== Hero floating decorations (first screen, clearly visible) ===== */
+.hero .floaty{position:absolute;z-index:0;pointer-events:none;color:#7dd3fc}
+.hero .floaty .snow{width:100%;height:100%;display:block;animation:spin 26s linear infinite}
+.hero .floaty.f1{width:180px;height:180px;left:-56px;top:36px;color:#7dd3fc;animation:floaty 9s ease-in-out infinite}
+.hero .floaty.f2{width:104px;height:104px;right:7%;top:46px;color:#bae6fd;animation:floaty 7s ease-in-out infinite reverse}
+.hero .floaty.f3{width:66px;height:66px;right:24%;bottom:64px;color:#a5f3fc;animation:floaty 11s ease-in-out infinite}
+.hero .floaty.f4{width:48px;height:48px;left:17%;bottom:34px;color:#e0f2fe;animation:floaty 8s ease-in-out infinite reverse}
+.hero .floaty.f2 .snow{animation-direction:reverse}
+.hero .floaty.f4 .snow{animation-direction:reverse}
+.hero-crystal{position:absolute;z-index:0;pointer-events:none;opacity:.6}
+.hero-crystal.c1{left:7%;top:26%;width:62px;animation:spin 26s linear infinite,floaty 12s ease-in-out infinite}
+.hero-crystal.c2{right:13%;top:16%;width:48px;opacity:.8;animation:spin 20s linear infinite reverse,floaty 9s ease-in-out infinite}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-28px)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hero .wrap{position:relative;z-index:2}
+
+/* ===== Section top wave ribbon (per-theme colour) ===== */
+.section.deco{position:relative}
+.section.deco .sec-wave{position:absolute;top:0;left:0;width:100%;height:24px;z-index:3;line-height:0;pointer-events:none;filter:drop-shadow(0 4px 6px rgba(15,23,42,.06))}
+.section.deco .sec-wave svg{width:100%;height:100%;display:block}
+.section.deco::after{content:"";position:absolute;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,var(--accent),transparent 70%);opacity:.12;right:6%;top:12%;filter:blur(4px);animation:floatBlob 16s ease-in-out infinite;pointer-events:none;z-index:0}
+@keyframes floatBlob{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,-26px)}}
+
+/* ===== Button shine sweep on hover ===== */
+.btn{position:relative;overflow:hidden}
+.btn::after{content:"";position:absolute;top:0;left:-130%;width:55%;height:100%;
+  background:linear-gradient(120deg,transparent,rgba(255,255,255,.55),transparent);
+  transform:skewX(-22deg);transition:left .6s ease}
+.btn:hover::after{left:150%}
+.btn-primary::after{background:linear-gradient(120deg,transparent,rgba(37,99,235,.18),transparent)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="logo"><img src="images/logo-binghan.jpg" alt="冰寒督学"></div>
+    <nav class="nav-links">
+      <a href="#top" class="active">首页</a>
+      <a href="#cat">服务分类</a>
+      <a href="#hot">热门方案</a>
+      <a href="#single">单项服务</a>
+      <a href="#act">限时活动</a>
+      <a href="#team">督学团队</a>
+      <a href="javascript:void(0)" onclick="openReviews()">学员反馈</a>
+      <a href="javascript:void(0)" onclick="openRule()">学员准则</a>
+      <a href="#faq">常见问题</a>
+      <a href="#contact">联系店长</a>
+    </nav>
+    <a class="nav-cta" href="#contact">添加店长微信</a>
+  </div>
+</header>
+
+<!-- ===== Hero ===== -->
+<section class="hero" id="top">
+  <!-- reusable snowflake shape -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <g id="sf-arm" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" fill="none">
+        <line x1="50" y1="50" x2="50" y2="6"/>
+        <line x1="50" y1="22" x2="41" y2="13"/>
+        <line x1="50" y1="22" x2="59" y2="13"/>
+        <line x1="50" y1="34" x2="44" y2="28"/>
+        <line x1="50" y1="34" x2="56" y2="28"/>
+      </g>
+      <g id="snowflake">
+        <use href="#sf-arm"/>
+        <use href="#sf-arm" transform="rotate(60 50 50)"/>
+        <use href="#sf-arm" transform="rotate(120 50 50)"/>
+        <use href="#sf-arm" transform="rotate(180 50 50)"/>
+        <use href="#sf-arm" transform="rotate(240 50 50)"/>
+        <use href="#sf-arm" transform="rotate(300 50 50)"/>
+        <circle cx="50" cy="50" r="3.4" fill="currentColor" stroke="none"/>
+      </g>
+    </defs>
+  </svg>
+  <div class="floaty f1"><svg class="snow" viewBox="0 0 100 100" aria-hidden="true"><use href="#snowflake"/></svg></div>
+  <div class="floaty f2"><svg class="snow" viewBox="0 0 100 100" aria-hidden="true"><use href="#snowflake"/></svg></div>
+  <div class="floaty f3"><svg class="snow" viewBox="0 0 100 100" aria-hidden="true"><use href="#snowflake"/></svg></div>
+  <div class="floaty f4"><svg class="snow" viewBox="0 0 100 100" aria-hidden="true"><use href="#snowflake"/></svg></div>
+  <svg class="hero-crystal c1" viewBox="0 0 100 100" aria-hidden="true"><g stroke="#bae6fd" stroke-width="2.4" stroke-linecap="round" fill="none"><line x1="50" y1="6" x2="50" y2="94"/><line x1="50" y1="6" x2="50" y2="94" transform="rotate(60 50 50)"/><line x1="50" y1="6" x2="50" y2="94" transform="rotate(120 50 50)"/></g></svg>
+  <svg class="hero-crystal c2" viewBox="0 0 100 100" aria-hidden="true"><g stroke="#e0f2fe" stroke-width="2.4" stroke-linecap="round" fill="none"><line x1="50" y1="8" x2="50" y2="92"/><line x1="50" y1="8" x2="50" y2="92" transform="rotate(60 50 50)"/><line x1="50" y1="8" x2="50" y2="92" transform="rotate(120 50 50)"/></g></svg>
+  <svg class="hero-crystal c3" viewBox="0 0 100 100" aria-hidden="true"><g stroke="#bae6fd" stroke-width="2.6" stroke-linecap="round" fill="none"><line x1="50" y1="6" x2="50" y2="94"/><line x1="50" y1="6" x2="50" y2="94" transform="rotate(60 50 50)"/><line x1="50" y1="6" x2="50" y2="94" transform="rotate(120 50 50)"/></g></svg>
+  <svg class="hero-crystal c4" viewBox="0 0 100 100" aria-hidden="true"><g stroke="#e0f2fe" stroke-width="2.8" stroke-linecap="round" fill="none"><line x1="50" y1="8" x2="50" y2="92"/><line x1="50" y1="8" x2="50" y2="92" transform="rotate(60 50 50)"/><line x1="50" y1="8" x2="50" y2="92" transform="rotate(120 50 50)"/></g></svg>
+  <div class="wrap hero-grid">
+    <div>
+      <h1>找回你的<span>自律节奏</span></h1>
+      <p>冰寒督学提供严格监督、温暖陪伴、双师协同与全天候叫醒哄睡服务。让拖延止步，让目标落地。</p>
+      <div class="hero-btns">
+        <a class="btn btn-primary" href="#hot">挑选监督方案 →</a>
+        <a class="btn btn-outline" href="javascript:void(0)" onclick="openQrModal()">联系店长咨询</a>
+      </div>
+      <button class="fb-btn hero-rule-btn" onclick="openRule()">📜 查看学员准则</button>
+      <button class="notice-link" onclick="openNotice()">📋 下单须知 · 点击查看</button>
+    </div>
+    <div class="hero-visual">
+      <div class="glass">
+        <div class="label">已服务学员</div>
+        <div class="big">1000+</div>
+        <p>覆盖备考、减肥、运动、专升本等多类目标人群</p>
+      </div>
+      <div class="hero-cards">
+        <div class="glass">
+          <div class="label">督学经验</div>
+          <div class="big">13年</div>
+        </div>
+        <div class="glass">
+          <div class="label">在线时间</div>
+          <div class="big">7×24</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Feedback CTA (查看真实反馈) ===== -->
+<div class="wrap fb-cta reveal">
+  <button class="fb-btn fb-blue-light" onclick="openReviews()">📷 查看学员真实反馈</button>
+</div>
+
+<!-- ===== Categories ===== -->
+<section class="section alt theme-blue deco" id="cat">
+  <div class="sec-wave" aria-hidden="true"><svg viewBox="0 0 1440 16" preserveAspectRatio="none"><path d="M0,8 C240,16 480,0 720,8 C960,16 1200,0 1440,8 L1440,16 L0,16 Z" fill="var(--accent)"/></svg></div>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>服务分类</h2>
+      <div class="line"></div>
+      <span class="tagline">总有一种监督方式适合你</span>
+    </div>
+    <button class="cat-toggle" id="catToggle" onclick="toggleCat()">展开全部 8 项 ▼</button>
+    <div class="cat-grid reveal collapsed" id="catGrid">
+      <div class="cat feature c-purple" style="--i:0" onclick="scrollToEl('#hot')">
+        <div class="badge">旗舰推荐</div>
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 7l4 4 5-6 5 6 4-4v11H3z"/><path d="M3 18h18"/></svg></div>
+        <div class="ct-txt">
+          <h4>2v1 店长 + 监督员</h4>
+          <p>店长统筹进度、督学盯执行，双保险。一个人想偷懒？两个人一起盯你，想糊弄都难。</p>
+        </div>
+      </div>
+      <div class="cat c-orange" style="--i:1" onclick="scrollToEl('#hot')">
+        <div class="badge">有温度</div>
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M4 5h16v10H9l-4 4V5z"/><path d="M8 10h.01M12 10h.01M16 10h.01" stroke-linecap="round"/></svg></div>
+        <h4>陪伴系列</h4>
+        <p>语音 + 文字，备考路上总有人陪你说话。</p>
+      </div>
+      <div class="cat c-amber" style="--i:2" onclick="scrollToEl('#act')">
+        <div class="badge">限时</div>
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M4 7h16v4a2 2 0 0 0 0 4v2H4v-2a2 2 0 0 0 0-4z"/><path d="M14 7v10" stroke-dasharray="2 2"/></svg></div>
+        <h4>限时卡券</h4>
+        <p>四次卡 / 十次卡，连续达标还送优惠券。</p>
+      </div>
+      <div class="cat c-blue" style="--i:3" onclick="scrollToEl('#hot')">
+        <div class="badge">人气最高</div>
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4-3 7-7 9-4-2-7-5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h4>监督员 · 严格监督</h4>
+        <p>手机查岗、任务打卡，拖延症先过监督员这关。</p>
+      </div>
+      <div class="cat c-indigo" style="--i:4" onclick="scrollToEl('#hot')">
+        <div class="badge">老牌口碑</div>
+        <div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="5"/><path d="M9 14l-2 7 5-3 5 3-2-7"/></svg></div>
+        <h4>店长 · 严格监督</h4>
+        <p>资深店长坐镇，高标准全流程盯紧你的进度。</p>
+      </div>
+      <div class="cat c-rose" style="--i:5" onclick="scrollToEl('#hot')">
+        <div class="badge">上新</div>
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l1.6 5.4L19 10l-5.4 1.6L12 17l-1.6-5.4L5 10l5.4-1.6z"/></svg></div>
+        <h4>陪伴升级版</h4>
+        <p>每周树洞 + 思想课，更有走心感的那段关系。</p>
+      </div>
+      <div class="cat c-teal" style="--i:6" onclick="scrollToEl('#hot')">
+        <div class="badge">双倍盯</div>
+        <div class="ic"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/><circle cx="17" cy="9" r="2.4"/><path d="M15 20a4.5 4.5 0 0 1 7-2"/></svg></div>
+        <h4>2v1 双监督员</h4>
+        <p>两位督学协同，查得更细、也盯得更紧。</p>
+      </div>
+      <div class="cat c-emerald" style="--i:7" onclick="scrollToEl('#single')">
+        <div class="badge">随心选</div>
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg></div>
+        <h4>单项服务</h4>
+        <p>抽背 / 叫醒 / 陪学 / 树洞 / 哄睡，单点也接。</p>
+      </div>
+      <div class="cat cta" style="--i:8" onclick="scrollToEl('#contact')">
+        <div class="cta-main">还拿不准选哪个？<small>加店长微信 binghanduxue，一对一帮你配方案</small></div>
+        <div class="cta-go">去咨询 →</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Snow overlay ===== -->
+<canvas id="snowCanvas"></canvas>
+
+<!-- ===== Hot products ===== -->
+<section class="section theme-orange deco" id="hot">
+  <div class="sec-wave" aria-hidden="true"><svg viewBox="0 0 1440 16" preserveAspectRatio="none"><path d="M0,8 C240,16 480,0 720,8 C960,16 1200,0 1440,8 L1440,16 L0,16 Z" fill="var(--accent)"/></svg></div>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>热门监督方案</h2>
+      <div class="line"></div>
+      <span class="tagline">长周期更划算</span>
+    </div>
+
+    <!-- 下单指南 -->
+    <div class="order-guide reveal">
+      <span class="og-hint">想知道各监督方向具体包含什么？</span>
+      <button class="og-btn" onclick="openGuide()">📖 点击查看下单指南</button>
+    </div>
+
+    <div class="period-bar reveal">
+      <span class="label">计费周期：</span>
+      <div class="period-toggle" id="periodToggle">
+        <button data-p="周">周</button>
+        <button data-p="月" class="active">月</button>
+        <button data-p="季">季</button>
+        <button data-p="半年">半年</button>
+        <button data-p="一年">一年</button>
+      </div>
+    </div>
+    <div class="prod-groups" id="prodGroups"></div>
+  </div>
+</section>
+
+<!-- ===== Single services ===== -->
+<section class="section alt2 theme-teal deco" id="single">
+  <div class="sec-wave" aria-hidden="true"><svg viewBox="0 0 1440 16" preserveAspectRatio="none"><path d="M0,8 C240,16 480,0 720,8 C960,16 1200,0 1440,8 L1440,16 L0,16 Z" fill="var(--accent)"/></svg></div>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>单项服务 · 灵活加购</h2>
+      <div class="line"></div>
+      <span class="tagline">按需选择，随用随付</span>
+    </div>
+    <div class="ss-grid reveal">
+      <div class="ss-card">
+        <h3><span class="dot"></span>成长护航</h3>
+        <div class="ss-row">
+          <div class="ss-item"><span>抽背知识</span><span class="price">¥25 / 次</span></div>
+          <div class="ss-desc">30分钟查漏补缺，快速揪出记忆漏洞</div>
+        </div>
+        <div class="ss-row">
+          <div class="ss-item"><span>专属陪学</span><span class="price">¥30 / 小时</span></div>
+          <div class="ss-desc">1v1自习室全程陪同，监督与陪伴并行</div>
+        </div>
+        <div class="ss-row">
+          <div class="ss-item"><span>电话叫醒</span><span class="price">¥10 / 次</span></div>
+          <div class="ss-desc">提前确认起床时间，五分钟电话确认清醒</div>
+        </div>
+        <div class="ss-row">
+          <div class="ss-item"><span>温柔哄睡</span><span class="price">¥98 / 小时</span></div>
+          <div class="ss-desc">引导放下杂念和焦虑，减少深夜内耗</div>
+        </div>
+      </div>
+      <div class="ss-card alt-h">
+        <h3><span class="dot"></span>一路同行<span class="ss-tag">一次性存五单立减50元</span></h3>
+        <div class="ss-item"><span>树洞 · 全程语音陪伴</span><span class="price">¥280 / 小时</span></div>
+        <div class="ss-item"><span>思想课 · 全程视频陪伴</span><span class="price">¥280 / 小时</span></div>
+      </div>
+      <div class="ss-card alt-f">
+        <h3><span class="dot"></span>笃行守望</h3>
+        <div class="ss-item"><span>线下面对面</span><span class="price">咨询店长</span></div>
+        <div class="ss-note">全天监督管教，让训诫赋予你改变的决心，让陪伴点燃你前行的底气。此项需付定金；监督员外出及住宿需学员安排，具体请联系店长咨询。</div>
+        <div class="ss-note" style="margin-top:10px;background:#fff1f2;color:#881337"><b>下单须知：</b>请提前与监督员老师确认是否接单，接单开始后不予退费。</div>
+      </div>
+    </div>
+    <div class="ss-img reveal"><img src="images/single-service.jpg" alt="冰寒督学单项服务价格表"></div>
+  </div>
+</section>
+
+<!-- ===== Supervisor team ===== -->
+<section class="section theme-purple deco" id="team">
+  <div class="sec-wave" aria-hidden="true"><svg viewBox="0 0 1440 16" preserveAspectRatio="none"><path d="M0,8 C240,16 480,0 720,8 C960,16 1200,0 1440,8 L1440,16 L0,16 Z" fill="var(--accent)"/></svg></div>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>金牌督学团队</h2>
+      <div class="line"></div>
+      <span class="tagline">严格与温度并存</span>
+    </div>
+    <div class="team-grid reveal">
+      <div class="team-card">
+        <div class="team-img"><img src="images/supervisor-manager.jpg" alt="冰寒督学店长"></div>
+        <div class="team-meta">
+          <div class="name">冰寒店长 <span class="role gold">店长</span></div>
+          <p>13年督学经验，带过1000+学员；对时间一丝不苟，严厉与温柔并存。</p>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-img"><img src="images/supervisor-bingyuan.jpg" alt="冰渊金牌监督员"></div>
+        <div class="team-meta">
+          <div class="name">冰渊 <span class="role">金牌监督员</span></div>
+          <p>硕士研究生，闭环式监督 + 人性化弹性监督 + 可视化成果监督，陪你对抗惰性陷阱。</p>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-img"><img src="images/supervisor-bingti.jpg" alt="冰媞监督员"></div>
+        <div class="team-meta">
+          <div class="name">冰媞 <span class="role purple">监督员</span></div>
+          <p>医学博士在读，全周期跟进、痛点靶向、数据化复盘，擅长破解“半途而废”。</p>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-img"><img src="images/supervisor-bingwan.jpg" alt="冰婠监督员"></div>
+        <div class="team-meta">
+          <div class="name">冰婠 <span class="role rose">监督员</span></div>
+          <p>擅长倾听、情绪稳定，时间观念强；生活中的小太阳，学习中的小绵羊。</p>
+        </div>
+      </div>
+    </div>
+
+    <a href="mailto:1719343811@qq.com" class="team-featured reveal">
+      <div class="tf-img"><img src="images/jinhuan.jpg" alt="尽欢客服运营"></div>
+      <div class="tf-body">
+        <div class="tf-head">
+          <div class="tf-name">尽欢 <span class="role teal">客服+运营</span></div>
+          <div class="tf-mail">1719343811@qq.com</div>
+        </div>
+        <p>负责接待咨询、订单跟进与日常运营，第一时间响应你的需求。联系尽欢提出您对于冰寒督学的宝贵意见，被采纳可领取额外优惠券。</p>
+        <span class="tf-btn">✉️ 发邮件联系尽欢</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ===== Letter of thanks ===== -->
+<section class="section" id="thanks">
+  <div class="wrap">
+    <div class="thanks-card reveal" id="thanksCard">
+      <canvas class="fw-canvas" id="fwCanvas"></canvas>
+      <div class="thanks-mark">”</div>
+      <h3>感谢信</h3>
+      <div class="thanks-body">
+        <p>冰寒督学自 2023 年 6 月 21 日成立，始终以<strong>严规砺学、初心相伴</strong>为信条，深耕线上高压督学，落地线下自习空间，陪伴上千名学员对抗拖延、锚定目标，在日复一日的自律里奔赴理想。</p>
+        <p>寒锋淬于久砺，微光聚作星河。所有成长与荣光，皆归于每一位信任我们、坚持前行的学员，以及并肩值守的监督员们。</p>
+      </div>
+      <div class="thanks-sign">—— 冰寒督学全体</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Activity ===== -->
+<section class="section theme-indigo deco" id="act">
+  <div class="sec-wave" aria-hidden="true"><svg viewBox="0 0 1440 16" preserveAspectRatio="none"><path d="M0,8 C240,16 480,0 720,8 C960,16 1200,0 1440,8 L1440,16 L0,16 Z" fill="var(--accent)"/></svg></div>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>限时活动</h2>
+      <div class="line"></div>
+      <span class="tagline">坚持有回报，越自律越省</span>
+    </div>
+
+    <div class="act a-blue reveal" style="margin-bottom:24px">
+      <h4>🔥 新客首单立减</h4>
+      <p>首次订阅任意监督方案，联系督学顾问即享首单立减优惠，最高立减 ¥99。</p>
+      <div class="coupon">最高减 ¥99</div>
+      <span class="pill">新用户专享</span>
+      <button class="copy-btn" style="margin-top:12px" onclick="copyQq()">复制客服QQ：1719343811</button>
+    </div>
+
+    <div class="act-grid3 reveal">
+      <div class="act a1">
+        <h4><svg viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h6v16H6a2 2 0 0 0-2 2V5z"/><path d="M20 5a2 2 0 0 0-2-2h-6v16h6a2 2 0 0 1 2 2V5z"/></svg>抽背连续达标</h4>
+        <p>抽背四次卡连续认真完成，即赠专属优惠券，学习回血两不误。</p>
+        <div class="coupon">四次卡 ¥88</div>
+        <div class="act-detail">连续四次全对可获得一张 18 元优惠券；抽背内容必须是新学内容、数量合理；作弊行为收回此卡及其他福利。</div>
+      </div>
+      <div class="act a2">
+        <h4>🎓 陪学连续达标</h4>
+        <p>陪学四次卡全程投入不缺席，连续达标即赠更高额优惠券。</p>
+        <div class="coupon">四次卡 ¥108</div>
+        <div class="act-mini">1v1 会议室专属陪伴，监督员全程在线</div>
+        <div class="act-detail">连续四次陪学过程认真学习、无违规行为，可获得一张 28 元优惠券；最终由监督员根据任务完成情况和学员学习状态评估。</div>
+      </div>
+      <div class="act a-green">
+        <h4>⏰ 叫醒连续达标</h4>
+        <p>叫醒十次卡连续准时起床，养成早起习惯再领专属优惠券。</p>
+        <div class="coupon">十次卡 ¥88</div>
+        <div class="act-detail">连续十次不赖床可获得一张 8 元优惠券；需在五分钟叫醒时间内起床，回笼觉不算。</div>
+      </div>
+    </div>
+
+    <!-- 老学员福利（黑金） -->
+    <div class="act a-gold reveal" style="margin-bottom:24px">
+      <h4>👑 老学员福利</h4>
+      <p>老学员推荐有礼：介绍一位新学员成功下单，即可获得 <b>20 元服务回馈金</b> 或 <b>30 元下单优惠券</b>。</p>
+      <div class="act-detail">累计推荐达到五人，额外赠送 <b>三天单项监督</b> 服务，感恩一路同行的你。</div>
+    </div>
+
+    <div class="act a4 reveal" style="margin-bottom:30px">
+      <h4>💎 储值礼遇</h4>
+      <p>储值金额越高，赠送服务礼遇越多；未消费部分可随时申请退还，长期督学更安心。</p>
+      <div class="r-grid">
+        <span>充1000送100</span><span>充2000送300</span><span>充3000送500</span><span>充5000送800</span>
+        <span>充8000送1300</span><span>充10000送1700</span><span>充15000送2800</span><span>充20000送3700</span>
+      </div>
+    </div>
+
+    <div class="act-divider reveal"><span>线下专属 · 苏州自习空间</span></div>
+
+    <div class="act-wide a5 reveal">
+      <div class="city-skyline" aria-hidden="true">
+        <svg viewBox="0 0 800 220" preserveAspectRatio="xMidYMax slice">
+          <defs>
+            <linearGradient id="cityFade" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#e5e5e5"/>
+              <stop offset="55%" stop-color="#a3a3a3"/>
+              <stop offset="100%" stop-color="#404040" stop-opacity="0"/>
+            </linearGradient>
+            <linearGradient id="waterFade" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#404040" stop-opacity="0.35"/>
+              <stop offset="60%" stop-color="#a3a3a3" stop-opacity="0.08"/>
+              <stop offset="100%" stop-color="#e5e5e5" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <!-- skyline -->
+          <g fill="url(#cityFade)">
+            <rect x="0" y="155" width="24" height="65"/>
+            <rect x="28" y="140" width="18" height="80"/>
+            <rect x="52" y="148" width="22" height="72"/>
+            <rect x="80" y="115" width="28" height="105"/>
+            <rect x="112" y="130" width="20" height="90"/>
+            <rect x="138" y="105" width="32" height="115"/>
+            <rect x="175" y="145" width="18" height="75"/>
+            <rect x="200" y="95" width="36" height="125"/>
+            <rect x="242" y="135" width="22" height="85"/>
+            <rect x="270" y="85" width="40" height="135"/>
+            <rect x="316" y="125" width="26" height="95"/>
+            <rect x="350" y="145" width="20" height="75"/>
+            <rect x="378" y="100" width="34" height="120"/>
+            <rect x="418" y="130" width="24" height="90"/>
+            <rect x="448" y="75" width="44" height="145"/>
+            <rect x="498" y="120" width="26" height="100"/>
+            <rect x="530" y="140" width="20" height="80"/>
+            <rect x="558" y="90" width="38" height="130"/>
+            <rect x="602" y="135" width="22" height="85"/>
+            <rect x="632" y="110" width="30" height="110"/>
+            <rect x="670" y="150" width="20" height="70"/>
+            <rect x="698" y="128" width="26" height="92"/>
+            <rect x="730" y="85" width="36" height="135"/>
+            <rect x="772" y="145" width="28" height="75"/>
+          </g>
+          <!-- windows / lights -->
+          <g fill="#f5f5f5" opacity="0.5">
+            <rect x="86" y="125" width="4" height="4"/><rect x="96" y="135" width="4" height="4"/><rect x="86" y="145" width="4" height="4"/>
+            <rect x="212" y="108" width="4" height="6"/><rect x="224" y="125" width="4" height="6"/><rect x="212" y="145" width="4" height="6"/>
+            <rect x="280" y="98" width="5" height="5"/><rect x="295" y="115" width="5" height="5"/><rect x="280" y="135" width="5" height="5"/>
+            <rect x="390" y="112" width="4" height="5"/><rect x="402" y="130" width="4" height="5"/><rect x="390" y="150" width="4" height="5"/>
+            <rect x="460" y="88" width="5" height="6"/><rect x="478" y="108" width="5" height="6"/><rect x="460" y="135" width="5" height="6"/>
+            <rect x="570" y="100" width="5" height="5"/><rect x="588" y="125" width="5" height="5"/><rect x="570" y="150" width="5" height="5"/>
+            <rect x="644" y="120" width="4" height="5"/><rect x="656" y="140" width="4" height="5"/>
+            <rect x="742" y="95" width="5" height="6"/><rect x="758" y="120" width="5" height="6"/><rect x="742" y="145" width="5" height="6"/>
+          </g>
+          <!-- reflection -->
+          <g fill="url(#waterFade)">
+            <rect x="0" y="220" width="800" height="80"/>
+          </g>
+        </svg>
+      </div>
+      <div class="aw-left">
+        <h4>
+          <svg class="aw-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4 8 4v14M8 21v-9a2 2 0 0 1 4 0v9"/></svg>
+          线下监督 · 苏州自习空间
+        </h4>
+        <div class="aw-addr">
+          <svg class="aw-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          江苏省苏州市
+        </div>
+        <p>监督中全面评估学员的学习态度与方向，与学员共同制定专属计划与家规；每日学习任务完成后，以多元化听写、抽背巩固成效，拒绝敷衍了事。在日复一日的坚持里，提升个人修养、改善不良习惯、告别拖延、把控懒散，把自律真正养成。</p>
+        <button class="offline-btn" onclick="openOfflineModal()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          查看线下真实记录
+        </button>
+      </div>
+      <div class="aw-price">
+        <div class="aw-item"><span>天</span><b>¥258</b></div>
+        <div class="aw-item"><span>周</span><b>¥1399</b></div>
+        <div class="aw-item"><span>月</span><b>¥4999</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="section alt theme-sky deco" id="faq">
+  <div class="sec-wave" aria-hidden="true"><svg viewBox="0 0 1440 16" preserveAspectRatio="none"><path d="M0,8 C240,16 480,0 720,8 C960,16 1200,0 1440,8 L1440,16 L0,16 Z" fill="var(--accent)"/></svg></div>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>常见问题</h2>
+      <div class="line"></div>
+      <span class="tagline">下单前可以先看看</span>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq">
+        <div class="faq-q" onclick="toggleFaq(this)">督学服务具体包含什么？</div>
+        <div class="faq-a">根据所选方案不同，包含每日计划制定、学习打卡提醒、进度复盘、每周固定次数语音/视频陪伴、陪伴模式包含不限时文字陪伴、树洞倾听、思想课引导、抽背、叫醒、哄睡等。具体以对应方案说明为准。</div>
+      </div>
+      <div class="faq">
+        <div class="faq-q" onclick="toggleFaq(this)">付款后如何开始？</div>
+        <div class="faq-a">点击「立即订阅」扫码添加店长微信 binghanduxue，备注您的手机号和所选方案，店长会尽快为您匹配督学老师并拉群启动监督。</div>
+      </div>
+      <div class="faq">
+        <div class="faq-q" onclick="toggleFaq(this)">可以退款吗？</div>
+        <div class="faq-a">单项额外服务下单前请与监督员老师确认是否接单，付款后不予退费。监督服务若因学员自身原因需要退费，扣除本单 30% 作为违约金；若因监督员原因，退还全部剩余资金。</div>
+      </div>
+      <div class="faq">
+        <div class="faq-q" onclick="toggleFaq(this)">监督和陪伴有什么区别？</div>
+        <div class="faq-a">严格监督以目标达成、进度把控、规则执行为主；陪伴系列在监督基础上增加语音/文字情感陪伴，升级版额外包含每周树洞 / 思想课，更注重心理支持。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Contact ===== -->
+<section class="section theme-blue deco" id="contact">
+  <div class="sec-wave" aria-hidden="true"><svg viewBox="0 0 1440 16" preserveAspectRatio="none"><path d="M0,8 C240,16 480,0 720,8 C960,16 1200,0 1440,8 L1440,16 L0,16 Z" fill="var(--accent)"/></svg></div>
+  <div class="wrap">
+    <div class="contact-card reveal">
+      <div>
+        <h3>联系店长 · 安排专属督学</h3>
+        <p>付款或咨询，请添加店长微信，备注「督学咨询」即可快速通过。</p>
+        <div class="wx-row">
+          <span class="wx-label">店长微信号</span>
+          <span class="wx-id" id="managerWx">binghanduxue</span>
+          <button class="copy-btn" onclick="copyWx()">复制微信号</button>
+        </div>
+      </div>
+      <div style="text-align:right">
+        <div style="font-size:14px;opacity:.85">客服邮箱</div>
+        <div style="font-size:18px;font-weight:800">1719343811@qq.com</div>
+        <div style="font-size:13px;opacity:.75;margin-top:6px">每日 07:00 - 23:00 在线</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer>
+  <div class="wrap foot">
+    <div>
+      <div class="brand">冰寒督学</div>
+      <p>专业的学习监督与陪伴服务，用温度与纪律，帮每一位学员找回自律与节奏。</p>
+    </div>
+    <div>
+      <h5>服务分类</h5>
+      <a href="#hot">严格监督</a><a href="#hot">陪伴系列</a>
+      <a href="#hot">2v1 双师</a><a href="#single">单项服务</a>
+    </div>
+    <div>
+      <h5>帮助中心</h5>
+      <a href="#hot">方案价格</a><a href="#act">限时活动</a>
+      <a href="#team">督学团队</a><a href="#faq">常见问题</a>
+    </div>
+    <div>
+      <h5>联系我们</h5>
+      <p>🎵 抖音号：binghanduxue</p>
+      <p>✉️ 邮箱：1719343811@qq.com</p>
+      <p>💬 店长微信：binghanduxue</p>
+      <p>🕒 服务时间：每日 07:00 - 23:00</p>
+    </div>
+    <div class="copy">© 2026 冰寒督学 · 监督服务商城　|　本页价格为示意，最终以督学顾问确认为准　|　理性消费，服务内容与权益以双方沟通确认为准</div>
+  </div>
+</footer>
+
+<!-- ===== Shop manager QR modal ===== -->
+<div class="modal-overlay" id="qrModal" onclick="if(event.target===this)closeQrModal()">
+  <div class="modal qr-modal">
+    <button class="modal-close" onclick="closeQrModal()">×</button>
+    <div class="modal-head">
+      <div class="modal-title">添加店长微信</div>
+      <div class="modal-sub">扫码添加，备注「督学咨询」快速通过</div>
+    </div>
+    <img class="qr-img" src="images/shop-manager-qr.jpg" alt="店长微信二维码">
+    <div class="qr-wx">微信号：binghanduxue</div>
+    <div class="qr-tip">长按识别二维码，或直接搜索微信号添加</div>
+  </div>
+</div>
+
+<!-- ===== Payment modal ===== -->
+<div class="modal-overlay" id="payModal" onclick="if(event.target===this)closePay()">
+  <div class="modal">
+    <button class="modal-close" onclick="closePay()">×</button>
+    <div class="modal-head">
+      <div class="modal-title">扫码添加店长微信</div>
+      <div class="modal-sub" id="payPlan">方案名称</div>
+      <div class="modal-price" id="payPrice">¥0</div>
+    </div>
+    <div class="qr-wrap">
+      <div class="qr-item" style="max-width:260px;margin:0 auto">
+        <img src="images/shop-manager-qr.jpg" alt="店长微信二维码：冰寒先生">
+        <span>店长微信</span>
+      </div>
+    </div>
+    <div class="pay-note">
+      点击「立即订阅」扫码添加店长微信 <b>binghanduxue</b>，备注您的手机号和所选方案，店长会尽快为您匹配督学老师并拉群启动监督。
+      <span style="display:inline-flex;gap:8px;margin-top:8px">
+        <button class="copy-btn" onclick="copyWx()">复制微信号</button>
+        <button class="copy-btn" onclick="copyQq()">复制客服QQ</button>
+      </span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Notice modal ===== -->
+<div class="modal-overlay" id="noticeModal" onclick="if(event.target===this)closeNotice()">
+  <div class="modal notice-modal">
+    <button class="modal-close" onclick="closeNotice()">×</button>
+    <div class="modal-head">
+      <div class="modal-title">📋 下单须知</div>
+      <div class="modal-sub">下单前请仔细阅读，了解监督流程与退费规则</div>
+    </div>
+    <div class="notice-body">
+      <h5>① 监督流程</h5>
+      <p>所有监督会在监督开始前 10 分钟相互了解，确认需求，根据学员情况个性化定制监督方案；每周复盘调整，督促改正不良学习与生活习惯。</p>
+      <h5>② 退费规则</h5>
+      <p>监督开始后，若因学员自身原因退费，扣除本单 <b class="warn">30%</b> 作为违约金。</p>
+      <h5>③ 督学保障</h5>
+      <p>监督开始后 <b class="warn">7 天内</b> 若对监督员不满意，可免费更换监督员，直到找到最合适的那一位。</p>
+      <h5>④ 督学在线时间</h5>
+      <p>监督员每日在线服务时间为 <b>8:00 ~ 23:00</b>，非时段内的紧急事项可通过微信留言，次日统一处理。</p>
+      <div class="notice-tip" style="background:#eff6ff;border-color:#bfdbfe;color:#1d4ed8">🔞 本店仅接受 <b>成年人</b> 下单。</div>
+      <div class="notice-tip">⚠️ 下单前请咨询店长或客服！</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Order guide modal ===== -->
+<div class="modal-overlay" id="guideModal" onclick="if(event.target===this)closeGuide()">
+  <div class="modal guide-modal">
+    <button class="modal-close" onclick="closeGuide()">×</button>
+    <div class="modal-head">
+      <div class="modal-title">📖 下单指南 · 四大监督方向</div>
+      <div class="modal-sub">点击对应方向，了解具体服务内容</div>
+    </div>
+    <div class="guide-body">
+      <div class="g-block">
+        <div class="g-head g-study">📚 学习监督</div>
+        <ul>
+          <li>督促学员制定计划</li>
+          <li>计划进度提醒</li>
+          <li>任务复盘检查</li>
+          <li>周订单每周抽背三次；月订单以上每周抽背四次</li>
+          <li>24 小时免费自习室</li>
+          <li>自习室监督员＋学习监督员双重督促</li>
+        </ul>
+      </div>
+      <div class="g-block">
+        <div class="g-head g-life">🌿 生活监督</div>
+        <ul>
+          <li>一日三餐</li>
+          <li>作息管理</li>
+          <li>健康饮食 · 饮水提醒</li>
+          <li>戒烟 / 戒酒</li>
+          <li>拖延症的把控</li>
+          <li>督促改正不良生活习惯</li>
+        </ul>
+      </div>
+      <div class="g-block">
+        <div class="g-head g-fit">🔥 减肥监督</div>
+        <ul>
+          <li>提供相关经验、健康食谱</li>
+          <li>每日运动督促</li>
+          <li>体重监测管理</li>
+          <li>科学减肥方案，避免反弹效应</li>
+        </ul>
+      </div>
+      <div class="g-block">
+        <div class="g-head g-companion">💬 陪伴模式</div>
+        <div class="g-pair">
+          <div>
+            <div class="g-sub">陪伴模式</div>
+            <ul>
+              <li>不限时文字聊天</li>
+              <li>全天候专属陪伴</li>
+              <li>每周三次 30 分钟语音聊天</li>
+              <li>月订单以上赠送每月两小时陪学</li>
+            </ul>
+          </div>
+          <div>
+            <div class="g-sub">陪伴模式升级版</div>
+            <ul>
+              <li>不限时文字聊天</li>
+              <li>全天候专属陪伴</li>
+              <li>每周三次 30 分钟语音聊天</li>
+              <li>每周 1 次树洞 / 思想课</li>
+              <li>月订单以上赠送每月三小时陪学</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Reviews modal ===== -->
+<div class="modal-overlay" id="reviewsModal" onclick="if(event.target===this)closeReviews()">
+  <div class="modal reviews-modal">
+    <button class="modal-close" onclick="closeReviews()">×</button>
+    <div class="modal-head">
+      <div class="modal-title">成功或失败，冰寒与你同在</div>
+      <div class="modal-sub">每一段反馈都是真实学员的监督故事</div>
+    </div>
+    <div class="reviews-body">
+      <div class="review-flow">
+        <div class="review-item">
+          <img src="images/review-1.jpg" alt="学员反馈1" loading="lazy">
+          <p class="review-quote">从备考的深夜到录取的清晨，每一步都有冰寒督学陪你走过。博士录取不是终点，而是自律习惯结出的第一颗果实。</p>
+        </div>
+        <div class="review-item">
+          <img src="images/review-2.jpg" alt="学员反馈2" loading="lazy">
+          <p class="review-quote">那些反复背诵的知识点、一轮轮模考的焦虑，终于变成了通往理想院校的门票。上岸，是坚持最好的回信。</p>
+        </div>
+        <div class="review-item">
+          <img src="images/review-3.jpg" alt="学员反馈3" loading="lazy">
+          <p class="review-quote">每一点微小的蜕变，都离不开温柔而坚定的陪伴与托举</p>
+        </div>
+        <div class="review-item">
+          <img src="images/review-4.jpg" alt="学员反馈4" loading="lazy">
+          <p class="review-quote">有些敲打，比温柔的宽慰更令人清醒。</p>
+        </div>
+        <div class="review-item">
+          <img src="images/review-5.jpg" alt="学员反馈5" loading="lazy">
+          <p class="review-quote">不止成绩在变好，整个人生的节奏都在慢慢归位。自律带来的，是比分数更长久的心安。</p>
+        </div>
+        <div class="review-item">
+          <img src="images/review-6.jpg" alt="学员反馈6" loading="lazy">
+          <p class="review-quote">痛苦只是一时的，破局之后的蜕变，才是长久的馈赠。</p>
+        </div>
+        <div class="review-item">
+          <img src="images/review-7.jpg" alt="学员反馈7" loading="lazy">
+          <p class="review-quote">严在规矩，暖在人心。有人盯紧你的懈怠，也有人安抚你的焦虑。严格与温柔并行，学员的信任，是每一份陪伴最好的回响</p>
+        </div>
+        <div class="review-item">
+          <img src="images/review-8.jpg" alt="学员反馈8" loading="lazy">
+        </div>
+        <div class="review-item">
+          <img src="images/review-9.jpg" alt="学员反馈9" loading="lazy">
+          <p class="review-quote">监督员不只是催你学习，更像并肩作战的朋友。严格与温柔并存，才能让改变真正发生。</p>
+        </div>
+        <div class="review-item">
+          <img src="images/review-10.jpg" alt="学员反馈10" loading="lazy">
+          <p class="review-quote">约束是向外的鞭策，自驱是向内的觉醒，努力终会有回报。</p>
+        </div>
+        <div class="review-item">
+          <img src="images/review-11.jpg" alt="学员反馈11" loading="lazy">
+        </div>
+        <div class="review-item">
+          <img src="images/review-12.jpg" alt="学员反馈12" loading="lazy">
+          <p class="review-quote">线下的氛围、监督和陪伴，让学习变成可以沉浸的事。七天很短，但足够让人焕然一新。</p>
+        </div>
+        <div class="review-item">
+          <img src="images/review-13.jpg" alt="学员反馈13" loading="lazy">
+          <p class="review-quote">一张普通话证书，是自律结出的具体果实。再小的目标，认真去完成都值得被看见。</p>
+        </div>
+        <div class="review-item">
+          <img src="images/review-14.jpg" alt="学员反馈14" loading="lazy">
+          <p class="review-quote">被认真对待过的人，也会想把这份认真传递给更多人。监督员的用心，学员都记在心里。</p>
+        </div>
+        <div class="review-item">
+          <img src="images/review-15.jpg" alt="学员反馈15" loading="lazy">
+          <p class="review-quote">四六级通过只是漫长自律路上的一个小小里程碑。接下来，还有更远的地方可以抵达。</p>
+        </div>
+        <div class="review-item">
+          <img src="images/review-16.jpg" alt="学员反馈16" loading="lazy">
+          <p class="review-quote">学员亲手画下的礼物，是最珍贵的认可。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Rule modal (学员准则) ===== -->
+<div class="modal-overlay" id="ruleModal" onclick="if(event.target===this)closeRule()">
+  <div class="modal rule-modal">
+    <button class="modal-close" onclick="closeRule()">×</button>
+    <div class="modal-head">
+      <div class="modal-title">冰寒督学 · 学员准则</div>
+      <div class="modal-sub">双向约束 · 共同遵守</div>
+    </div>
+    <div class="rule-body">
+      <p class="rule-intro">为营造正向、自律、高效的氛围，让每一位同学的努力都有回馈，特制定本学员准则，双向约束、共同遵守：</p>
+      <ul class="rule-list">
+        <li><b>1. 尊重与配合</b>尊重监督员的督促、复盘与指导，认真回复学习反馈，配合进度检查。双向配合，才是监督起效的前提。</li>
+        <li><b>2. 诚信反馈</b>学习情况如实汇报，不谎报、不瞒报，才能得到精准的指导与帮助。</li>
+        <li><b>3. 请假与顺延</b>如需请假暂停学习，提前主动说明，监督会顺延相应周期，请假最低标准为一天（半天假/小时假不顺延）。</li>
+        <li><b>4. 自动放弃情形</b>无故摆烂拒不配合、长期失联一周、多次故意挑衅监督员、影响本工作室正常工作进度，将视为自动放弃服务。</li>
+        <li><b>5. 保护隐私安全</b>注意保护自身隐私安全，请勿随意泄露个人身份信息，家庭住址，涉及任何私密的照片等。</li>
+        <li><b>6. 监督员信息保护</b>禁止随意打探和传播监督员私人信息。</li>
+        <li><b>7. 纠纷处理</b>若与监督员发生意见不合等纠纷，请及时联系店长或客服处理，我们遵循公平公正原则，不偏袒任何一方。</li>
+      </ul>
+      <p class="rule-sign">寒锋淬砺，久久为功。<span class="small">愿所有坚持，皆有回响；所有付出，终得上岸。</span><span class="small">—— 冰寒督学团队</span></p>
+      <div class="rule-envelope" id="ruleEnvelope" onclick="toggleEnvelope()" title="点击信封，展开店长来信">
+        <span class="bloom b1">🌸</span>
+        <span class="bloom b2">🌼</span>
+        <span class="bloom b3">🌺</span>
+        <span class="bloom b4">💮</span>
+        <span class="bloom b5">🌷</span>
+        <span class="bloom b6">🌸</span>
+        <div class="env-back"></div>
+        <div class="env-pocket"></div>
+        <div class="env-flap"></div>
+      </div>
+      <div class="env-hint">👆 点击信封，展开《致学员的一封信》</div>
+      <div class="rule-letter-card">
+        <p>亲爱的学员：</p>
+        <p>展信安。</p>
+        <p>做督学这件事，到今年已经是第三个年头了。</p>
+        <p>三年里，我见过太多人带着满腔热情开始，又在某个深夜被"算了吧，明天再说"劝退；也见过太多人，只是需要有人每天问一句"今天学得怎么样"，就真的把日子一点点过成了想要的样子。</p>
+        <p>在我看来，督学并不只是盯进度、催学习，这份工作的内核是温暖的陪伴。我们盯紧你的学习节奏，陪伴你打卡复盘，接纳你的焦虑与崩溃，在你想要退缩的时候，给你继续往前走的勇气。这些细碎日常或许没有耀眼的光环，却盛满了我们最赤诚的心意。</p>
+        <p>你不用时刻完美，也不用每天都斗志满满。只要还愿意比昨天多走一步，我们就一直在。</p>
+        <p>这封信没别的意思，就是想谢谢你愿意把一段日子交给冰寒督学。往后的路，我们继续一起走。</p>
+        <p class="sign">—— 店长冰寒与团队 敬上</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Text-shaped fireworks (over real-feedback, non-blocking) ===== -->
+<div id="fwOverlay">
+  <canvas id="fwCanvasBig"></canvas>
+</div>
+
+<!-- ===== Floating contact ===== -->
+<button class="fab" onclick="copyWx()">💬 复制店长微信</button>
+
+<!-- ===== Cat food can (drag onto cat) ===== -->
+<div class="cat-can" id="catCan" title="把罐罐拖给小满回顶部、拖给小黑去底部">
+  <svg viewBox="0 0 64 64" aria-hidden="true">
+    <defs>
+      <linearGradient id="canBody" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#7dd3fc"/><stop offset="1" stop-color="#2563eb"/>
+      </linearGradient>
+    </defs>
+    <rect x="14" y="18" width="36" height="38" rx="7" fill="url(#canBody)"/>
+    <ellipse cx="32" cy="18" rx="18" ry="6" fill="#bfdbfe"/>
+    <ellipse cx="32" cy="16" rx="18" ry="6" fill="#e0f2fe"/>
+    <rect x="18" y="30" width="28" height="18" rx="4" fill="#ffffff" opacity="0.96"/>
+    <g fill="#2563eb">
+      <circle cx="32" cy="41" r="4"/>
+      <circle cx="26" cy="37" r="2.1"/>
+      <circle cx="30" cy="35" r="2.1"/>
+      <circle cx="34" cy="35" r="2.1"/>
+      <circle cx="38" cy="37" r="2.1"/>
+    </g>
+  </svg>
+</div>
+
+<!-- ===== Offline records modal ===== -->
+<div class="modal-overlay" id="offlineModal" onclick="if(event.target===this)closeOfflineModal()">
+  <div class="modal offline-modal">
+    <button class="modal-close" onclick="closeOfflineModal()">×</button>
+    <div class="modal-head">
+      <div class="modal-title">线下真实记录</div>
+      <div class="modal-sub">苏州自习空间 · 三周年温暖纪念</div>
+    </div>
+    <div class="offline-tabs">
+      <button class="offline-tab active" data-tab="study" onclick="switchOfflineTab('study')">学习空间</button>
+      <button class="offline-tab" data-tab="anniversary" onclick="switchOfflineTab('anniversary')">周年纪念</button>
+    </div>
+    <div class="offline-body">
+      <div class="offline-pane active" data-pane="study">
+        <div class="offline-grid">
+          <img src="images/study-space-1.jpg" alt="学习空间 1" loading="lazy">
+          <img src="images/study-space-2.jpg" alt="学习空间 2" loading="lazy">
+          <img src="images/study-space-3.jpg" alt="学习空间 3" loading="lazy">
+          <img src="images/study-space-4.jpg" alt="学习空间 4" loading="lazy">
+          <img src="images/study-space-5.jpg" alt="学习空间 5" loading="lazy">
+          <img src="images/study-space-6.jpg" alt="学习空间 6" loading="lazy">
+        </div>
+      </div>
+      <div class="offline-pane" data-pane="anniversary">
+        <div class="offline-grid">
+          <img src="images/anniversary-1.jpg" alt="三周年纪念 1" loading="lazy">
+          <img src="images/anniversary-2.jpg" alt="三周年纪念 2" loading="lazy">
+          <img src="images/anniversary-3.jpg" alt="三周年纪念 3" loading="lazy">
+          <img src="images/anniversary-4.jpg" alt="三周年纪念 4" loading="lazy">
+          <img src="images/anniversary-5.jpg" alt="三周年纪念 5" loading="lazy">
+          <img src="images/anniversary-6.jpg" alt="三周年纪念 6" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="can-hint" id="canHint">拖动罐罐喂给小满可到达顶部，喂给小黑可到达页面底部 🥫</div>
+
+<!-- ===== Draggable cats (xiaoman + xiaohei, each independent & stacked) ===== -->
+<div class="cat-avatar" id="catXiaoman" data-cat="xiaoman" title="拖动我到处跑 · 点我回顶部">
+  <img src="images/cat.png" alt="小满" draggable="false">
+  <span class="cat-name">#小满</span>
+</div>
+<div class="cat-avatar" id="catXiaohei" data-cat="xiaohei" title="拖动我到处跑 · 点我去底部">
+  <img src="images/cat-black.png" alt="小黑" draggable="false">
+  <span class="cat-name">#小黑</span>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* ===== Products data ===== */
+const groups = [
+  {title:"监督员系列", sub:"专属监督员全程严格跟进", cls:"g-yellow", plans:[
+    {tier:"严格监督", name:"单项监督", prices:{周:240,月:899,季:2399,半年:4499,一年:8299}, tags:["监督员","基础起步"]},
+    {tier:"严格监督", name:"双项监督", prices:{周:380,月:1399,季:3899,半年:6999,一年:12899}, tags:["监督员","双线管控"]},
+    {tier:"严格监督", name:"全面监督", prices:{周:520,月:1799,季:5299,半年:9699,一年:17999}, tags:["监督员","全面覆盖"]},
+    {tier:"陪伴", name:"单项陪伴", prices:{周:420,月:1499,季:4299,半年:7799,一年:14599}, tags:["每周3次语音","不限时文字陪伴"]},
+    {tier:"陪伴", name:"双项陪伴", prices:{周:520,月:1799,季:5299,半年:9699,一年:17999}, tags:["每周3次语音","双项陪伴"]},
+    {tier:"陪伴", name:"全面陪伴", prices:{周:620,月:2299,季:6499,半年:11899,一年:22099}, tags:["每周3次语音","全面陪伴"]},
+    {tier:"陪伴升级版", name:"单项升级", prices:{周:520,月:1799,季:5299,半年:9699,一年:17999}, tags:["每周树洞/思想课","更进一步"]},
+    {tier:"陪伴升级版", name:"双项升级", prices:{周:620,月:2299,季:6499,半年:11899,一年:22099}, tags:["每周树洞/思想课","双项"]},
+    {tier:"陪伴升级版", name:"全面升级", prices:{周:720,月:2599,季:7299,半年:13499,一年:24899}, tags:["每周树洞/思想课","全面"]},
+  ]},
+  {title:"店长系列", sub:"资深店长坐镇，高标准全流程监督", cls:"g-blue", plans:[
+    {tier:"严格监督", name:"单项监督", prices:{周:500,月:1899,季:5399,半年:9999,一年:18299}, tags:["店长级","基础起步"]},
+    {tier:"严格监督", name:"双项监督", prices:{周:800,月:2899,季:8099,半年:14999,一年:27699}, tags:["店长级","双线管控"]},
+    {tier:"严格监督", name:"全面监督", prices:{周:1200,月:4299,季:12299,半年:22499,一年:41499}, tags:["店长级","全面覆盖"]},
+    {tier:"陪伴", name:"单项陪伴", prices:{周:700,月:2499,季:6899,半年:12899,一年:24399}, tags:["每周3次语音","不限时文字陪伴"]},
+    {tier:"陪伴", name:"双项陪伴", prices:{周:1100,月:3899,季:11099,半年:20399,一年:37599}, tags:["每周3次语音","双项陪伴"]},
+    {tier:"陪伴", name:"全面陪伴", prices:{周:1600,月:5999,季:16999,半年:32599,一年:62899}, tags:["每周3次语音","全面陪伴"]},
+    {tier:"陪伴升级版", name:"单项升级", prices:{周:800,月:2899,季:8099,半年:14999,一年:27699}, tags:["每周树洞/思想课","更进一步"]},
+    {tier:"陪伴升级版", name:"双项升级", prices:{周:1200,月:4299,季:12299,半年:22499,一年:41499}, tags:["每周树洞/思想课","双项"]},
+    {tier:"陪伴升级版", name:"全面升级", prices:{周:1700,月:6099,季:17399,半年:31699,一年:58099}, tags:["每周树洞/思想课","全面"]},
+  ]},
+  {title:"2v1 · 双监督员", sub:"两位督学协同，全面覆盖", cls:"g-purple", plans:[
+    {tier:"严格监督", name:"单项监督", prices:{周:458,月:1699,季:4999,半年:8499,一年:15799}, tags:["双监督员","基础起步"]},
+    {tier:"严格监督", name:"双项监督", prices:{周:720,月:2599,季:7299,半年:13499,一年:24899}, tags:["双监督员","双线管控"]},
+    {tier:"严格监督", name:"三项监督", prices:{周:900,月:3299,季:9299,半年:17499,一年:33499}, tags:["双监督员","三项覆盖"]},
+    {tier:"陪伴", name:"单项陪伴", prices:{周:638,月:2299,季:6499,半年:11899,一年:22099}, tags:["每周3次语音","不限时文字陪伴"]},
+    {tier:"陪伴", name:"双项陪伴", prices:{周:900,月:3299,季:9299,半年:17499,一年:33499}, tags:["每周3次语音","双项陪伴"]},
+    {tier:"陪伴", name:"全面陪伴", prices:{周:1100,月:3899,季:11099,半年:20399,一年:37599}, tags:["每周3次语音","全面陪伴"]},
+    {tier:"陪伴升级版", name:"单项升级", prices:{周:838,月:2999,季:8399,半年:15299,一年:28399}, tags:["每周树洞/思想课","更进一步"]},
+    {tier:"陪伴升级版", name:"双项升级", prices:{周:1100,月:3899,季:11099,半年:20399,一年:37599}, tags:["每周树洞/思想课","双项"]},
+    {tier:"陪伴升级版", name:"全面升级", prices:{周:1300,月:4699,季:13099,半年:23999,一年:44499}, tags:["每周树洞/思想课","全面"]},
+  ]},
+  {title:"2v1 · 店长+监督员", sub:"店长统筹 + 督学执行，旗舰体验", cls:"g-green", plans:[
+    {tier:"严格监督", name:"单项监督", prices:{周:668,月:2399,季:6699,半年:12699,一年:24999}, tags:["店长+监督员","基础起步"]},
+    {tier:"严格监督", name:"双项监督", prices:{周:899,月:3299,季:9299,半年:17499,一年:33499}, tags:["店长+监督员","双线管控"]},
+    {tier:"严格监督", name:"全面监督", prices:{周:1399,月:5299,季:14899,半年:28299,一年:54399}, tags:["店长+监督员","全面覆盖"]},
+    {tier:"陪伴", name:"单项陪伴", prices:{周:999,月:3599,季:10299,半年:20499,一年:39499}, tags:["每周3次语音","不限时文字陪伴"]},
+    {tier:"陪伴", name:"双项陪伴", prices:{周:1399,月:5299,季:14899,半年:28299,一年:54399}, tags:["每周3次语音","双项陪伴"]},
+    {tier:"陪伴", name:"全面陪伴", prices:{周:2099,月:5599,季:15499,半年:28599,一年:53099}, tags:["每周3次语音","全面陪伴"]},
+    {tier:"陪伴升级版", name:"单项升级", prices:{周:1199,月:4299,季:12299,半年:22499,一年:41499}, tags:["每周树洞/思想课","更进一步"]},
+    {tier:"陪伴升级版", name:"双项升级", prices:{周:1599,月:5799,季:16199,半年:29599,一年:54999}, tags:["每周树洞/思想课","双项"]},
+    {tier:"陪伴升级版", name:"全面升级", prices:{周:2299,月:8299,季:23199,半年:42299,一年:78699}, tags:["每周树洞/思想课","全面"]},
+  ]},
+];
+
+let currentPeriod = "月";
+const unitMap = {周:"/周",月:"/月",季:"/季",半年:"/半年",一年:"/年"};
+
+function renderGroups(){
+  const wrap = document.getElementById("prodGroups");
+  wrap.innerHTML = groups.map((grp,gi)=>{
+    const cards = grp.plans.map((p,i)=>{
+      const price = p.prices[currentPeriod].toLocaleString();
+      const label = grp.title + " · " + p.tier + " · " + p.name;
+      const tagSpans = p.tags.map((t,k)=>`<span class="tag${k+2}">${t}</span>`).join("");
+      const safe = label.replace(/'/g,"\\'").replace(/"/g,'&quot;');
+      return `<div class="prod reveal" style="transition-delay:${((gi*9)+i)*25}ms">
+        <div class="badges"><span class="tag1">${p.tier}</span>${tagSpans}</div>
+        <h4>${p.name}</h4>
+        <div class="price"><span class="cur">¥</span><span class="num">${price}</span><span class="unit">${unitMap[currentPeriod]}</span></div>
+        <div class="unit-note">周 ¥${p.prices.周} · 季 ¥${p.prices.季.toLocaleString()} · 半年 ¥${p.prices.半年.toLocaleString()} · 年 ¥${p.prices.一年.toLocaleString()}</div>
+        <button class="buy" onclick="openPay('${safe}',${p.prices[currentPeriod]})">立即订阅</button>
+      </div>`;
+    }).join("");
+    return `<div class="prod-group reveal collapsed ${grp.cls}">
+      <div class="prod-group-head" onclick="toggleGroup(this)"><h3>${grp.title}</h3><span>${grp.sub}</span><span class="gh-toggle">展开</span></div>
+      <div class="prod-grid">${cards}</div>
+    </div>`;
+  }).join("");
+  observeReveal();
+}
+
+function toggleGroup(head){
+  const g = head.closest(".prod-group");
+  const collapsed = g.classList.toggle("collapsed");
+  const t = head.querySelector(".gh-toggle");
+  if(t && t.firstChild) t.firstChild.textContent = collapsed ? "展开" : "收起";
+  if(!collapsed){
+    // 展开时确保卡片可见（收起状态下卡片 display:none，reveal 滚动监听不会触发，需手动点亮）
+    g.querySelectorAll(".prod.reveal").forEach(c=>c.classList.add("show"));
+  }
+}
+
+function showButterfly(btn){
+  btn.querySelectorAll(".bfly-wrap").forEach(el=>el.remove());
+  const wrap=document.createElement("span");
+  wrap.className="bfly-wrap";
+  wrap.innerHTML=`<svg viewBox="0 0 40 40"><g transform="translate(20,20)"><path class="wing wing-l" d="M0,0 C-5,-9 -14,-11 -16,-3 C-17,4 -9,10 0,6 Z" fill="rgba(255,255,255,.92)"/><path class="wing wing-r" d="M0,0 C5,-9 14,-11 16,-3 C17,4 9,10 0,6 Z" fill="rgba(255,255,255,.92)"/><path class="wing wing-l" d="M0,6 C-4,10 -7,14 -5,17 C-3,19 0,15 0,11 Z" fill="rgba(255,255,255,.75)"/><path class="wing wing-r" d="M0,6 C4,10 7,14 5,17 C3,19 0,15 0,11 Z" fill="rgba(255,255,255,.75)"/></g></svg>`;
+  for(let i=0;i<7;i++){
+    const s=document.createElement("span");
+    s.className="spark";
+    const ang=Math.random()*Math.PI*2;
+    const dist=10+Math.random()*14;
+    s.style.setProperty("--tx",Math.cos(ang)*dist+"px");
+    s.style.setProperty("--ty",Math.sin(ang)*dist+"px");
+    s.style.animationDelay=(Math.random()*120)+"ms";
+    wrap.appendChild(s);
+  }
+  btn.appendChild(wrap);
+  setTimeout(()=>wrap.remove(),950);
+}
+document.getElementById("periodToggle").addEventListener("click",e=>{
+  if(e.target.tagName!=="BUTTON")return;
+  document.querySelectorAll("#periodToggle button").forEach(b=>b.classList.remove("active"));
+  e.target.classList.add("active");
+  showButterfly(e.target);
+  currentPeriod = e.target.dataset.p;
+  renderGroups();
+});
+renderGroups();
+
+/* ===== Shop manager QR modal ===== */
+const qrModal=document.getElementById("qrModal");
+function openQrModal(){qrModal.classList.add("show");}
+function closeQrModal(){qrModal.classList.remove("show");}
+
+/* ===== Offline records modal ===== */
+const offlineModal=document.getElementById("offlineModal");
+function openOfflineModal(){offlineModal.classList.add("show");document.body.style.overflow="hidden";}
+function closeOfflineModal(){offlineModal.classList.remove("show");document.body.style.overflow="";}
+function switchOfflineTab(tab){
+  offlineModal.querySelectorAll(".offline-tab").forEach(t=>t.classList.toggle("active",t.dataset.tab===tab));
+  offlineModal.querySelectorAll(".offline-pane").forEach(p=>p.classList.toggle("active",p.dataset.pane===tab));
+}
+
+/* ===== Payment modal ===== */
+const modal=document.getElementById("payModal");
+function openPay(name,price){
+  document.getElementById("payPlan").textContent=name+"（"+currentPeriod+"）";
+  document.getElementById("payPrice").textContent="¥"+price.toLocaleString();
+  modal.classList.add("show");
+}
+function closePay(){modal.classList.remove("show");}
+
+/* ===== Notice modal ===== */
+const noticeModal=document.getElementById("noticeModal");
+function openNotice(){noticeModal.classList.add("show");}
+function closeNotice(){noticeModal.classList.remove("show");}
+
+/* ===== Order guide modal ===== */
+const guideModal=document.getElementById("guideModal");
+function openGuide(){guideModal.classList.add("show");}
+function closeGuide(){guideModal.classList.remove("show");}
+
+/* ===== Reviews modal ===== */
+const reviewsModal=document.getElementById("reviewsModal");
+function openReviews(){const items=reviewsModal.querySelectorAll(".review-item");items.forEach((it,i)=>{it.style.animationDelay=(0.14+i*0.055)+"s";});reviewsModal.classList.add("show");document.body.style.overflow="hidden";openFireworks();}
+function closeReviews(){closeFireworks();reviewsModal.classList.remove("show");document.body.style.overflow="";}
+
+/* ===== Rule modal (学员准则) ===== */
+const ruleModal=document.getElementById("ruleModal");
+function openRule(){
+  const env=document.getElementById("ruleEnvelope");
+  const m=ruleModal.querySelector(".modal");
+  env.classList.remove("open");      /* letter hidden until envelope clicked */
+  m.classList.remove("show-anim");
+  ruleModal.classList.add("show");
+  document.body.style.overflow="hidden";
+  ruleModal.querySelector(".rule-body").scrollTop=0;
+}
+function toggleEnvelope(){
+  const env=document.getElementById("ruleEnvelope");
+  const m=ruleModal.querySelector(".modal");
+  const opened=env.classList.toggle("open");
+  m.classList.toggle("show-anim",opened);
+}
+function closeRule(){
+  ruleModal.classList.remove("show");
+  document.body.style.overflow="";
+  document.getElementById("ruleEnvelope").classList.remove("open");
+  ruleModal.querySelector(".modal").classList.remove("show-anim");
+}
+
+/* ===== Full-screen fireworks celebration (plays once) ===== */
+let fwRAF=null, fwRunning=false;
+function openFireworks(){
+  const ov=document.getElementById("fwOverlay");
+  if(!ov){ return; }
+  ov.classList.add("show");
+  document.body.style.overflow="hidden";
+  if(!fwRunning){ launchFireworks(); }
+}
+function closeFireworks(){
+  const ov=document.getElementById("fwOverlay");
+  if(ov){ ov.classList.remove("show"); }
+  fwRunning=false;
+  if(fwRAF){ cancelAnimationFrame(fwRAF); fwRAF=null; }
+  const c=document.getElementById("fwCanvasBig");
+  if(c){ const ctx=c.getContext("2d"); ctx.clearRect(0,0,c.width,c.height); }
+  if(!ruleModal.classList.contains("show") && !reviewsModal.classList.contains("show")){ document.body.style.overflow=""; }
+}
+function launchFireworks(){
+  const ov=document.getElementById("fwOverlay");
+  const c=document.getElementById("fwCanvasBig");
+  const ctx=c.getContext("2d");
+  const dpr=Math.min(window.devicePixelRatio||1,2);
+  function resize(){ c.width=Math.floor(innerWidth*dpr); c.height=Math.floor(innerHeight*dpr); ctx.setTransform(dpr,0,0,dpr,0,0); }
+  resize();
+  window.addEventListener("resize",resize);
+
+  const W=innerWidth, H=innerHeight;
+  /* 参考图里的粉、黄、青、蓝、白、淡紫 */
+  const palette=["#ff9ff3","#feca57","#48dbfb","#54a0ff","#ffffff","#a29bfe","#ff6b9d","#c8d6e5"];
+  let streaks=[], sparkles=[], cores=[];
+  const startT=performance.now();
+  fwRunning=true;
+
+  function makeStreak(x,y,color,sp){
+    const ang=Math.random()*Math.PI*2;
+    const speed=sp*(0.55+Math.random()*0.65);
+    streaks.push({
+      x,y,vx:Math.cos(ang)*speed,vy:Math.sin(ang)*speed,
+      life:1,decay:0.005+Math.random()*0.005,
+      color:color||palette[Math.floor(Math.random()*palette.length)],
+      size:1.6+Math.random()*2.4,
+      trail:[{x,y}]
+    });
+  }
+
+  function makeSparkle(x,y,color,sp){
+    const ang=Math.random()*Math.PI*2;
+    const speed=sp*(0.35+Math.random()*0.95);
+    sparkles.push({
+      x,y,vx:Math.cos(ang)*speed,vy:Math.sin(ang)*speed,
+      life:1,decay:0.010+Math.random()*0.012,
+      color:color||palette[Math.floor(Math.random()*palette.length)],
+      size:0.9+Math.random()*1.7,
+      flicker:0.3+Math.random()*0.7
+    });
+  }
+
+  function bigBurst(cx,cy,scale){
+    const nStreaks=Math.floor(150*scale);
+    const nSparkles=Math.floor(80*scale);
+    for(let i=0;i<nStreaks;i++) makeStreak(cx,cy,null,scale*(7+Math.random()*7));
+    for(let i=0;i<nSparkles;i++) makeSparkle(cx,cy,null,scale*(5+Math.random()*6));
+    cores.push({x:cx,y:cy,life:1,r:scale*(20+Math.random()*12)});
+  }
+
+  /* 主爆炸：屏幕中心一朵大花，像参考图 */
+  bigBurst(W/2,H*0.46,1.25);
+
+  /* 0.85s 后再补一朵小一点的，增加层次 */
+  let secondFired=false;
+
+  function tick(now){
+    if(!fwRunning) return;
+    const t=now-startT;
+    ctx.clearRect(0,0,W,H);
+
+    if(!secondFired && t>850){
+      secondFired=true;
+      bigBurst(W/2+(Math.random()*100-50),H*0.46+(Math.random()*70-35),0.55);
+    }
+
+    /* 中心发光核心 */
+    ctx.globalCompositeOperation="lighter";
+    for(let i=cores.length-1;i>=0;i--){
+      const co=cores[i];
+      co.life-=0.018;
+      if(co.life<=0){ cores.splice(i,1); continue; }
+      const grd=ctx.createRadialGradient(co.x,co.y,0,co.x,co.y,co.r*2.8);
+      grd.addColorStop(0,'rgba(255,255,255,'+(co.life*0.98)+')');
+      grd.addColorStop(0.2,'rgba(255,240,180,'+(co.life*0.62)+')');
+      grd.addColorStop(0.55,'rgba(255,150,200,'+(co.life*0.22)+')');
+      grd.addColorStop(1,'rgba(255,255,255,0)');
+      ctx.fillStyle=grd;
+      ctx.beginPath(); ctx.arc(co.x,co.y,co.r*2.8,0,7); ctx.fill();
+    }
+
+    /* 长拖尾彩色流线 */
+    for(let i=streaks.length-1;i>=0;i--){
+      const s=streaks[i];
+      s.x+=s.vx; s.y+=s.vy;
+      s.vy+=0.035; s.vx*=0.987; s.vy*=0.987;
+      s.life-=s.decay;
+      if(s.life<=0){ streaks.splice(i,1); continue; }
+      s.trail.push({x:s.x,y:s.y});
+      if(s.trail.length>20) s.trail.shift();
+      ctx.globalCompositeOperation="lighter";
+      for(let k=1;k<s.trail.length;k++){
+        const p0=s.trail[k-1],p1=s.trail[k];
+        const segLife=(k/s.trail.length)*s.life;
+        ctx.globalAlpha=segLife*0.92;
+        ctx.strokeStyle=s.color; ctx.lineWidth=s.size*(0.35+0.65*segLife);
+        ctx.beginPath(); ctx.moveTo(p0.x,p0.y); ctx.lineTo(p1.x,p1.y); ctx.stroke();
+      }
+      /* 流线头部亮点 */
+      ctx.globalAlpha=s.life;
+      ctx.beginPath(); ctx.arc(s.x,s.y,s.size*1.5,0,7); ctx.fillStyle="#ffffff"; ctx.fill();
+      ctx.beginPath(); ctx.arc(s.x,s.y,s.size*0.8,0,7); ctx.fillStyle=s.color; ctx.fill();
+    }
+
+    /* 闪烁小星点 */
+    for(let i=sparkles.length-1;i>=0;i--){
+      const p=sparkles[i];
+      p.x+=p.vx; p.y+=p.vy;
+      p.vy+=0.042; p.vx*=0.983; p.vy*=0.983;
+      p.life-=p.decay;
+      if(p.life<=0){ sparkles.splice(i,1); continue; }
+      const flick=0.5+0.5*Math.sin(now*0.018*p.flicker);
+      ctx.globalAlpha=p.life*flick;
+      ctx.beginPath(); ctx.arc(p.x,p.y,p.size,0,7); ctx.fillStyle=p.color; ctx.fill();
+      ctx.globalAlpha=p.life*0.32;
+      ctx.beginPath(); ctx.arc(p.x,p.y,p.size*2.4,0,7); ctx.fillStyle=p.color; ctx.fill();
+    }
+
+    ctx.globalAlpha=1;
+    ctx.globalCompositeOperation="source-over";
+
+    if(t>6500){   /* 只放一次，约6.5秒后淡出并隐藏 */
+      fwRunning=false;
+      ctx.clearRect(0,0,W,H);
+      ov.classList.remove("show");
+      window.removeEventListener("resize",resize);
+      streaks=[]; sparkles=[]; cores=[];
+      return;
+    }
+    fwRAF=requestAnimationFrame(tick);
+  }
+  fwRAF=requestAnimationFrame(tick);
+}
+
+/* ===== Toast ===== */
+let toastTimer;
+function toast(msg){const t=document.getElementById("toast");t.textContent=msg;t.classList.add("show");
+  clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.remove("show"),2200);}
+function scrollToEl(sel){document.querySelector(sel).scrollIntoView({behavior:"smooth"});}
+function toggleCat(){
+  const g=document.getElementById("catGrid");
+  const b=document.getElementById("catToggle");
+  const collapsed=g.classList.toggle("collapsed");
+  b.textContent = collapsed ? "展开全部 8 项 ▼" : "收起 ▲";
+}
+
+/* ===== Copy wechat id ===== */
+function copyWx(){
+  const id=document.getElementById("managerWx").textContent;
+  if(navigator.clipboard){
+    navigator.clipboard.writeText(id).then(()=>toast("已复制店长微信号："+id));
+  }else{
+    const ta=document.createElement("textarea");ta.value=id;document.body.appendChild(ta);
+    ta.select();document.execCommand("copy");document.body.removeChild(ta);
+    toast("已复制店长微信号："+id);
+  }
+}
+
+function copyQq(){
+  const id="1719343811";
+  if(navigator.clipboard){
+    navigator.clipboard.writeText(id).then(()=>toast("已复制客服QQ："+id));
+  }else{
+    const ta=document.createElement("textarea");ta.value=id;document.body.appendChild(ta);
+    ta.select();document.execCommand("copy");document.body.removeChild(ta);
+    toast("已复制客服QQ："+id);
+  }
+}
+
+/* ===== FAQ ===== */
+function toggleFaq(el){
+  const faq = el.parentElement;
+  const isOpen = faq.classList.contains("open");
+  document.querySelectorAll(".faq").forEach(f=>f.classList.remove("open"));
+  if(!isOpen) faq.classList.add("open");
+}
+
+/* ===== Scroll reveal ===== */
+function observeReveal(){
+  const obs = new IntersectionObserver((entries)=>{
+    entries.forEach(en=>{if(en.isIntersecting){en.target.classList.add("show");if(en.target.id==="catGrid")en.target.classList.add("in");obs.unobserve(en.target);}});
+  },{threshold:.12});
+  document.querySelectorAll(".reveal").forEach(el=>obs.observe(el));
+}
+observeReveal();
+
+/* ===== Stats count-up ===== */
+(function(){
+  const nums=document.querySelectorAll('.stat .num');
+  if(!nums.length)return;
+  let done=false;
+  const io=new IntersectionObserver(es=>{
+    es.forEach(e=>{
+      if(e.isIntersecting && !done){
+        done=true;
+        nums.forEach(el=>{
+          const m=el.textContent.trim().match(/([\d.]+)(.*)/);
+          if(!m)return;
+          const target=parseFloat(m[1]);
+          const dec=(m[1].split('.')[1]||'').length;
+          const suffix=m[2]||'';
+          const dur=1300,start=performance.now();
+          (function step(now){
+            const p=Math.min((now-start)/dur,1);
+            const eased=1-Math.pow(1-p,3);
+            el.textContent=(target*eased).toFixed(dec)+suffix;
+            if(p<1)requestAnimationFrame(step);
+            else el.textContent=target.toFixed(dec)+suffix;
+          })(start);
+        });
+        io.disconnect();
+      }
+    });
+  },{threshold:.3});
+  const host=document.querySelector('.stats-inner');
+  if(host)io.observe(host);
+})();
+
+/* ===== Snow overlay (ice element) ===== */
+(function(){
+  const cv=document.getElementById("snowCanvas");
+  if(!cv)return;
+  const ctx=cv.getContext("2d");
+  let W=0,H=0,flakes=[];
+  function init(){
+    W=cv.width=innerWidth; H=cv.height=innerHeight;
+    flakes=[];
+    const n=Math.max(18,Math.min(40,Math.floor(W/30)));
+    for(let i=0;i<n;i++){
+      flakes.push({x:Math.random()*W,y:Math.random()*H,r:1.4+Math.random()*2.4,
+        s:0.4+Math.random()*0.9,d:Math.random()*Math.PI*2});
+    }
+  }
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    ctx.fillStyle="rgba(255,255,255,.92)";
+    ctx.shadowColor="rgba(125,211,252,.9)";
+    ctx.shadowBlur=6;
+    flakes.forEach(f=>{
+      f.y+=f.s; f.x+=Math.sin(f.d)*0.4; f.d+=0.008;
+      if(f.y>H+6){f.y=-6;f.x=Math.random()*W;}
+      if(f.x>W+6)f.x=-6; if(f.x<-6)f.x=W+6;
+      ctx.beginPath(); ctx.arc(f.x,f.y,f.r,0,Math.PI*2); ctx.fill();
+    });
+    requestAnimationFrame(draw);
+  }
+  init(); draw();
+  addEventListener("resize",init);
+})();
+
+/* ===== Fireworks on thanks card ===== */
+(function(){
+  const card=document.getElementById("thanksCard");
+  const canvas=document.getElementById("fwCanvas");
+  if(!card||!canvas)return;
+  const ctx=canvas.getContext("2d");
+  let W=0,H=0,running=false,particles=[],raf=0,timer=0;
+  const colors=["#e11d48","#d97706","#be123c","#0e7490","#7c3aed","#db2777"];
+  function size(){const r=card.getBoundingClientRect();canvas.width=r.width;canvas.height=r.height;W=r.width;H=r.height;}
+  function burst(x,y){
+    const n=26+Math.floor(Math.random()*16);
+    const c=colors[Math.floor(Math.random()*colors.length)];
+    for(let i=0;i<n;i++){
+      const a=Math.PI*2*i/n, sp=2+Math.random()*3.6;
+      particles.push({x,y,vx:Math.cos(a)*sp,vy:Math.sin(a)*sp,life:1,c});
+    }
+  }
+  function tick(){
+    ctx.clearRect(0,0,W,H);
+    particles.forEach(p=>{
+      p.x+=p.vx; p.y+=p.vy; p.vy+=0.05; p.vx*=0.99; p.life-=0.012;
+      ctx.globalAlpha=Math.max(p.life,0); ctx.fillStyle=p.c;
+      ctx.beginPath(); ctx.arc(p.x,p.y,2.4,0,Math.PI*2); ctx.fill();
+    });
+    ctx.globalAlpha=1;
+    for(let i=particles.length-1;i>=0;i--) if(particles[i].life<=0) particles.splice(i,1);
+    raf=requestAnimationFrame(tick);
+  }
+  function start(){
+    size();
+    if(running) return;
+    running=true;
+    raf=requestAnimationFrame(tick);
+    timer=setInterval(()=>{
+      burst(W*(0.18+Math.random()*0.64),H*(0.2+Math.random()*0.34));
+    },650);
+  }
+  const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)start();});},{threshold:.3});
+  io.observe(card);
+  window.addEventListener("resize",size);
+})();
+
+/* ===== Draggable cats (each independent) ===== */
+(function(){
+  window.goTop=function(){window.scrollTo({top:0,behavior:"smooth"});};
+  window.goBottom=function(){window.scrollTo({top:document.body.scrollHeight,behavior:"smooth"});};
+  const cats=[...document.querySelectorAll(".cat-avatar")];
+  cats.forEach(cat=>{
+    let dragging=false, moved=false, sx=0, sy=0, ox=0, oy=0;
+    // 把 CSS 的 fixed 定位(left/bottom) 转成 left/top 像素值，便于拖动
+    const r=cat.getBoundingClientRect();
+    cat.style.left=Math.round(r.left)+"px";
+    cat.style.top=Math.round(r.top)+"px";
+    cat.style.right="auto"; cat.style.bottom="auto";
+    function down(x,y){dragging=true;moved=false;sx=x;sy=y;ox=cat.offsetLeft;oy=cat.offsetTop;cat.classList.add("grab","dragging");}
+    function move(x,y){
+      if(!dragging)return;
+      const dx=x-sx, dy=y-sy;
+      if(Math.abs(dx)>4||Math.abs(dy)>4)moved=true;
+      let nl=ox+dx, nt=oy+dy;
+      nl=Math.max(0,Math.min(nl,window.innerWidth-cat.offsetWidth));
+      nt=Math.max(0,Math.min(nt,window.innerHeight-cat.offsetHeight));
+      cat.style.left=nl+"px"; cat.style.top=nt+"px";
+    }
+    function up(){ if(!dragging)return; dragging=false; cat.classList.remove("grab","dragging"); }
+    cat.addEventListener("mousedown",e=>down(e.clientX,e.clientY));
+    window.addEventListener("mousemove",e=>move(e.clientX,e.clientY));
+    window.addEventListener("mouseup",up);
+    cat.addEventListener("touchstart",e=>{const t=e.touches[0];down(t.clientX,t.clientY);},{passive:true});
+    window.addEventListener("touchmove",e=>{if(dragging){const t=e.touches[0];move(t.clientX,t.clientY);e.preventDefault();}},{passive:false});
+    window.addEventListener("touchend",up);
+    cat.addEventListener("click",function(e){
+      if(moved){e.stopPropagation(); return;}
+      const which=this.dataset.cat;
+      if(which==="xiaoman"){if(window.playMeow)window.playMeow(); window.goTop(); if(window.toast)window.toast("🐱 小满带你回顶部！");}
+      else if(which==="xiaohei"){if(window.playMeow)window.playMeow(); window.goBottom(); if(window.toast)window.toast("🐱 小黑带你到底部！");}
+    });
+  });
+})();
+
+/* ===== Cat food can: drag onto avatar -> meow + scroll ===== */
+window.playMeow=function(){
+  try{
+    const AC=window.AudioContext||window.webkitAudioContext;
+    if(!AC)return;
+    const ac=new AC(); const now=ac.currentTime;
+    const osc=ac.createOscillator(); const gain=ac.createGain();
+    const bp=ac.createBiquadFilter(); bp.type="bandpass"; bp.frequency.value=1000; bp.Q.value=5;
+    osc.type="sawtooth";
+    osc.frequency.setValueAtTime(620,now);
+    osc.frequency.exponentialRampToValueAtTime(1100,now+0.12);
+    osc.frequency.exponentialRampToValueAtTime(560,now+0.4);
+    const lfo=ac.createOscillator(); const lfoGain=ac.createGain();
+    lfo.frequency.value=18; lfoGain.gain.value=40;
+    lfo.connect(lfoGain); lfoGain.connect(osc.frequency);
+    gain.gain.setValueAtTime(0,now);
+    gain.gain.linearRampToValueAtTime(0.25,now+0.05);
+    gain.gain.linearRampToValueAtTime(0.18,now+0.2);
+    gain.gain.exponentialRampToValueAtTime(0.001,now+0.45);
+    osc.connect(bp); bp.connect(gain); gain.connect(ac.destination);
+    osc.start(now); lfo.start(now); osc.stop(now+0.5); lfo.stop(now+0.5);
+    setTimeout(()=>{try{ac.close();}catch(e){}},600);
+  }catch(e){}
+};
+(function(){
+  const can=document.getElementById("catCan");
+  const cats=[...document.querySelectorAll(".cat-avatar")];
+  if(!can||!cats.length)return;
+  let dragging=false, moved=false, sx=0, sy=0, ox=0, oy=0;
+  function home(){const m=window.innerWidth<=560;can.style.right=(m?12:18)+"px";can.style.top=(m?12:18)+"px";can.style.left="auto";can.style.bottom="auto";}
+  function down(x,y){dragging=true;moved=false;sx=x;sy=y;ox=can.offsetLeft;oy=can.offsetTop;can.classList.remove("eaten");}
+  function move(x,y){
+    if(!dragging)return;
+    const dx=x-sx, dy=y-sy;
+    if(Math.abs(dx)>4||Math.abs(dy)>4)moved=true;
+    let nl=ox+dx, nt=oy+dy;
+    nl=Math.max(0,Math.min(nl,window.innerWidth-54));
+    nt=Math.max(0,Math.min(nt,window.innerHeight-54));
+    can.style.left=nl+"px"; can.style.top=nt+"px"; can.style.right="auto"; can.style.bottom="auto";
+  }
+  function up(){
+    if(!dragging)return;
+    dragging=false;
+    if(moved){
+      const cr=can.getBoundingClientRect();
+      const cx=cr.left+cr.width/2, cy=cr.top+cr.height/2;
+      // find nearest cat avatar within range
+      let hit=null, best=70;
+      cats.forEach(av=>{
+        const ar=av.getBoundingClientRect();
+        const ax=ar.left+ar.width/2, ay=ar.top+ar.height/2;
+        const d=Math.hypot(cx-ax,cy-ay);
+        if(d<best){best=d; hit=av;}
+      });
+      if(hit){
+        if(window.playMeow) window.playMeow();
+        const which=hit.dataset.cat;
+        if(which==="xiaoman"){
+          if(window.goTop) window.goTop();
+          if(window.toast) window.toast("🐱 小满吃饱啦，带你回顶部！");
+        }else{
+          if(window.goBottom) window.goBottom();
+          if(window.toast) window.toast("🐱 小黑吃饱啦，带你到页面底部！");
+        }
+        can.classList.add("eaten");
+        // 吃完后隐藏，5 秒后自动恢复罐头
+        setTimeout(()=>{can.classList.remove("eaten");home();},5200);
+        return;
+      }
+    }
+    home();
+  }
+  can.addEventListener("mousedown",e=>down(e.clientX,e.clientY));
+  window.addEventListener("mousemove",e=>move(e.clientX,e.clientY));
+  window.addEventListener("mouseup",up);
+  can.addEventListener("touchstart",e=>{const t=e.touches[0];down(t.clientX,t.clientY);},{passive:true});
+  window.addEventListener("touchmove",e=>{if(dragging){const t=e.touches[0];move(t.clientX,t.clientY);e.preventDefault();}},{passive:false});
+  window.addEventListener("touchend",up);
+})();
+
+/* ===== Nav scroll-spy ===== */
+(function(){
+  const links=[...document.querySelectorAll('.nav-links a[href^="#"]')];
+  const map={};
+  links.forEach(a=>{const id=a.getAttribute("href").slice(1);if(document.getElementById(id))map[id]=a;});
+  const ids=Object.keys(map);
+  function spy(){
+    const y=window.scrollY+140;
+    let cur=ids[0];
+    ids.forEach(id=>{const s=document.getElementById(id);if(s&&s.offsetTop<=y)cur=id;});
+    links.forEach(a=>a.classList.remove("active"));
+    if(map[cur])map[cur].classList.add("active");
+  }
+  window.addEventListener("scroll",spy,{passive:true});
+  spy();
+})();
+
+/* ===== Hero scroll parallax ===== */
+(function(){
+  const hero=document.querySelector(".hero");
+  const inner=document.querySelector(".hero .wrap");
+  if(!hero||!inner)return;
+  let ticking=false;
+  function onScroll(){
+    const y=window.scrollY;
+    inner.style.transform = y<hero.offsetHeight+200 ? "translateY("+(y*0.16)+"px)" : "";
+    ticking=false;
+  }
+  window.addEventListener("scroll",()=>{if(!ticking){requestAnimationFrame(onScroll);ticking=true;}},{passive:true});
+})();
+
+/* ===== 内容保护：防止图片被右键另存 / 拖拽盗用 ===== */
+(function(){
+  document.addEventListener("contextmenu",(e)=>{
+    if(e.target && e.target.tagName==="IMG") e.preventDefault();
+  },{capture:true});
+  document.addEventListener("dragstart",(e)=>{
+    if(e.target && e.target.tagName==="IMG") e.preventDefault();
+  },{capture:true});
+})();
+</script>
+</body>
+</html>
