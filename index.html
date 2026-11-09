@@ -231,40 +231,32 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);
 .delay-card .save{align-self:flex-start;background:#fef2f2;color:#be123c;font-size:12px;font-weight:800;padding:3px 10px;border-radius:12px;margin:8px 0 14px}
 .delay-card .buy{margin-top:auto;background:linear-gradient(135deg,var(--accent),var(--accent-d))}
 .delay-banner{margin-top:20px;background:linear-gradient(90deg,#fff1f2,#ffe4e6);border:1px solid #fecdd3;color:#9f1239;border-radius:14px;padding:12px 18px;font-size:13.5px;font-weight:700}
-/* ===== 会员板块（真·蝴蝶：文字写进翅膀） ===== */
+/* ===== 会员板块（蝴蝶：尖刺羽缘SVG形，文字写进翅膀） ===== */
 .member-stage{display:flex;flex-direction:column;align-items:center;margin-top:26px}
-.butterfly{position:relative;width:min(860px,100%);aspect-ratio:860/600}
-.wing{position:absolute;display:flex;flex-direction:column;align-items:center;justify-content:center;isolation:isolate;cursor:pointer;transition:transform .25s,filter .25s}
-.wing:hover{filter:brightness(1.03) drop-shadow(0 14px 30px rgba(109,40,217,.25));z-index:2}
-.wing-ul{left:2%;top:4%;width:46%;height:62%;background:linear-gradient(135deg,#e9d5ff,#a855f7 60%,#8b5cf6);border-radius:95% 30% 65% 55%/88% 55% 90% 60%;transform:rotate(-4deg)}
-.wing-ul::before{content:"";position:absolute;inset:6px;border-radius:inherit;background:linear-gradient(160deg,#faf5ff 0%,#ffffff 62%);z-index:-1}
-.wing-ur{right:2%;top:4%;width:46%;height:62%;background:linear-gradient(225deg,#fde68a,#f59e0b 60%,#d97706);border-radius:30% 95% 55% 65%/55% 88% 60% 90%;transform:rotate(4deg)}
-.wing-ur::before{content:"";position:absolute;inset:6px;border-radius:inherit;background:linear-gradient(200deg,#fffbeb 0%,#ffffff 62%);z-index:-1}
-.wing-bl{left:11%;bottom:3%;width:30%;height:34%;background:linear-gradient(135deg,#d8b4fe,#8b5cf6);border-radius:90% 40% 50% 70%/95% 40% 60% 40%;transform:rotate(-10deg)}
-.wing-br{right:11%;bottom:3%;width:30%;height:34%;background:linear-gradient(225deg,#fde68a,#f59e0b);border-radius:40% 90% 70% 50%/40% 95% 40% 60%;transform:rotate(10deg)}
-.bfly-core{position:absolute;left:50%;top:8%;transform:translateX(-50%);width:9%;z-index:3}
-.bfly-core svg{width:100%;height:auto;filter:drop-shadow(0 6px 12px rgba(91,33,182,.3))}
-.w-tag{background:linear-gradient(90deg,#8b5cf6,#7c3aed);color:#fff;font-size:clamp(13px,1.8vw,16px);font-weight:800;padding:5px 18px;border-radius:16px;letter-spacing:2px}
-.wing-ur .w-tag{background:linear-gradient(90deg,#fbbf24,#d97706)}
-.wing-price{display:flex;align-items:baseline;gap:3px;margin:10px 0 0;color:var(--hot)}
-.wing-price .cur{font-size:clamp(16px,2.4vw,22px);font-weight:800}
-.wing-price .num{font-size:clamp(40px,6.5vw,64px);font-weight:900;line-height:1}
-.w-was{font-size:clamp(12px,1.6vw,14px);color:var(--muted);text-decoration:line-through;margin-top:4px}
-.w-lim{font-size:clamp(11px,1.5vw,13px);font-weight:800;color:#047857;background:#ecfdf5;padding:3px 12px;border-radius:12px;margin-top:10px}
-.bfly-intro-link{margin-top:18px;border:none;background:var(--bg2);color:#6d28d9;font-size:14px;font-weight:800;padding:12px 22px;border-radius:14px;cursor:pointer}
+.bfly-intro-link{border:none;background:var(--bg2);color:#6d28d9;font-size:14px;font-weight:800;padding:12px 22px;border-radius:14px;cursor:pointer;margin-bottom:4px}
 .bfly-intro-link:hover{background:#f3e8ff}
+.butterfly{position:relative;width:min(880px,100%);aspect-ratio:1000/640;margin-top:10px}
+.bfly-svg{width:100%;height:100%;display:block;filter:drop-shadow(0 12px 26px rgba(91,33,182,.16))}
+.wt{position:absolute;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;cursor:pointer;transition:transform .25s,filter .25s;border-radius:20px;-webkit-tap-highlight-color:transparent}
+.wt:hover{transform:translateY(-4px)}
+.wt:focus-visible{outline:3px dashed #a855f7;outline-offset:4px}
+.wtl{left:12%;top:13%;width:28.5%;height:28%}
+.wtr{right:12%;top:13%;width:28.5%;height:28%}
+.w-tag{color:#fff;font-size:clamp(13px,1.9vw,17px);font-weight:800;padding:5px 20px;border-radius:16px;letter-spacing:2px;background:linear-gradient(90deg,#8b5cf6,#7c3aed);white-space:nowrap}
+.wtr .w-tag{background:linear-gradient(90deg,#fbbf24,#d97706)}
+.wing-price{display:flex;align-items:baseline;gap:3px;margin-top:8px;color:var(--hot)}
+.wing-price .cur{font-size:clamp(15px,2.2vw,22px);font-weight:800}
+.wing-price .num{font-size:clamp(34px,6vw,60px);font-weight:900;line-height:1}
+.w-was{font-size:clamp(12px,1.6vw,14px);color:var(--muted);text-decoration:line-through;margin-top:5px}
 .mm-block{background:var(--bg2);border-radius:12px;padding:14px 16px;margin-bottom:12px}
 .mm-block h4{margin:0 0 6px;font-size:15px;font-weight:900;color:var(--ink)}
 .mm-block p{margin:0;font-size:13px;line-height:1.8;color:var(--slate)}
 .mm-note{font-size:12px;color:var(--muted);text-align:center;margin:4px 0 0}
 @media(max-width:760px){.delay-grid{grid-template-columns:1fr}}
 @media(max-width:640px){
-  .butterfly{aspect-ratio:420/640;width:min(420px,94%)}
-  .wing-ul{left:0;top:6%;width:52%;height:44%;transform:rotate(-3deg)}
-  .wing-ur{right:0;top:6%;width:52%;height:44%;transform:rotate(3deg)}
-  .wing-bl{left:4%;bottom:14%;width:40%;height:20%}
-  .wing-br{right:4%;bottom:14%;width:40%;height:20%}
-  .bfly-core{top:4%;width:12%}
+  .butterfly{aspect-ratio:1000/700;width:min(480px,96%)}
+  .wtl{left:9%;top:16%;width:34%;height:32%}
+  .wtr{right:9%;top:16%;width:34%;height:32%}
 }
 /* ===== 盲盒体验卡三档价格行 ===== */
 .trial-box{margin:14px 0 4px;display:flex;flex-direction:column;gap:8px}
@@ -1017,36 +1009,44 @@ footer{background:#0f172a;color:#94a3b8;padding:46px 0 28px}
   <div class="sec-wave" aria-hidden="true"><svg viewBox="0 0 1440 16" preserveAspectRatio="none"><path d="M0,8 C240,16 480,0 720,8 C960,16 1200,0 1440,8 L1440,16 L0,16 Z" fill="var(--accent)"/></svg></div>
   <div class="wrap">
     <div class="sec-head reveal">
-      <h2>冰寒督学 · 永久会员<span class="sec-new">NEW · 今年限时</span></h2>
+      <h2>冰寒督学 · 永久会员<span class="sec-new">NEW</span></h2>
       <div class="line"></div>
       <span class="tagline">一次开通，自习室长期免费</span>
     </div>
     <div class="member-stage reveal">
+      <button class="bfly-intro-link" onclick="openMemberIntro()">📖 查看会员权益详细介绍</button>
       <div class="butterfly">
-        <div class="wing wing-ul" onclick="openPay('冰寒督学 · 永久普通会员',88,'永久')">
+        <svg class="bfly-svg" viewBox="0 0 1000 640" aria-hidden="true">
+          <defs>
+            <path id="wingShape" d="M512,170 C590,100 700,68 810,62 C880,58 930,62 955,78 L905,140 L872,112 L845,170 L808,132 L782,192 L742,158 L718,212 L680,182 L656,232 L622,204 L600,250 L572,226 L554,268 L534,248 L520,288 C560,300 630,322 705,352 C775,382 848,436 900,510 L842,478 L832,532 L780,468 L768,522 L718,452 L704,500 L656,430 L640,472 L600,412 L580,440 L556,392 L528,396 C516,360 512,320 512,290 C510,250 510,205 512,170 Z"/>
+            <linearGradient id="wgR" x1="1" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#fff7e0"/><stop offset=".45" stop-color="#fde68a"/><stop offset="1" stop-color="#f59e0b"/>
+            </linearGradient>
+            <linearGradient id="wgL" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#f5efff"/><stop offset=".45" stop-color="#d8b4fe"/><stop offset="1" stop-color="#8b5cf6"/>
+            </linearGradient>
+          </defs>
+          <use href="#wingShape" fill="url(#wgL)" stroke="#7c3aed" stroke-width="3.5" stroke-linejoin="round" transform="translate(1000,0) scale(-1,1)"/>
+          <use href="#wingShape" fill="url(#wgR)" stroke="#d97706" stroke-width="3.5" stroke-linejoin="round"/>
+          <g class="bfly-bodyg">
+            <path d="M500,170 C486,132 480,106 492,82" stroke="#5b21b6" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <path d="M500,170 C514,132 520,106 508,82" stroke="#5b21b6" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <circle cx="500" cy="178" r="11" fill="#6d28d9"/>
+            <path d="M489,210 C483,290 490,350 500,396 C510,350 517,290 511,210 Z" fill="#7c3aed"/>
+            <path d="M493,250 C492,300 495,340 500,378" stroke="#a78bfa" stroke-width="2.4" fill="none" opacity=".8"/>
+          </g>
+        </svg>
+        <div class="wt wtl" role="button" tabindex="0" onclick="openPay('冰寒督学 · 永久普通会员',88,'永久')">
           <span class="w-tag">普通会员</span>
           <div class="wing-price"><span class="cur">¥</span><span class="num">88</span></div>
           <span class="w-was">原价 ¥158</span>
-          <span class="w-lim">今年限时 · 永久有效</span>
         </div>
-        <div class="wing wing-ur" onclick="openPay('冰寒督学 · 永久尊享会员',128,'永久')">
+        <div class="wt wtr" role="button" tabindex="0" onclick="openPay('冰寒督学 · 永久尊享会员',128,'永久')">
           <span class="w-tag">尊享会员</span>
           <div class="wing-price"><span class="cur">¥</span><span class="num">128</span></div>
           <span class="w-was">原价 ¥198</span>
-          <span class="w-lim">今年限时 · 永久有效</span>
-        </div>
-        <div class="wing wing-bl"></div>
-        <div class="wing wing-br"></div>
-        <div class="bfly-core">
-          <svg viewBox="0 0 40 100" aria-hidden="true">
-            <path d="M20,12 C14,2 8,0 6,3 M20,12 C26,2 32,0 34,3" stroke="#5b21b6" stroke-width="2.4" fill="none" stroke-linecap="round"/>
-            <circle cx="20" cy="16" r="7" fill="#7c3aed"/>
-            <ellipse cx="20" cy="52" rx="9" ry="34" fill="#8b5cf6"/>
-            <ellipse cx="20" cy="52" rx="4" ry="24" fill="#a78bfa" opacity=".7"/>
-          </svg>
         </div>
       </div>
-      <button class="bfly-intro-link" onclick="openMemberIntro()">📖 查看会员权益详细介绍</button>
     </div>
   </div>
 </section>
@@ -1057,14 +1057,14 @@ footer{background:#0f172a;color:#94a3b8;padding:46px 0 28px}
     <button class="modal-close" onclick="closeMemberIntro()">×</button>
     <div class="modal-title">🦋 会员权益 · 详细介绍</div>
     <div class="mm-block">
-      <h4>普通会员 · ¥88（原价 ¥158）· 今年限时</h4>
+      <h4>普通会员 · ¥88（原价 ¥158）</h4>
       <p>开通即为冰寒督学永久普通会员：可享受自习室永久免费，即使非监督期间也可进入自习室自行学习；但多次违规，监督员有权把人移出自习室，直到还账完毕。开通后需拉进自习室汇报群。</p>
     </div>
     <div class="mm-block">
-      <h4>尊享会员 · ¥128（原价 ¥198）· 今年限时</h4>
+      <h4>尊享会员 · ¥128（原价 ¥198）</h4>
       <p>自习室永久免费；一年三次下单减免：下单时丢骰子定减免幅度，随机减免 3%～8%；粉丝团 6 级即可参加每年周年庆线下活动。</p>
     </div>
-    <p class="mm-note">两类会员均一次开通、永久有效，价格为今年限时优惠。</p>
+    <p class="mm-note">两类会员均一次开通、永久有效。</p>
   </div>
 </div>
 
