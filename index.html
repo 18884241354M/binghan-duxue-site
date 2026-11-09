@@ -45,6 +45,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);
 .hero h1 span{color:#7dd3fc}
 .hero p{font-size:18px;color:#cbd5e1;margin:22px 0 30px;max-width:520px}
 .hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.hero-sub-btns{display:flex;gap:16px;flex-wrap:wrap;margin-top:18px}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:28px;font-size:15px;font-weight:700;transition:.2s;border:none;cursor:pointer}
 .btn-primary{background:#fff;color:var(--blue)}
 .btn-primary:hover{background:#e0f2fe;transform:translateY(-2px)}
@@ -230,30 +231,46 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);
 .delay-card .save{align-self:flex-start;background:#fef2f2;color:#be123c;font-size:12px;font-weight:800;padding:3px 10px;border-radius:12px;margin:8px 0 14px}
 .delay-card .buy{margin-top:auto;background:linear-gradient(135deg,var(--accent),var(--accent-d))}
 .delay-banner{margin-top:20px;background:linear-gradient(90deg,#fff1f2,#ffe4e6);border:1px solid #fecdd3;color:#9f1239;border-radius:14px;padding:12px 18px;font-size:13.5px;font-weight:700}
-/* ===== 会员板块（蝴蝶翅膀双卡） ===== */
-.member-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:16px;align-items:stretch;margin-top:24px}
-.wing-card{background:#fff;padding:30px 36px;display:flex;flex-direction:column;position:relative;box-shadow:0 8px 24px rgba(91,33,182,.10)}
-.wing-l{border:2px solid #c4b5fd;border-radius:130px 26px 26px 130px}
-.wing-r{border:2px solid #f59e0b;border-radius:26px 130px 130px 26px;background:linear-gradient(165deg,#fffbea 0%,#ffffff 42%)}
-.wing-tag{align-self:flex-start;background:var(--accent);color:#fff;font-size:13px;font-weight:800;padding:5px 16px;border-radius:14px}
-.wing-r .wing-tag{background:linear-gradient(90deg,#f59e0b,#fbbf24)}
-.wing-price{margin:16px 0 6px;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
-.wing-price .cur{font-size:18px;font-weight:800;color:var(--hot)}
-.wing-price .num{font-size:44px;font-weight:900;color:var(--hot);line-height:1}
-.wing-price .was{font-size:13px;color:var(--muted);text-decoration:line-through}
-.wing-lim{align-self:flex-start;background:#ecfdf5;color:#047857;font-size:12px;font-weight:800;padding:3px 10px;border-radius:12px;margin-bottom:12px}
-.wing-card ul{list-style:none;margin:0 0 18px;padding:0;font-size:13.5px;color:var(--slate);line-height:1.75;flex:1}
-.wing-card ul li{padding:5px 0 5px 22px;position:relative}
-.wing-card ul li::before{content:"✓";position:absolute;left:0;color:var(--accent);font-weight:800}
-.wing-card .buy{margin-top:auto;background:linear-gradient(135deg,var(--accent),var(--accent-d))}
-.butterfly-center{align-self:center;animation:bfFloat 3s ease-in-out infinite;filter:drop-shadow(0 4px 10px rgba(124,58,237,.3))}
-@keyframes bfFloat{0%,100%{transform:translateY(0) rotate(-8deg)}50%{transform:translateY(-10px) rotate(8deg)}}
-@media(max-width:860px){
+/* ===== 会员板块（蝴蝶造型：左普通/右尊享，渐变翼缘） ===== */
+.member-stage{display:flex;justify-content:center;margin-top:30px}
+.butterfly{position:relative;width:min(920px,100%);display:flex;justify-content:center}
+.bfly-wing{flex:1;max-width:440px;padding:30px 32px 26px;display:flex;flex-direction:column;position:relative;isolation:isolate;box-shadow:0 12px 32px rgba(91,33,182,.16)}
+.bfly-l{background:linear-gradient(135deg,#d8b4fe,#7c3aed);border-radius:190px 28px 28px 190px;transform:rotate(-3deg);padding-right:62px}
+.bfly-l::before{content:"";position:absolute;inset:3px;border-radius:187px 25px 25px 187px;background:linear-gradient(170deg,#faf5ff 0%,#ffffff 55%);z-index:-1}
+.bfly-r{background:linear-gradient(135deg,#fde68a,#f59e0b);border-radius:28px 190px 190px 28px;transform:rotate(3deg);padding-left:62px}
+.bfly-r::before{content:"";position:absolute;inset:3px;border-radius:25px 187px 187px 25px;background:linear-gradient(170deg,#fffbeb 0%,#ffffff 55%);z-index:-1}
+.bfly-tag{align-self:flex-start;color:#fff;font-size:13px;font-weight:800;padding:5px 16px;border-radius:14px}
+.bfly-l .bfly-tag{background:linear-gradient(90deg,#8b5cf6,#7c3aed)}
+.bfly-r .bfly-tag{background:linear-gradient(90deg,#fbbf24,#f59e0b)}
+.bfly-mini{list-style:none;margin:10px 0 16px;padding:0;font-size:13px;color:var(--slate);line-height:1.7}
+.bfly-mini li{padding:3px 0 3px 20px;position:relative}
+.bfly-mini li::before{content:"✦";position:absolute;left:0;font-weight:800}
+.bfly-l .bfly-mini li::before{color:#7c3aed}
+.bfly-r .bfly-mini li::before{color:#d97706}
+.bfly-actions{display:flex;gap:10px;margin-top:auto}
+.bfly-actions .buy{flex:1;padding:12px}
+.bfly-l .buy{background:linear-gradient(135deg,#8b5cf6,#6d28d9)}
+.bfly-r .buy{background:linear-gradient(135deg,#fbbf24,#d97706)}
+.bfly-more{border:none;cursor:pointer;border-radius:12px;padding:12px 14px;font-size:13.5px;font-weight:800;white-space:nowrap}
+.bfly-l .bfly-more{color:#6d28d9;background:#f3e8ff}
+.bfly-r .bfly-more{color:#b45309;background:#fef3c7}
+.bfly-body{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);z-index:3;animation:bfFloat 3s ease-in-out infinite;filter:drop-shadow(0 6px 14px rgba(109,40,217,.35))}
+@keyframes bfFloat{0%,100%{transform:translate(-50%,-50%) rotate(-8deg)}50%{transform:translate(-50%,-50%) rotate(8deg)}}
+@keyframes bfFloatM{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(8deg)}}
+.mm-block{background:var(--bg2);border-radius:12px;padding:14px 16px;margin-bottom:12px}
+.mm-block h4{margin:0 0 6px;font-size:15px;font-weight:900;color:var(--ink)}
+.mm-block p{margin:0;font-size:13px;line-height:1.8;color:var(--slate)}
+.mm-note{font-size:12px;color:var(--muted);text-align:center;margin:4px 0 0}
+@media(max-width:760px){
   .delay-grid{grid-template-columns:1fr}
-  .member-grid{grid-template-columns:1fr}
-  .wing-l,.wing-r{border-radius:26px}
-  .wing-card{padding:24px}
-  .butterfly-center{justify-self:center}
+  .butterfly{flex-direction:column;align-items:stretch;gap:16px}
+  .bfly-wing{max-width:100%;transform:none;padding:24px;border-radius:26px}
+  .bfly-l{border-radius:26px}
+  .bfly-l::before,.bfly-r::before{border-radius:23px}
+  .bfly-r{border-radius:26px}
+  .bfly-l{order:1}
+  .bfly-body{order:2;position:static;transform:none;align-self:center;animation:bfFloatM 3s ease-in-out infinite}
+  .bfly-r{order:3}
 }
 /* ===== 盲盒体验卡三档价格行 ===== */
 .trial-box{margin:14px 0 4px;display:flex;flex-direction:column;gap:8px}
@@ -831,11 +848,12 @@ footer{background:#0f172a;color:#94a3b8;padding:46px 0 28px}
     <div>
       <h1>找回你的<span>自律节奏</span></h1>
       <div class="hero-btns">
-        <a class="btn btn-primary" href="#hot">挑选监督方案 →</a>
-        <a class="btn btn-outline" href="javascript:void(0)" onclick="openQrModal()">联系店长咨询</a>
+        <a class="btn btn-primary" href="javascript:void(0)" onclick="openQrModal()">联系店长咨询</a>
       </div>
-      <button class="fb-btn hero-rule-btn" onclick="openRule()">📜 查看学员准则</button>
-      <button class="notice-link" onclick="openNotice()">📋 下单须知 · 点击查看</button>
+      <div class="hero-sub-btns">
+        <button class="fb-btn hero-rule-btn" onclick="openRule()">📜 查看学员准则</button>
+        <button class="notice-link" onclick="openNotice()">📋 下单须知 · 点击查看</button>
+      </div>
     </div>
     <div class="hero-visual">
       <div class="glass">
@@ -1009,33 +1027,58 @@ footer{background:#0f172a;color:#94a3b8;padding:46px 0 28px}
       <div class="line"></div>
       <span class="tagline">一次开通，自习室长期免费</span>
     </div>
-    <div class="member-grid reveal">
-      <div class="wing-card wing-l">
-        <span class="wing-tag">普通会员</span>
-        <div class="wing-price"><span class="cur">¥</span><span class="num">88</span><span class="was">原价 ¥158</span></div>
-        <span class="wing-lim">今年限时 · 永久有效</span>
-        <ul>
-          <li>自习室<b>永久免费</b>——非监督期间也可进入自习室自行学习</li>
-          <li>多次违规者，监督员有权将其移出自习室，直至还账完毕</li>
-          <li>开通后拉进自习室汇报群</li>
-        </ul>
-        <button class="buy" onclick="openPay('冰寒督学 · 永久普通会员',88,'永久')">立即开通</button>
-      </div>
-      <div class="butterfly-center"><svg viewBox="0 0 40 40" width="56" height="56" aria-hidden="true"><g transform="translate(20,20)"><path d="M0,0 C-5,-9 -14,-11 -16,-3 C-17,4 -9,10 0,6 Z" fill="#a855f7"/><path d="M0,0 C5,-9 14,-11 16,-3 C17,4 9,10 0,6 Z" fill="#c084fc"/><path d="M0,6 C-4,10 -7,14 -5,17 C-3,19 0,15 0,11 Z" fill="#8b5cf6"/><path d="M0,6 C4,10 7,14 5,17 C3,19 0,15 0,11 Z" fill="#a78bfa"/><ellipse cx="0" cy="2" rx="1.6" ry="7" fill="#6d28d9"/></g></svg></div>
-      <div class="wing-card wing-r">
-        <span class="wing-tag">👑 尊享会员</span>
-        <div class="wing-price"><span class="cur">¥</span><span class="num">128</span><span class="was">原价 ¥198</span></div>
-        <span class="wing-lim">今年限时 · 永久有效</span>
-        <ul>
-          <li>自习室<b>永久免费</b></li>
-          <li>每年 3 次下单减免：下单时丢骰子，随机减免 3%～8%</li>
-          <li>粉丝团 6 级即可参加每年周年庆线下活动</li>
-        </ul>
-        <button class="buy" onclick="openPay('冰寒督学 · 永久尊享会员',128,'永久')">立即开通</button>
+    <div class="member-stage reveal">
+      <div class="butterfly">
+        <div class="bfly-wing bfly-l">
+          <span class="bfly-tag">普通会员</span>
+          <div class="wing-price"><span class="cur">¥</span><span class="num">88</span><span class="was">原价 ¥158</span></div>
+          <span class="wing-lim">今年限时 · 永久有效</span>
+          <ul class="bfly-mini">
+            <li>自习室永久免费</li>
+            <li>违规移出，还账完毕为止</li>
+            <li>进自习室汇报群</li>
+          </ul>
+          <div class="bfly-actions">
+            <button class="buy" onclick="openPay('冰寒督学 · 永久普通会员',88,'永久')">立即开通</button>
+            <button class="bfly-more" onclick="openMemberIntro()">📖 详细介绍</button>
+          </div>
+        </div>
+        <div class="bfly-body"><svg viewBox="0 0 40 40" width="92" height="92" aria-hidden="true"><g transform="translate(20,20)"><path d="M0,-16 C-2,-19 2,-19 0,-16 M0,0 C-5,-9 -14,-11 -16,-3 C-17,4 -9,10 0,6 Z" fill="#a855f7"/><path d="M0,0 C5,-9 14,-11 16,-3 C17,4 9,10 0,6 Z" fill="#c084fc"/><path d="M0,6 C-4,10 -7,14 -5,17 C-3,19 0,15 0,11 Z" fill="#8b5cf6"/><path d="M0,6 C4,10 7,14 5,17 C3,19 0,15 0,11 Z" fill="#a78bfa"/><ellipse cx="0" cy="0" rx="1.8" ry="8" fill="#6d28d9"/></g></svg></div>
+        <div class="bfly-wing bfly-r">
+          <span class="bfly-tag">👑 尊享会员</span>
+          <div class="wing-price"><span class="cur">¥</span><span class="num">128</span><span class="was">原价 ¥198</span></div>
+          <span class="wing-lim">今年限时 · 永久有效</span>
+          <ul class="bfly-mini">
+            <li>自习室永久免费</li>
+            <li>年 3 次骰子减免 3%～8%</li>
+            <li>周年庆线下活动（粉丝团6级）</li>
+          </ul>
+          <div class="bfly-actions">
+            <button class="buy" onclick="openPay('冰寒督学 · 永久尊享会员',128,'永久')">立即开通</button>
+            <button class="bfly-more" onclick="openMemberIntro()">📖 详细介绍</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
+<!-- ===== 会员详细介绍弹窗 ===== -->
+<div class="modal-overlay" id="memberModal" onclick="if(event.target===this)closeMemberIntro()">
+  <div class="modal">
+    <button class="modal-close" onclick="closeMemberIntro()">×</button>
+    <div class="modal-title">🦋 会员权益 · 详细介绍</div>
+    <div class="mm-block">
+      <h4>普通会员 · ¥88（原价 ¥158）· 今年限时</h4>
+      <p>开通即为冰寒督学永久普通会员：可享受自习室永久免费，即使非监督期间也可进入自习室自行学习；但多次违规，监督员有权把人移出自习室，直到还账完毕。开通后需拉进自习室汇报群。</p>
+    </div>
+    <div class="mm-block">
+      <h4>尊享会员 · ¥128（原价 ¥198）· 今年限时</h4>
+      <p>自习室永久免费；一年三次下单减免：下单时丢骰子定减免幅度，随机减免 3%～8%；粉丝团 6 级即可参加每年周年庆线下活动。</p>
+    </div>
+    <p class="mm-note">两类会员均一次开通、永久有效，价格为今年限时优惠。</p>
+  </div>
+</div>
 
 <!-- ===== Single services ===== -->
 <section class="section alt2 theme-teal deco" id="single">
@@ -1877,6 +1920,11 @@ function closeNotice(){noticeModal.classList.remove("show");}
 const guideModal=document.getElementById("guideModal");
 function openGuide(){guideModal.classList.add("show");}
 function closeGuide(){guideModal.classList.remove("show");}
+
+/* ===== Member intro modal ===== */
+const memberModal=document.getElementById("memberModal");
+function openMemberIntro(){memberModal.classList.add("show");}
+function closeMemberIntro(){memberModal.classList.remove("show");}
 
 /* ===== Reviews modal ===== */
 const reviewsModal=document.getElementById("reviewsModal");
