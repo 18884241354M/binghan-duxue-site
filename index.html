@@ -208,7 +208,9 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);
 .prod .unit-note{font-size:12px;color:var(--muted);margin-bottom:14px}
 .prod .plan-note{font-size:12px;line-height:1.55;color:var(--muted);margin-bottom:14px;padding:8px 10px;background:var(--bg2);border-radius:8px}
 /* ===== 新上线套餐（1v3组团）突出样式：系列金黄色调 ===== */
-.prod.is-new{background:linear-gradient(160deg,#fffbeb 0%,#ffffff 45%)}
+.prod.is-new{isolation:isolate;border:none;background:linear-gradient(135deg,#fde68a 0%,#f59e0b 50%,#fde68a 100%)}
+.prod-group .prod.is-new{border-left:none}
+.prod.is-new::before{content:"";position:absolute;inset:2px;border-radius:18px;background:linear-gradient(160deg,#fffbeb 0%,#ffffff 45%);z-index:-1}
 .prod-group .prod.is-new .buy{background:var(--accent)}
 .prod.is-new .new-ribbon{position:absolute;top:-11px;left:16px;background:linear-gradient(90deg,#f59e0b,#fbbf24);color:#fff;font-size:11px;font-weight:800;padding:3px 12px;border-radius:12px;letter-spacing:1px;box-shadow:0 3px 8px rgba(245,158,11,.4);animation:ribbonGlow 2.2s ease-in-out infinite}
 @keyframes ribbonGlow{0%,100%{box-shadow:0 3px 8px rgba(245,158,11,.4)}50%{box-shadow:0 3px 16px rgba(251,191,36,.75)}}
