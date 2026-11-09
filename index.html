@@ -206,6 +206,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);
 .prod .price .num{font-size:36px;font-weight:900;color:var(--hot);line-height:1}
 .prod .price .unit{font-size:13px;color:var(--muted)}
 .prod .unit-note{font-size:12px;color:var(--muted);margin-bottom:14px}
+.prod .plan-note{font-size:12px;line-height:1.55;color:var(--muted);margin-bottom:14px;padding:8px 10px;background:var(--bg2);border-radius:8px}
 .prod .feats{list-style:none;font-size:13.5px;color:var(--slate);margin-bottom:18px;flex:1}
 .prod .feats li{padding:4px 0 4px 22px;position:relative}
 .prod .feats li::before{content:"✓";position:absolute;left:0;color:var(--blue);font-weight:800}
@@ -1584,6 +1585,8 @@ const groups = [
     {tier:"严格监督", name:"单项监督", prices:{周:240,月:899,季:2399,半年:4499,一年:8299}, tags:["监督员","基础起步"]},
     {tier:"严格监督", name:"双项监督", prices:{周:380,月:1399,季:3899,半年:6999,一年:12899}, tags:["监督员","双线管控"]},
     {tier:"严格监督", name:"全面监督", prices:{周:520,月:1799,季:5299,半年:9699,一年:17999}, tags:["监督员","全面覆盖"]},
+    {tier:"1v3组团监督", name:"单项组团", prices:{周:200,月:799,季:2099}, tags:["3人组团","打卡监督"], note:"3人组团或存单等人齐开始监督，三人可以不用监督同样的项目，需在群名片上备注好，监督员拉一个群。此项更侧重于打卡监督，学员之间互相激励，共同进步。暂不开放半年/年付。"},
+    {tier:"1v3组团监督", name:"双项组团", prices:{周:340,月:1099,季:3599}, tags:["3人组团","互相激励"], note:"3人组团或存单等人齐开始监督，三人可以不用监督同样的项目，需在群名片上备注好，监督员拉一个群。此项更侧重于打卡监督，学员之间互相激励，共同进步。暂不开放半年/年付。"},
     {tier:"陪伴", name:"单项陪伴", prices:{周:420,月:1499,季:4299,半年:7799,一年:14599}, tags:["每周3次语音","不限时文字陪伴"]},
     {tier:"陪伴", name:"双项陪伴", prices:{周:520,月:1799,季:5299,半年:9699,一年:17999}, tags:["每周3次语音","双项陪伴"]},
     {tier:"陪伴", name:"全面陪伴", prices:{周:620,月:2299,季:6499,半年:11899,一年:22099}, tags:["每周3次语音","全面陪伴"]},
@@ -1633,16 +1636,21 @@ function renderGroups(){
   const wrap = document.getElementById("prodGroups");
   wrap.innerHTML = groups.map((grp,gi)=>{
     const cards = grp.plans.map((p,i)=>{
-      const price = p.prices[currentPeriod].toLocaleString();
+      const hasP = !!p.prices[currentPeriod];
+      const price = hasP ? p.prices[currentPeriod].toLocaleString() : "—";
       const label = grp.title + " · " + p.tier + " · " + p.name;
       const tagSpans = p.tags.map((t,k)=>`<span class="tag${k+2}">${t}</span>`).join("");
       const safe = label.replace(/'/g,"\\'").replace(/"/g,'&quot;');
+      const unitLine = [["周",false],["季",true],["半年",true],["一年",true]].filter(([k])=>p.prices[k]).map(([k,f])=>`${k} ¥${f?p.prices[k].toLocaleString():p.prices[k]}`).join(" · ");
+      const noteLine = p.note ? `<div class="plan-note">${p.note}</div>` : "";
+      const buyBtn = hasP ? `<button class="buy" onclick="openPay('${safe}',${p.prices[currentPeriod]})">立即订阅</button>` : `<button class="buy" disabled style="opacity:.45;cursor:not-allowed">该周期暂不开放</button>`;
       return `<div class="prod reveal" style="transition-delay:${((gi*9)+i)*25}ms">
         <div class="badges"><span class="tag1">${p.tier}</span>${tagSpans}</div>
         <h4>${p.name}</h4>
         <div class="price"><span class="cur">¥</span><span class="num">${price}</span><span class="unit">${unitMap[currentPeriod]}</span></div>
-        <div class="unit-note">周 ¥${p.prices.周} · 季 ¥${p.prices.季.toLocaleString()} · 半年 ¥${p.prices.半年.toLocaleString()} · 年 ¥${p.prices.一年.toLocaleString()}</div>
-        <button class="buy" onclick="openPay('${safe}',${p.prices[currentPeriod]})">立即订阅</button>
+        <div class="unit-note">${unitLine}</div>
+        ${noteLine}
+        ${buyBtn}
       </div>`;
     }).join("");
     return `<div class="prod-group reveal collapsed ${grp.cls}">
