@@ -217,6 +217,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);
 @keyframes ribbonGlow{0%,100%{box-shadow:0 3px 8px rgba(245,158,11,.4)}50%{box-shadow:0 3px 16px rgba(251,191,36,.75)}}
 /* ===== 板块标题旁 NEW 标 ===== */
 .sec-new{display:inline-block;vertical-align:middle;background:linear-gradient(90deg,#f59e0b,#fbbf24);color:#fff;font-size:12px;font-weight:800;padding:4px 12px;border-radius:14px;margin-left:12px;letter-spacing:.5px;animation:ribbonGlow 2.2s ease-in-out infinite;transform:translateY(-3px)}
+.sec-small{display:inline-block;vertical-align:middle;font-size:14px;font-weight:700;color:var(--accent-d);margin-left:10px;letter-spacing:0;opacity:.85}
 /* ===== 拖延症监督板块 ===== */
 .delay-note{background:var(--accent-soft);border:1px dashed var(--accent);border-radius:14px;padding:14px 18px;font-size:14px;line-height:1.8;color:var(--slate);max-width:880px}
 .delay-note b{color:var(--accent-d)}
@@ -248,6 +249,14 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);
 .wing-price .cur{font-size:clamp(16px,2.4vw,24px);font-weight:800;color:#fff;text-shadow:0 1px 4px rgba(60,30,90,.4)}
 .wing-price .num{font-size:clamp(38px,6.2vw,68px);font-weight:900;line-height:1;background:linear-gradient(180deg,#fff3c8,#f3c869 55%,#d99b33);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 2px 3px rgba(120,70,10,.4))}
 .w-was{font-size:clamp(12px,1.6vw,15px);font-weight:700;color:#fff;opacity:.95;text-decoration:line-through;text-shadow:0 1px 4px rgba(60,30,90,.45);margin-top:5px}
+.wh{position:absolute;display:flex;align-items:center;justify-content:center;text-align:center;cursor:pointer;transition:transform .25s}
+.wh:hover{transform:translateY(-3px)}
+.whl{left:16%;top:62%;width:18%;height:12%}
+.whr{right:16%;top:62%;width:18%;height:12%}
+.wh .w-was{margin-top:0;font-size:clamp(12px,1.7vw,16px)}
+.mm-red{display:block;color:#dc2626;font-weight:800;margin:6px 0}
+.mm-highlight{background:linear-gradient(135deg,#fffdf6,#fff5e0);border:1.5px dashed #f0b95a}
+.mm-highlight h4{color:#b45309}
 .mm-block{background:var(--bg2);border-radius:12px;padding:14px 16px;margin-bottom:12px}
 .mm-block h4{margin:0 0 6px;font-size:15px;font-weight:900;color:var(--ink)}
 .mm-block p{margin:0;font-size:13px;line-height:1.8;color:var(--slate)}
@@ -257,6 +266,8 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);
   .butterfly{width:min(480px,96%)}
   .wtl{left:9%;top:18%;width:35%;height:28%}
   .wtr{right:9%;top:18%;width:35%;height:28%}
+  .whl{left:13%;top:62%;width:22%;height:11%}
+  .whr{right:13%;top:62%;width:22%;height:11%}
 }
 /* ===== 盲盒体验卡三档价格行 ===== */
 .trial-box{margin:14px 0 4px;display:flex;flex-direction:column;gap:8px}
@@ -973,31 +984,31 @@ footer{background:#0f172a;color:#94a3b8;padding:46px 0 28px}
   <div class="sec-wave" aria-hidden="true"><svg viewBox="0 0 1440 16" preserveAspectRatio="none"><path d="M0,8 C240,16 480,0 720,8 C960,16 1200,0 1440,8 L1440,16 L0,16 Z" fill="var(--accent)"/></svg></div>
   <div class="wrap">
     <div class="sec-head reveal">
-      <h2>拖延症监督<span class="sec-new">NEW · 新板块上线</span></h2>
+      <h2>赴时监督<span class="sec-small">专治拖延症</span><span class="sec-new">NEW · 新板块上线</span></h2>
       <div class="line"></div>
       <span class="tagline">不想动的时候，拉你一把</span>
     </div>
     <div class="delay-note reveal">
-      此监督项目<b>无需监督员制定计划</b>：学员在需要做某些事但不想动的时候，给自己定好时间发到群里；<b>超时未完成，由监督员督促完成惩罚</b>。规则简单，专治"躺着一动不动"。
+      此监督项目为冰寒督学全新推出，<b>不以监督员制定计划为主</b>。学员在面对某件想拖延的又必须做的事情时，由自己或监督员定好时间，<b>若超时未完成，由监督员督促完成相关惩罚</b>。该监督项目可覆盖学习、生活、减肥、运动任何领域，但需由学员自行把控完成质量。
     </div>
     <div class="delay-grid">
       <div class="delay-card reveal">
         <div class="d-label">周卡</div>
         <div class="d-price"><span class="cur">¥</span><span class="num">148</span><span class="was">原价 ¥178</span></div>
         <div class="save">🔥 试营业价 · 立省 30</div>
-        <button class="buy" onclick="openPay('拖延症监督 · 周卡',148,'周')">立即订阅</button>
+        <button class="buy" onclick="openPay('赴时监督 · 周卡',148,'周')">立即订阅</button>
       </div>
       <div class="delay-card reveal">
         <div class="d-label">月卡</div>
         <div class="d-price"><span class="cur">¥</span><span class="num">566</span><span class="was">原价 ¥666</span></div>
         <div class="save">🔥 试营业价 · 立省 100</div>
-        <button class="buy" onclick="openPay('拖延症监督 · 月卡',566,'月')">立即订阅</button>
+        <button class="buy" onclick="openPay('赴时监督 · 月卡',566,'月')">立即订阅</button>
       </div>
       <div class="delay-card reveal">
         <div class="d-label">季卡</div>
         <div class="d-price"><span class="cur">¥</span><span class="num">1,566</span><span class="was">原价 ¥1,766</span></div>
         <div class="save">🔥 试营业价 · 立省 200</div>
-        <button class="buy" onclick="openPay('拖延症监督 · 季卡',1566,'季')">立即订阅</button>
+        <button class="buy" onclick="openPay('赴时监督 · 季卡',1566,'季')">立即订阅</button>
       </div>
     </div>
     <div class="delay-banner reveal">⏰ 试营业期间限时优惠，恢复原价后：周 ¥178 · 月 ¥666 · 季 ¥1,766</div>
@@ -1011,7 +1022,7 @@ footer{background:#0f172a;color:#94a3b8;padding:46px 0 28px}
     <div class="sec-head reveal">
       <h2>冰寒督学 · 永久会员<span class="sec-new">NEW</span></h2>
       <div class="line"></div>
-      <span class="tagline">一次开通，自习室长期免费</span>
+      <span class="tagline">一次开通，永久免费</span>
     </div>
     <div class="member-stage reveal">
       <button class="bfly-intro-link" onclick="openMemberIntro()">📖 查看会员权益详细介绍</button>
@@ -1066,13 +1077,13 @@ footer{background:#0f172a;color:#94a3b8;padding:46px 0 28px}
         <div class="wt wtl" role="button" tabindex="0" onclick="openPay('冰寒督学 · 永久普通会员',88,'永久')">
           <span class="w-tag">普通会员</span>
           <div class="wing-price"><span class="cur">¥</span><span class="num">88</span></div>
-          <span class="w-was">原价 ¥158</span>
         </div>
+        <div class="wh whl" role="button" tabindex="0" onclick="openPay('冰寒督学 · 永久普通会员',88,'永久')"><span class="w-was">原价 ¥158</span></div>
         <div class="wt wtr" role="button" tabindex="0" onclick="openPay('冰寒督学 · 永久尊享会员',128,'永久')">
           <span class="w-tag">尊享会员</span>
           <div class="wing-price"><span class="cur">¥</span><span class="num">128</span></div>
-          <span class="w-was">原价 ¥198</span>
         </div>
+        <div class="wh whr" role="button" tabindex="0" onclick="openPay('冰寒督学 · 永久尊享会员',128,'永久')"><span class="w-was">原价 ¥198</span></div>
       </div>
     </div>
   </div>
@@ -1085,11 +1096,15 @@ footer{background:#0f172a;color:#94a3b8;padding:46px 0 28px}
     <div class="modal-title">🦋 会员权益 · 详细介绍</div>
     <div class="mm-block">
       <h4>普通会员 · ¥88（原价 ¥158）</h4>
-      <p>开通即为冰寒督学永久普通会员：可享受自习室永久免费，即使非监督期间也可进入自习室自行学习；但多次违规，监督员有权把人移出自习室，直到还账完毕。开通后需拉进自习室汇报群。</p>
+      <p>开通即为冰寒督学永久普通会员：可享受自习室永久免费，即使非监督期间也可进入自习室自行学习。<span class="mm-red">多次违规，监督员有权把人移出自习室，直到还账完毕。</span>开通后需拉进自习室汇报群。</p>
     </div>
     <div class="mm-block">
       <h4>尊享会员 · ¥128（原价 ¥198）</h4>
       <p>自习室永久免费；一年三次下单减免：下单时丢骰子定减免幅度，随机减免 3%～8%；粉丝团 6 级即可参加每年周年庆线下活动。</p>
+    </div>
+    <div class="mm-block mm-highlight">
+      <h4>🎁 粉丝团福利</h4>
+      <p>粉丝团十级用户可以凭借截图免费兑换普通会员，若需升级尊享会员，补足差价即可。</p>
     </div>
     <p class="mm-note">两类会员均一次开通、永久有效。</p>
   </div>
