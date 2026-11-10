@@ -236,23 +236,23 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);
 .member-stage{display:flex;flex-direction:column;align-items:center;margin-top:26px}
 .bfly-intro-link{border:none;background:var(--bg2);color:#6d28d9;font-size:14px;font-weight:800;padding:12px 22px;border-radius:14px;cursor:pointer;margin-bottom:4px}
 .bfly-intro-link:hover{background:#f3e8ff}
-.butterfly{position:relative;width:min(800px,100%);aspect-ratio:1000/820;margin-top:10px}
+.butterfly{position:relative;width:min(800px,100%);aspect-ratio:880/780;margin-top:10px}
 .bfly-svg{width:100%;height:100%;display:block;filter:drop-shadow(0 16px 34px rgba(120,80,200,.28))}
 .wt{position:absolute;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;cursor:pointer;transition:transform .25s;border-radius:20px;-webkit-tap-highlight-color:transparent}
 .wt:hover{transform:translateY(-4px)}
 .wt:focus-visible{outline:3px dashed #f0b95a;outline-offset:4px}
-.wtl{left:6%;top:23%;width:34%;height:30%}
-.wtr{right:6%;top:23%;width:34%;height:30%}
-.w-tag{color:#fff;font-size:clamp(14px,2vw,19px);font-weight:800;padding:6px 22px;border-radius:999px;letter-spacing:3px;background:rgba(60,20,110,.32);white-space:nowrap;box-shadow:0 2px 8px rgba(60,20,110,.25)}
+.wtl{left:9%;top:16%;width:32%;height:30%}
+.wtr{right:9%;top:16%;width:32%;height:30%}
+.w-tag{color:#fff;font-size:clamp(12px,1.6vw,16px);font-weight:800;padding:5px 16px;border-radius:999px;letter-spacing:2px;background:rgba(60,20,110,.32);white-space:nowrap;box-shadow:0 2px 8px rgba(60,20,110,.25)}
 .wtr .w-tag{background:rgba(60,20,110,.32)}
-.wing-price{display:flex;align-items:baseline;gap:4px;margin-top:8px}
-.wing-price .cur{font-size:clamp(16px,2.4vw,24px);font-weight:800;color:#fff;text-shadow:0 2px 8px rgba(80,30,140,.45)}
-.wing-price .num{font-size:clamp(38px,6.2vw,68px);font-weight:900;line-height:1;color:#fff;text-shadow:0 2px 10px rgba(80,30,140,.5)}
-.w-was{font-size:clamp(12px,1.6vw,15px);font-weight:700;color:#fff;background:rgba(60,20,110,.28);padding:4px 12px;border-radius:999px;text-decoration:line-through;text-shadow:0 1px 4px rgba(60,30,90,.45);white-space:nowrap}
+.wing-price{display:flex;align-items:baseline;gap:4px;margin-top:6px}
+.wing-price .cur{font-size:clamp(14px,1.9vw,20px);font-weight:800;color:#fff;text-shadow:0 2px 8px rgba(80,30,140,.45)}
+.wing-price .num{font-size:clamp(30px,4.6vw,52px);font-weight:900;line-height:1;color:#fff;text-shadow:0 2px 10px rgba(80,30,140,.5)}
+.w-was{font-size:clamp(11px,1.4vw,14px);font-weight:700;color:#fff;background:rgba(60,20,110,.28);padding:3px 10px;border-radius:999px;text-decoration:line-through;text-shadow:0 1px 4px rgba(60,30,90,.45);white-space:nowrap}
 .wh{position:absolute;display:flex;align-items:center;justify-content:center;text-align:center;cursor:pointer;transition:transform .25s}
 .wh:hover{transform:translateY(-3px)}
-.whl{left:11%;bottom:12%;width:28%;height:9%}
-.whr{right:11%;bottom:12%;width:28%;height:9%}
+.whl{left:16%;top:70%;width:28%;height:9%}
+.whr{right:16%;top:70%;width:28%;height:9%}
 .wh .w-was{margin-top:0;font-size:clamp(12px,1.7vw,16px)}
 .mm-red{display:block;color:#dc2626;font-weight:800;margin:6px 0}
 .mm-highlight{background:linear-gradient(135deg,#fffdf6,#fff5e0);border:1.5px dashed #f0b95a}
@@ -264,10 +264,10 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);
 @media(max-width:760px){.delay-grid{grid-template-columns:1fr}}
 @media(max-width:640px){
   .butterfly{width:min(480px,96%)}
-  .wtl{left:4%;top:23%;width:38%;height:30%}
-  .wtr{right:4%;top:23%;width:38%;height:30%}
-  .whl{left:9%;bottom:12%;width:32%;height:9%}
-  .whr{right:9%;bottom:12%;width:32%;height:9%}
+  .wtl{left:7%;top:16%;width:36%;height:30%}
+  .wtr{right:7%;top:16%;width:36%;height:30%}
+  .whl{left:14%;top:70%;width:32%;height:9%}
+  .whr{right:14%;top:70%;width:32%;height:9%}
 }
 /* ===== 盲盒体验卡三档价格行 ===== */
 .trial-box{margin:14px 0 4px;display:flex;flex-direction:column;gap:8px}
@@ -1027,7 +1027,7 @@ footer{background:#0f172a;color:#94a3b8;padding:46px 0 28px}
     <div class="member-stage reveal">
       <button class="bfly-intro-link" onclick="openMemberIntro()">📖 查看会员权益详细介绍</button>
       <div class="butterfly">
-        <svg class="bfly-svg" viewBox="0 0 1000 820" aria-hidden="true">
+        <svg class="bfly-svg" viewBox="60 40 880 780" aria-hidden="true">
           <defs>
             <path id="wingFore" d="M518,335 C545,245 640,165 750,132 C815,113 880,115 912,138 C935,158 930,205 893,258 C850,320 770,385 690,425 C640,448 585,455 552,442 C528,408 508,375 518,335 Z"/>
             <path id="wingHind" d="M540,455 C610,470 690,505 748,558 C800,608 818,672 796,730 C780,772 742,792 705,780 C660,764 615,706 585,630 C563,573 547,510 540,455 Z"/>
