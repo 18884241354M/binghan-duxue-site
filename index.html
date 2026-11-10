@@ -236,7 +236,14 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);
 .member-stage{display:flex;flex-direction:column;align-items:center;margin-top:26px}
 .bfly-intro-link{border:none;background:var(--bg2);color:#6d28d9;font-size:14px;font-weight:800;padding:12px 22px;border-radius:14px;cursor:pointer;margin-bottom:4px}
 .bfly-intro-link:hover{background:#f3e8ff}
-.butterfly{position:relative;width:min(800px,100%);aspect-ratio:880/780;margin-top:10px}
+.butterfly{position:relative;width:min(800px,100%);aspect-ratio:880/780;margin-top:10px;animation:bflyFloat 6s ease-in-out infinite}
+.bfly-wingset{transform-box:view-box;transform-origin:50% 44%;animation:wingFlap 3.6s ease-in-out infinite}
+.tw{transform-box:fill-box;transform-origin:center;animation:twinkle 2.4s ease-in-out infinite}
+.tw2{animation-delay:.8s}
+@keyframes bflyFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@keyframes wingFlap{0%,100%{transform:scaleX(1)}50%{transform:scaleX(.95)}}
+@keyframes twinkle{0%,100%{opacity:.95}50%{opacity:.25}}
+@media(prefers-reduced-motion:reduce){.butterfly,.bfly-wingset,.tw{animation:none}}
 .bfly-svg{width:100%;height:100%;display:block;filter:drop-shadow(0 16px 34px rgba(120,80,200,.28))}
 .wt{position:absolute;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;cursor:pointer;transition:transform .25s;border-radius:20px;-webkit-tap-highlight-color:transparent}
 .wt:hover{transform:translateY(-4px)}
@@ -1029,8 +1036,8 @@ footer{background:#0f172a;color:#94a3b8;padding:46px 0 28px}
       <div class="butterfly">
         <svg class="bfly-svg" viewBox="60 40 880 780" aria-hidden="true">
           <defs>
-            <path id="wingFore" d="M518,335 C545,245 640,165 750,132 C815,113 880,115 912,138 C935,158 930,205 893,258 C850,320 770,385 690,425 C640,448 585,455 552,442 C528,408 508,375 518,335 Z"/>
-            <path id="wingHind" d="M540,455 C610,470 690,505 748,558 C800,608 818,672 796,730 C780,772 742,792 705,780 C660,764 615,706 585,630 C563,573 547,510 540,455 Z"/>
+            <path id="wingFore" d="M522,342 C542,252 630,176 735,140 C802,117 870,118 902,146 C924,170 916,218 878,268 C836,325 768,384 694,423 C646,446 592,456 558,444 C532,412 510,384 522,342 Z"/>
+            <path id="wingHind" d="M546,458 C618,472 694,508 746,560 C794,612 808,674 786,726 C768,770 728,791 696,778 C654,761 614,705 588,632 C568,578 551,512 546,458 Z"/>
             <linearGradient id="wgR" x1="1" y1="0" x2="0" y2="1">
               <stop offset="0" stop-color="#ffd9ec"/><stop offset=".42" stop-color="#f9a8d4"/><stop offset=".75" stop-color="#c084fc"/><stop offset="1" stop-color="#8b5cf6"/>
             </linearGradient>
@@ -1041,23 +1048,25 @@ footer{background:#0f172a;color:#94a3b8;padding:46px 0 28px}
               <stop offset="0" stop-color="#c9a8f7"/><stop offset="1" stop-color="#7c3aed"/>
             </linearGradient>
           </defs>
-          <g transform="translate(1000,0) scale(-1,1)">
-            <use href="#wingHind" fill="url(#wgL)" stroke="#ffffff" stroke-width="6" stroke-linejoin="round"/>
-            <use href="#wingFore" fill="url(#wgL)" stroke="#ffffff" stroke-width="6" stroke-linejoin="round"/>
+          <g transform="translate(1000,0) scale(-1,1)"><g class="bfly-wingset">
+            <use href="#wingHind" fill="url(#wgL)" stroke="#ffffff" stroke-width="7" stroke-linejoin="round"/>
+            <use href="#wingFore" fill="url(#wgL)" stroke="#ffffff" stroke-width="7" stroke-linejoin="round"/>
             <ellipse cx="700" cy="230" rx="130" ry="62" fill="#ffffff" opacity=".35" transform="rotate(-24 700 230)"/>
             <circle cx="640" cy="620" r="46" fill="#ffffff" opacity=".22"/>
+          </g></g>
+          <g class="bfly-wingset">
+            <use href="#wingHind" fill="url(#wgR)" stroke="#ffffff" stroke-width="7" stroke-linejoin="round"/>
+            <use href="#wingFore" fill="url(#wgR)" stroke="#ffffff" stroke-width="7" stroke-linejoin="round"/>
+            <ellipse cx="700" cy="230" rx="130" ry="62" fill="#ffffff" opacity=".38" transform="rotate(-24 700 230)"/>
+            <circle cx="640" cy="620" r="46" fill="#ffffff" opacity=".25"/>
           </g>
-          <use href="#wingHind" fill="url(#wgR)" stroke="#ffffff" stroke-width="6" stroke-linejoin="round"/>
-          <use href="#wingFore" fill="url(#wgR)" stroke="#ffffff" stroke-width="6" stroke-linejoin="round"/>
-          <ellipse cx="700" cy="230" rx="130" ry="62" fill="#ffffff" opacity=".38" transform="rotate(-24 700 230)"/>
-          <circle cx="640" cy="620" r="46" fill="#ffffff" opacity=".25"/>
           <circle cx="836" cy="330" r="13" fill="#ffffff" opacity=".55"/>
           <circle cx="740" cy="690" r="11" fill="#ffffff" opacity=".45"/>
-          <g fill="#f9df8f">
+          <g fill="#f9df8f" class="tw tw1">
             <path d="M880,92 l3,9 9,3 -9,3 -3,9 -3,-9 -9,-3 9,-3 Z"/>
             <path d="M948,318 l2.5,7 7,2.5 -7,2.5 -2.5,7 -2.5,-7 -7,-2.5 7,-2.5 Z"/>
           </g>
-          <g fill="#ffffff" opacity=".9">
+          <g fill="#ffffff" opacity=".9" class="tw tw2">
             <path d="M118,110 l3,9 9,3 -9,3 -3,9 -3,-9 -9,-3 9,-3 Z"/>
             <path d="M58,320 l2.5,7 7,2.5 -7,2.5 -2.5,7 -2.5,-7 -7,-2.5 7,-2.5 Z"/>
           </g>
