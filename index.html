@@ -232,34 +232,8 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);
 .delay-card .save{align-self:flex-start;background:#fef2f2;color:#be123c;font-size:12px;font-weight:800;padding:3px 10px;border-radius:12px;margin:8px 0 14px}
 .delay-card .buy{margin-top:auto;background:linear-gradient(135deg,var(--accent),var(--accent-d))}
 .delay-banner{margin-top:20px;background:linear-gradient(90deg,#fff1f2,#ffe4e6);border:1px solid #fecdd3;color:#9f1239;border-radius:14px;padding:12px 18px;font-size:13.5px;font-weight:700}
-/* ===== 会员板块（蝴蝶：尖刺羽缘SVG形，文字写进翅膀） ===== */
-.member-stage{display:flex;flex-direction:column;align-items:center;margin-top:26px}
-#member{background:linear-gradient(108deg,#2e3c6e 0%,#3f3f7d 30%,#5e51a0 55%,#9a6fb5 78%,#d8a2c9 100%)}
-#member .sec-head h2{color:#fdf7ff;text-shadow:0 2px 12px rgba(15,15,60,.4)}
-#member .sec-head .tagline{color:rgba(255,248,255,.88)}
-#member .sec-head .line{background:linear-gradient(90deg,rgba(255,255,255,.55),transparent)}
-#member .sec-wave path{fill:#7c3aed}
-.bfly-intro-link{border:none;background:rgba(255,255,255,.92);color:#6d28d9;font-size:14px;font-weight:800;padding:12px 22px;border-radius:14px;cursor:pointer;margin-bottom:4px;box-shadow:0 4px 16px rgba(20,20,70,.3)}
-.bfly-intro-link:hover{background:#fff}
-.butterfly{position:relative;width:min(640px,100%);margin-top:10px;border-radius:26px;overflow:hidden;box-shadow:0 22px 60px rgba(25,25,70,.45);animation:bflyFloat 6s ease-in-out infinite}
-.bfly-img{width:100%;display:block}
-.bfly-hit{position:absolute;top:0;bottom:0;width:50%;cursor:pointer;-webkit-tap-highlight-color:transparent}
-.bfly-hit:focus-visible{outline:3px dashed #f0b95a;outline-offset:-8px}
-.bfly-hit-l{left:0}
-.bfly-hit-r{right:0}
-@keyframes bflyFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
-@media(prefers-reduced-motion:reduce){.butterfly{animation:none}}
-.mm-red{display:block;color:#dc2626;font-weight:800;margin:6px 0}
-.mm-highlight{background:linear-gradient(135deg,#fffdf6,#fff5e0);border:1.5px dashed #f0b95a}
-.mm-highlight h4{color:#b45309}
-.mm-block{background:var(--bg2);border-radius:12px;padding:14px 16px;margin-bottom:12px}
-.mm-block h4{margin:0 0 6px;font-size:15px;font-weight:900;color:var(--ink)}
-.mm-block p{margin:0;font-size:13px;line-height:1.8;color:var(--slate)}
-.mm-note{font-size:12px;color:var(--muted);text-align:center;margin:4px 0 0}
 @media(max-width:760px){.delay-grid{grid-template-columns:1fr}}
-@media(max-width:640px){
-  .butterfly{width:min(480px,96%)}
-}
+
 /* ===== 盲盒体验卡三档价格行 ===== */
 .trial-box{margin:14px 0 4px;display:flex;flex-direction:column;gap:8px}
 .trial-row{display:flex;align-items:center;gap:10px;background:var(--bg2);border-radius:10px;padding:10px 14px}
@@ -1005,48 +979,6 @@ footer{background:#0f172a;color:#94a3b8;padding:46px 0 28px}
     <div class="delay-banner reveal">⏰ 试营业期间限时优惠，恢复原价后：周 ¥178 · 月 ¥666 · 季 ¥1,766</div>
   </div>
 </section>
-
-<!-- ===== NEW: 永久会员 ===== -->
-<section class="section theme-purple deco" id="member">
-  <div class="sec-wave" aria-hidden="true"><svg viewBox="0 0 1440 16" preserveAspectRatio="none"><path d="M0,8 C240,16 480,0 720,8 C960,16 1200,0 1440,8 L1440,16 L0,16 Z" fill="var(--accent)"/></svg></div>
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <h2>冰寒督学 · 永久会员<span class="sec-new">NEW</span></h2>
-      <div class="line"></div>
-      <span class="tagline">一次开通，永久免费</span>
-    </div>
-    <div class="member-stage reveal">
-      <button class="bfly-intro-link" onclick="openMemberIntro()">📖 查看会员权益详细介绍</button>
-      <div class="butterfly">
-        <img class="bfly-img" src="images/member-butterfly.jpg" alt="冰寒督学永久会员 · 普通会员88元 尊享会员128元">
-        <div class="bfly-hit bfly-hit-l" role="button" tabindex="0" aria-label="开通普通会员 88元" onclick="openPay('冰寒督学 · 永久普通会员',88,'永久')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openPay('冰寒督学 · 永久普通会员',88,'永久')}"></div>
-        <div class="bfly-hit bfly-hit-r" role="button" tabindex="0" aria-label="开通尊享会员 128元" onclick="openPay('冰寒督学 · 永久尊享会员',128,'永久')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openPay('冰寒督学 · 永久尊享会员',128,'永久')}"></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== 会员详细介绍弹窗 ===== -->
-<div class="modal-overlay" id="memberModal" onclick="if(event.target===this)closeMemberIntro()">
-  <div class="modal">
-    <button class="modal-close" onclick="closeMemberIntro()">×</button>
-    <div class="modal-title">🦋 会员权益 · 详细介绍</div>
-    <div class="mm-block">
-      <h4>普通会员 · ¥88（原价 ¥158）</h4>
-      <p>开通即为冰寒督学永久普通会员：可享受自习室永久免费，即使非监督期间也可进入自习室自行学习。<span class="mm-red">多次违规，监督员有权把人移出自习室，直到还账完毕。</span>开通后需拉进自习室汇报群。</p>
-    </div>
-    <div class="mm-block">
-      <h4>尊享会员 · ¥128（原价 ¥198）</h4>
-      <p>自习室永久免费；一年三次下单减免：下单时丢骰子定减免幅度，随机减免 3%～8%；粉丝团 6 级即可参加每年周年庆线下活动。</p>
-    </div>
-    <div class="mm-block mm-highlight">
-      <h4>🎁 粉丝团福利</h4>
-      <p>粉丝团十级用户可以凭借截图免费兑换普通会员，若需升级尊享会员，补足差价即可。</p>
-    </div>
-    <p class="mm-note">两类会员均一次开通、永久有效。</p>
-    <p class="mm-note">学员可在非监督期间打卡进入自习室自行学习，仅限正常使用；若多次违规扰乱自习秩序达到上限，将收回权限，需重新购买会员。</p>
-  </div>
-</div>
 
 <!-- ===== Single services ===== -->
 <section class="section alt2 theme-teal deco" id="single">
@@ -1894,9 +1826,6 @@ function openGuide(){guideModal.classList.add("show");}
 function closeGuide(){guideModal.classList.remove("show");}
 
 /* ===== Member intro modal ===== */
-const memberModal=document.getElementById("memberModal");
-function openMemberIntro(){memberModal.classList.add("show");}
-function closeMemberIntro(){memberModal.classList.remove("show");}
 
 /* ===== Reviews modal ===== */
 const reviewsModal=document.getElementById("reviewsModal");
