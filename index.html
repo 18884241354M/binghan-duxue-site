@@ -236,7 +236,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);
 .member-stage{display:flex;flex-direction:column;align-items:center;margin-top:26px}
 .bfly-intro-link{border:none;background:var(--bg2);color:#6d28d9;font-size:14px;font-weight:800;padding:12px 22px;border-radius:14px;cursor:pointer;margin-bottom:4px}
 .bfly-intro-link:hover{background:#f3e8ff}
-.butterfly{position:relative;width:min(800px,100%);aspect-ratio:880/780;margin-top:10px;animation:bflyFloat 6s ease-in-out infinite}
+.butterfly{position:relative;width:min(800px,100%);aspect-ratio:1000/900;margin-top:10px;animation:bflyFloat 6s ease-in-out infinite}
 .bfly-wingset{transform-box:view-box;transform-origin:50% 44%;animation:wingFlap 3.6s ease-in-out infinite}
 .tw{transform-box:fill-box;transform-origin:center;animation:twinkle 2.4s ease-in-out infinite}
 .tw2{animation-delay:.8s}
@@ -248,19 +248,16 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);
 .wt{position:absolute;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;cursor:pointer;transition:transform .25s;border-radius:20px;-webkit-tap-highlight-color:transparent}
 .wt:hover{transform:translateY(-4px)}
 .wt:focus-visible{outline:3px dashed #f0b95a;outline-offset:4px}
-.wtl{left:9%;top:16%;width:32%;height:30%}
-.wtr{right:9%;top:16%;width:32%;height:30%}
-.w-tag{color:#fff;font-size:clamp(12px,1.6vw,16px);font-weight:800;padding:5px 16px;border-radius:999px;letter-spacing:2px;background:rgba(60,20,110,.32);white-space:nowrap;box-shadow:0 2px 8px rgba(60,20,110,.25)}
-.wtr .w-tag{background:rgba(60,20,110,.32)}
-.wing-price{display:flex;align-items:baseline;gap:4px;margin-top:6px}
-.wing-price .cur{font-size:clamp(14px,1.9vw,20px);font-weight:800;color:#fff;text-shadow:0 2px 8px rgba(80,30,140,.45)}
-.wing-price .num{font-size:clamp(30px,4.6vw,52px);font-weight:900;line-height:1;color:#fff;text-shadow:0 2px 10px rgba(80,30,140,.5)}
-.w-was{font-size:clamp(11px,1.4vw,14px);font-weight:700;color:#fff;background:rgba(60,20,110,.28);padding:3px 10px;border-radius:999px;text-decoration:line-through;text-shadow:0 1px 4px rgba(60,30,90,.45);white-space:nowrap}
-.wh{position:absolute;display:flex;align-items:center;justify-content:center;text-align:center;cursor:pointer;transition:transform .25s}
-.wh:hover{transform:translateY(-3px)}
-.whl{left:16%;top:70%;width:28%;height:9%}
-.whr{right:16%;top:70%;width:28%;height:9%}
-.wh .w-was{margin-top:0;font-size:clamp(12px,1.7vw,16px)}
+.wtl{left:14%;top:19%;width:30%;height:27%}
+.wtr{right:14%;top:19%;width:30%;height:27%}
+.w-tag{color:#fff;font-size:clamp(12px,1.6vw,16px);font-weight:800;padding:5px 16px;border-radius:999px;letter-spacing:2px;background:rgba(60,20,110,.30);white-space:nowrap;box-shadow:0 2px 8px rgba(60,20,110,.25)}
+.wtr .w-tag{background:rgba(60,20,110,.30)}
+.wing-price{display:flex;align-items:baseline;gap:3px;margin-top:5px}
+.wing-price .cur{font-size:clamp(13px,1.7vw,18px);font-weight:800;color:#fff;text-shadow:0 2px 8px rgba(80,30,140,.45)}
+.wing-price .num{font-size:clamp(26px,3.8vw,42px);font-weight:900;line-height:1;color:#fff;text-shadow:0 2px 10px rgba(80,30,140,.5)}
+.wing-price .yuan{font-size:clamp(12px,1.5vw,15px);font-weight:800;color:#fff;text-shadow:0 2px 8px rgba(80,30,140,.45)}
+.w-was{font-size:clamp(11px,1.4vw,14px);font-weight:700;color:#fff;background:rgba(60,20,110,.26);padding:3px 10px;border-radius:999px;text-decoration:line-through;text-shadow:0 1px 4px rgba(60,30,90,.45);white-space:nowrap}
+.wt .w-was{margin-top:4px}
 .mm-red{display:block;color:#dc2626;font-weight:800;margin:6px 0}
 .mm-highlight{background:linear-gradient(135deg,#fffdf6,#fff5e0);border:1.5px dashed #f0b95a}
 .mm-highlight h4{color:#b45309}
@@ -271,10 +268,8 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);
 @media(max-width:760px){.delay-grid{grid-template-columns:1fr}}
 @media(max-width:640px){
   .butterfly{width:min(480px,96%)}
-  .wtl{left:7%;top:16%;width:36%;height:30%}
-  .wtr{right:7%;top:16%;width:36%;height:30%}
-  .whl{left:14%;top:70%;width:32%;height:9%}
-  .whr{right:14%;top:70%;width:32%;height:9%}
+  .wtl{left:11%;top:19%;width:34%;height:27%}
+  .wtr{right:11%;top:19%;width:34%;height:27%}
 }
 /* ===== 盲盒体验卡三档价格行 ===== */
 .trial-box{margin:14px 0 4px;display:flex;flex-direction:column;gap:8px}
@@ -1034,10 +1029,10 @@ footer{background:#0f172a;color:#94a3b8;padding:46px 0 28px}
     <div class="member-stage reveal">
       <button class="bfly-intro-link" onclick="openMemberIntro()">📖 查看会员权益详细介绍</button>
       <div class="butterfly">
-        <svg class="bfly-svg" viewBox="60 40 880 780" aria-hidden="true">
+        <svg class="bfly-svg" viewBox="0 0 1000 900" aria-hidden="true">
           <defs>
-            <path id="wingFore" d="M522,342 C542,252 630,176 735,140 C802,117 870,118 902,146 C924,170 916,218 878,268 C836,325 768,384 694,423 C646,446 592,456 558,444 C532,412 510,384 522,342 Z"/>
-            <path id="wingHind" d="M546,458 C618,472 694,508 746,560 C794,612 808,674 786,726 C768,770 728,791 696,778 C654,761 614,705 588,632 C568,578 551,512 546,458 Z"/>
+            <path id="wingFore" d="M510,345 C555,255 650,175 770,140 C815,127 860,122 885,135 C900,145 908,170 905,200 C898,250 875,295 840,330 C790,385 715,425 645,443 C602,452 565,450 545,438 C520,405 502,380 510,345 Z"/>
+            <path id="wingHind" d="M528,455 C612,470 702,515 755,580 C784,617 792,653 783,686 C806,728 813,778 797,822 C792,834 778,836 770,826 C762,782 753,742 737,708 C689,690 631,652 593,595 C563,548 540,500 528,455 Z"/>
             <linearGradient id="wgR" x1="1" y1="0" x2="0" y2="1">
               <stop offset="0" stop-color="#ffd9ec"/><stop offset=".42" stop-color="#f9a8d4"/><stop offset=".75" stop-color="#c084fc"/><stop offset="1" stop-color="#8b5cf6"/>
             </linearGradient>
@@ -1051,43 +1046,31 @@ footer{background:#0f172a;color:#94a3b8;padding:46px 0 28px}
           <g transform="translate(1000,0) scale(-1,1)"><g class="bfly-wingset">
             <use href="#wingHind" fill="url(#wgL)" stroke="#ffffff" stroke-width="7" stroke-linejoin="round"/>
             <use href="#wingFore" fill="url(#wgL)" stroke="#ffffff" stroke-width="7" stroke-linejoin="round"/>
-            <ellipse cx="700" cy="230" rx="130" ry="62" fill="#ffffff" opacity=".35" transform="rotate(-24 700 230)"/>
-            <circle cx="640" cy="620" r="46" fill="#ffffff" opacity=".22"/>
+            <ellipse cx="680" cy="255" rx="118" ry="55" fill="#ffffff" opacity=".3" transform="rotate(-28 680 255)"/>
           </g></g>
           <g class="bfly-wingset">
             <use href="#wingHind" fill="url(#wgR)" stroke="#ffffff" stroke-width="7" stroke-linejoin="round"/>
             <use href="#wingFore" fill="url(#wgR)" stroke="#ffffff" stroke-width="7" stroke-linejoin="round"/>
-            <ellipse cx="700" cy="230" rx="130" ry="62" fill="#ffffff" opacity=".38" transform="rotate(-24 700 230)"/>
-            <circle cx="640" cy="620" r="46" fill="#ffffff" opacity=".25"/>
-          </g>
-          <circle cx="836" cy="330" r="13" fill="#ffffff" opacity=".55"/>
-          <circle cx="740" cy="690" r="11" fill="#ffffff" opacity=".45"/>
-          <g fill="#f9df8f" class="tw tw1">
-            <path d="M880,92 l3,9 9,3 -9,3 -3,9 -3,-9 -9,-3 9,-3 Z"/>
-            <path d="M948,318 l2.5,7 7,2.5 -7,2.5 -2.5,7 -2.5,-7 -7,-2.5 7,-2.5 Z"/>
-          </g>
-          <g fill="#ffffff" opacity=".9" class="tw tw2">
-            <path d="M118,110 l3,9 9,3 -9,3 -3,9 -3,-9 -9,-3 9,-3 Z"/>
-            <path d="M58,320 l2.5,7 7,2.5 -7,2.5 -2.5,7 -2.5,-7 -7,-2.5 7,-2.5 Z"/>
+            <ellipse cx="680" cy="255" rx="118" ry="55" fill="#ffffff" opacity=".32" transform="rotate(-28 680 255)"/>
           </g>
           <g>
             <path d="M498,300 C484,262 476,240 488,214" stroke="#6d28d9" stroke-width="4" fill="none" stroke-linecap="round"/>
             <path d="M502,300 C516,262 524,240 512,214" stroke="#6d28d9" stroke-width="4" fill="none" stroke-linecap="round"/>
             <circle cx="488" cy="212" r="7" fill="#6d28d9"/><circle cx="512" cy="212" r="7" fill="#6d28d9"/>
             <circle cx="500" cy="306" r="13" fill="url(#bodyG)"/>
-            <path d="M486,322 C482,395 488,475 500,565 C512,475 518,395 514,322 Z" fill="url(#bodyG)"/>
+            <path d="M486,322 C484,400 490,480 500,570 C510,480 516,400 514,322 Z" fill="url(#bodyG)"/>
           </g>
         </svg>
         <div class="wt wtl" role="button" tabindex="0" onclick="openPay('冰寒督学 · 永久普通会员',88,'永久')">
           <span class="w-tag">普通会员</span>
-          <div class="wing-price"><span class="cur">¥</span><span class="num">88</span></div>
+          <div class="wing-price"><span class="cur">¥</span><span class="num">88</span><span class="yuan">元</span></div>
+          <span class="w-was">原价 ¥158</span>
         </div>
-        <div class="wh whl" role="button" tabindex="0" onclick="openPay('冰寒督学 · 永久普通会员',88,'永久')"><span class="w-was">原价 ¥158</span></div>
         <div class="wt wtr" role="button" tabindex="0" onclick="openPay('冰寒督学 · 永久尊享会员',128,'永久')">
           <span class="w-tag">尊享会员</span>
-          <div class="wing-price"><span class="cur">¥</span><span class="num">128</span></div>
+          <div class="wing-price"><span class="cur">¥</span><span class="num">128</span><span class="yuan">元</span></div>
+          <span class="w-was">原价 ¥198</span>
         </div>
-        <div class="wh whr" role="button" tabindex="0" onclick="openPay('冰寒督学 · 永久尊享会员',128,'永久')"><span class="w-was">原价 ¥198</span></div>
       </div>
     </div>
   </div>
